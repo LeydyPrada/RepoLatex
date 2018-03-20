@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.3.3)  4 MAR 2018 20:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.3.13)  20 MAR 2018 11:17
 entering extended mode
 **./main.tex
 (main.tex
 LaTeX2e <2017-04-15>
 Babel <3.17> and hyphenation patterns for 75 language(s) loaded.
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\book.cls"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\book.cls"
 Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\bk12.clo"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\bk12.clo"
 File: bk12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -22,19 +22,18 @@ File: bk12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\inputenc.st
+y"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
+ ("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
+ ("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
 File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
@@ -275,7 +274,7 @@ File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
 File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
@@ -315,8 +314,8 @@ File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
 )
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
+ ("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omsenc.dfu
+"
 File: omsenc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -340,32 +339,40 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.st
+y"
 Package: babel 2018/01/24 3.17 The Babel package
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\switch.def"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\switch.d
+ef"
 File: switch.def 2018/01/24 3.17 Babel switching mechanism
 )
 *************************************
 * Local config file bblopts.cfg used
 *
-("C:\Program Files\MiKTeX 2.9\tex\latex\arabi\bblopts.cfg"
+
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\arabi\bblopts.cf
+g"
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\babel-spanish\spanish.ldf"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\babel-spanish\sp
+anish.ldf"
 Language: spanish.ldf 2016/03/03 v5.0p Spanish support from the babel system
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.de
+f"
 File: babel.def 2018/01/24 3.17 Babel common definitions
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\switch.def"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\switch.d
+ef"
 File: switch.def 2018/01/24 3.17 Babel switching mechanism
 )
 \babel@savecnt=\count88
 \U@D=\dimen103
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\txtbabel.def")
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\txtbabel
+.def")
 \bbl@dirlevel=\count89
 )
 \es@quottoks=\toks16
@@ -375,31 +382,38 @@ Package babel Info: Making . an active character on input line 662.
 Package babel Info: Making < an active character on input line 707.
 Package babel Info: Making > an active character on input line 707.
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphic
+x.sty"
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.
+sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphic
+s.sty"
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.st
+y"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\gra
+phics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-def\pdf
+tex.def"
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen104
 \Gin@req@width=\dimen105
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.sty"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listing
+s.sty"
 \lst@mode=\count91
 \lst@gtempboxa=\box26
 \lst@token=\toks18
@@ -413,35 +427,40 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 \lst@lineno=\count96
 \lst@maxwidth=\dimen109
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstmisc
+.sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 \c@lstnumber=\count97
 \lst@skipnumbers=\count98
 \lst@framebox=\box27
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.cfg"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\listing
+s.cfg"
 File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\color.s
+ty"
 Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\col
+or.cfg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\cite\cite.sty"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\cite\cite.sty"
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\longtable.sty"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\longtable.
+sty"
 Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip43
 \LTright=\skip44
@@ -509,7 +528,8 @@ LaTeX Font Info:    ... okay on input line 13.
 LaTeX Info: Redefining \. on input line 13.
 LaTeX Info: Redefining \% on input line 13.
 
-("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.
+mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count104
 \scratchdimen=\dimen111
@@ -522,31 +542,41 @@ LaTeX Info: Redefining \% on input line 13.
 \MPnumerator=\count108
 \makeMPintoPDFobject=\count109
 \everyMPtoPDFconversion=\toks21
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+)
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopd
+f-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infwa
+rerr.sty"
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grfext.
+sty"
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvdef
+inekeys.sty"
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxcm
+ds.sty"
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )))
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoptio
+ns.sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvset
+keys.sty"
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\etexc
+mds.sty"
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\iflua
+tex.sty"
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
@@ -555,11 +585,13 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\pdfte
+xcmds.sty"
 Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifpdf
+.sty"
 Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 )
 Package pdftexcmds Info: LuaTeX not detected.
@@ -578,7 +610,7 @@ G,.JBIG2,.JB2,.eps]
  [1
 
 
-{C:/Users/jeimmy/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2
+{C:/Users/USUARIO/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2
 
 ] (main.toc
 LaTeX Info: Redefining \. on input line 1.
@@ -594,8 +626,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 ]
 LaTeX Info: Redefining \. on input line 70.
 LaTeX Info: Redefining \% on input line 70.
-
-[2])
+ [2])
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
@@ -627,11 +658,11 @@ LaTeX Info: Redefining \% on input line 41.
 ]
 \openout2 = `contexto/proyecto/introduccion.aux'.
 
- (contexto/proyecto/introduccion.tex
+
+(contexto/proyecto/introduccion.tex
 LaTeX Info: Redefining \. on input line 15.
 LaTeX Info: Redefining \% on input line 15.
-
-[1
+ [1
 
 ]) [2
 
@@ -664,21 +695,21 @@ LaTeX Info: Redefining \. on input line 91.
 LaTeX Info: Redefining \% on input line 91.
  [8]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 91.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 91.
 LaTeX Info: Redefining \. on input line 103.
 LaTeX Info: Redefining \% on input line 103.
- [9]
+[9]
 LaTeX Info: Redefining \. on input line 118.
 LaTeX Info: Redefining \% on input line 118.
  [10]
 LaTeX Info: Redefining \. on input line 136.
 LaTeX Info: Redefining \% on input line 136.
-
-[11]
+ [11]
 LaTeX Info: Redefining \. on input line 145.
 LaTeX Info: Redefining \% on input line 145.
  [12]
@@ -1541,92 +1572,57 @@ LaTeX Info: Redefining \% on input line 13.
 \openout2 = `reflexiones/anexos.aux'.
 
  (reflexiones/anexos.tex
-("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstlang
+1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )) [64
 
 
 
 ] (main.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 23--27
-[]\OT1/cmr/m/n/12 Copropietarios.  Ley 675 de 2001 pro-pie-dad ho-ri-zon-tal.
+Underfull \hbox (badness 5637) in paragraph at lines 10--15
+[]\OT1/cmr/m/n/12 Edificios y Con-jun-tos.  Asam-blea ge-ne-ral de pro-pie-ta-r
+ios en
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--27
-\OT1/cmr/m/n/12 http://www.copropietarios.com.co/archivos/14.  [On-li-ne; ac-ce
--di-do
+Underfull \hbox (badness 5607) in paragraph at lines 10--15
+\OT1/cmr/m/n/12 edi-fi-cios y con-jun-tos.  $\OT1/cmtt/m/n/12 http : / / edific
+iosyconjuntos . com / blog /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--42
+Underfull \hbox (badness 10000) in paragraph at lines 17--23
 []\OT1/cmr/m/n/12 Actualce-se.  Ley de pro-pie-dad ho-ri-zon-tal: de-re-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--42
+Underfull \hbox (badness 10000) in paragraph at lines 17--23
 \OT1/cmr/m/n/12 chos y de-be-res de co-pro-pie-ta-rios y ad-mi-nis-tra-dor.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--42
-\OT1/cmr/m/n/12 https://actualicese.com/actualidad/2015/12/14/ley-de-propiedad-
-
+Underfull \hbox (badness 10000) in paragraph at lines 17--23
+\OT1/cmtt/m/n/12 https : / / actualicese . com / actualidad / 2015 / 12 / 14 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--42
-\OT1/cmr/m/n/12 horizontal-derechos-y-deberes-de-copropietarios-y-administrador
-/.
+Overfull \hbox (136.71669pt too wide) in paragraph at lines 17--23
+\OT1/cmtt/m/n/12 ley-[]de-[]propiedad-[]horizontal-[]derechos-[]y-[]deberes-[]d
+e-[]copropietarios-[]y-[]administrador/$\OT1/cmr/m/n/12 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--49
-[]\OT1/cmr/m/n/12 Portal de Re-vis-tas Uli-ma.  Ar-qui-tec-tu-
+Underfull \hbox (badness 10000) in paragraph at lines 32--37
+\OT1/cmtt/m/n/12 proyectos / abreproy / 11247 / fichero / Memoria % 252F7-[]SOA
+P + y + WSDL .
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 44--49
-\OT1/cmr/m/n/12 ra de in-te-gra-ci[]On orien-ta-da a ser-vi-cios.
- []
-
-
-Overfull \hbox (5.90144pt too wide) in paragraph at lines 44--49
-\OT1/cmr/m/n/12 https://revistas.ulima.edu.pe/index.php/Interfases/article/view
-/169/120.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 51--56
-[]\OT1/cmr/m/n/12 E-Reding Bi-blio-te-ca Se-vi-lla.  Soap y wsdl.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 51--56
-\OT1/cmr/m/n/12 http://bibing.us.es/proyectos/abreproy/11247/fichero/Memoria [O
-n-
- []
-
-[65
+) [65
 
 
 
-]
-! Missing } inserted.
-<inserted text> 
-                }
-l.63 \end{thebibliography}
-                          
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-)
-LaTeX Info: Redefining \. on input line 66.
-LaTeX Info: Redefining \% on input line 66.
- [66] (main.aux
+] (main.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
  (contexto/proyecto/introduccion.aux)
@@ -1642,24 +1638,26 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4790 strings out of 493303
- 80864 string characters out of 3138854
- 190938 words of memory out of 3000000
- 8102 multiletter control sequences out of 15000+200000
- 10102 words of font info for 35 fonts, out of 3000000 for 9000
+ 4780 strings out of 493303
+ 80929 string characters out of 3128914
+ 190929 words of memory out of 3000000
+ 8092 multiletter control sequences out of 15000+200000
+ 9924 words of font info for 35 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,12n,38p,1126b,620s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmsl12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmti12.pfb>
-Output written on main.pdf (74 pages, 1046960 bytes).
+<C:/Users/USUARIO/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmbx12.pfb><C:/Users/USUARIO/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/USUARIO/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/USUARIO/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/USUARIO/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/U
+sers/USUARIO/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+msl12.pfb><C:/Users/USUARIO/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb><C:/Users/USUARIO/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on main.pdf (73 pages, 1040791 bytes).
 PDF statistics:
- 332 PDF objects out of 1000 (max. 8388607)
+ 329 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  256 words of extra memory for PDF output out of 10000 (max. 10000000)
 

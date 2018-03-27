@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Extract method &apos;private static String calcularAlfabeto(String palabra)&apos; from &apos;monoalfabetico.CifradoMonoalfabetico.cifrarMonoalfabetico()&apos; to &apos;monoalfabetico.CifradoMonoalfabetico&apos;&#x0D;&#x0A;- Original project: &apos;Cifrado&apos;&#x0D;&#x0A;- Method name: &apos;calcularAlfabeto&apos;&#x0D;&#x0A;- Destination type: &apos;monoalfabetico.CifradoMonoalfabetico&apos;&#x0D;&#x0A;- Declared visibility: &apos;private&apos;" comments="false" description="Extract method &apos;calcularAlfabeto&apos;" destination="0" exceptions="false" flags="786434" id="org.eclipse.jdt.ui.extract.method" input="/src&lt;monoalfabetico{CifradoMonoalfabetico.java" name="calcularAlfabeto" replace="false" selection="203 1286" stamp="1522124553225" version="1.0" visibility="2"/>
-</session>

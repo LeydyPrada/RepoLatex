@@ -75,7 +75,7 @@ public class TipoUsuarioDAO implements iTipoUsuarioDAO{
     public List<TipoUsuarioDTO> consultarTodos() {
         PreparedStatement ps;
         ResultSet rs;
-        ArrayList<TipoUsuarioDTO> tipoUsuario = new ArrayList();
+        ArrayList<TipoUsuarioDTO> tipoUsuario = new ArrayList<>();
         
         try {           
             ps = con.getConn().prepareStatement(CONSULTAR_TODOS_SQL);            

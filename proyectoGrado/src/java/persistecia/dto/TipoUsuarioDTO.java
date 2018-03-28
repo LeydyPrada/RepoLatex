@@ -5,6 +5,8 @@
  */
 package persistecia.dto;
 
+import java.util.List;
+
 /**
  *
  * @author jnieton
@@ -13,6 +15,7 @@ public class TipoUsuarioDTO {
     
     private Integer id;
     private String tipo;
+    
     
     public TipoUsuarioDTO() {
     }

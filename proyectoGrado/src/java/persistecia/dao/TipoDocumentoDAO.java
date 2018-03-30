@@ -13,49 +13,46 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import persistecia.config.Conexion;
-import persistecia.dto.EncuestaDTO;
-import persistecia.dto.TipoEncuestaDTO;
+import persistecia.dto.TipoDocumentoDTO;
 
 /**
  *
  * @author jnieton
  */
-public class EncuestaDAO implements iEncuestaDAO{
+public class TipoDocumentoDAO implements iTipoDocumentoDAO{
     
-    private static final String CREAR_SQL = "INSERT INTO encuesta (id, descripcion, activo, id_tipo_encuesta) VALUES (?, ?, ?, ?)";
-    private static final String ACTUALIZAR_SQL = "UPDATE encuesta SET descripcion = ?, activo = ?, id_tipo_encuesta = ? WHERE id = ?";
-    private static final String BORRAR_SQL = "DELETE FROM encuesta WHERE id = ?";
-    private static final String CONSULTAR_SQL = "SELECT * FROM encuesta WHERE id = ?";
-    private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM encuesta";
+    private static final String CREAR_SQL = "INSERT INTO tipo_documento (id, tipo_documento) VALUES (?, ?)";
+    private static final String ACTUALIZAR_SQL = "UPDATE tipo_documento SET tipo_documento = ? WHERE id = ?";
+    private static final String BORRAR_SQL = "DELETE FROM tipo_documento WHERE id = ?";
+    private static final String CONSULTAR_SQL = "SELECT * FROM tipo_documento WHERE id = ?";
+    private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM tipo_documento";
     
     private static final Conexion con = Conexion.obtener();
 
     @Override
-    public boolean registrar(EncuestaDTO encuesta) {
+    public boolean registrar(TipoDocumentoDTO tipoDocumento) {
         PreparedStatement ps;
         try {            
             ps = con.getConn().prepareStatement(CREAR_SQL);
-            ps.setInt(1, encuesta.getId());   
-            ps.setString(2, encuesta.getDescripcion()); 
-            ps.setInt(3, encuesta.getActivo()); 
-            ps.setInt(4, encuesta.getTipoEncuesta().getId());
+            ps.setInt(1, tipoDocumento.getId());   
+            ps.setString(2, tipoDocumento.getTipoDocumento()); 
                                    
             if (ps.executeUpdate() > 0){
                 return true;
             }           
         } catch (SQLException ex) {
-            Logger.getLogger(EncuestaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoDocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             con.cerrar();
         }        
-        return false;
+        return false; 
     }
 
     @Override
-    public EncuestaDTO consultarPorId(Integer id) {
+    public TipoDocumentoDTO consultarPorId(Integer id) {
         PreparedStatement ps;
         ResultSet rs;
-        EncuestaDTO encuesta = new EncuestaDTO();
+        TipoDocumentoDTO tipoDocumento = new TipoDocumentoDTO();
         
         try {           
             ps = con.getConn().prepareStatement(CONSULTAR_SQL);
@@ -63,52 +60,50 @@ public class EncuestaDAO implements iEncuestaDAO{
             rs = ps.executeQuery();
             
             while(rs.next()){
-                encuesta = new EncuestaDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), new TipoEncuestaDTO(rs.getInt(4)));
+                tipoDocumento = new TipoDocumentoDTO(rs.getInt(1), rs.getString(2));
             }  
-            return encuesta;
+            return tipoDocumento;
         } catch (SQLException ex) {
-            Logger.getLogger(EncuestaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoDocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             con.cerrar();
         }
-        return encuesta;
+        return tipoDocumento;
     }
 
     @Override
-    public List<EncuestaDTO> consultarTodos() {
+    public List<TipoDocumentoDTO> consultarTodos() {
         PreparedStatement ps;
         ResultSet rs;
-        ArrayList<EncuestaDTO> encuesta = new ArrayList();
+        ArrayList<TipoDocumentoDTO> tipoDocumento = new ArrayList<>();
         
         try {           
             ps = con.getConn().prepareStatement(CONSULTAR_TODOS_SQL);            
             rs = ps.executeQuery();
             
             while(rs.next()){
-               encuesta.add(new EncuestaDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), new TipoEncuestaDTO(rs.getInt(4))));
+               tipoDocumento.add(new TipoDocumentoDTO(rs.getInt(1), rs.getString(2)));
             }            
         } catch (SQLException ex) {
-            Logger.getLogger(EncuestaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoDocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             con.cerrar();
         }
-        return encuesta;
+        return tipoDocumento;
     }
 
     @Override
-    public boolean actualizar(EncuestaDTO encuesta) {
+    public boolean actualizar(TipoDocumentoDTO tipoDocumento) {
         PreparedStatement ps;
         try {            
             ps = con.getConn().prepareStatement(ACTUALIZAR_SQL);
-            ps.setString(1, encuesta.getDescripcion());
-            ps.setInt(2, encuesta.getActivo());
-            ps.setInt(3, encuesta.getTipoEncuesta().getId());
+            ps.setString(1, tipoDocumento.getTipoDocumento());
                         
             if (ps.executeUpdate() > 0){
                 return true;
             }             
         } catch (SQLException ex) {
-            Logger.getLogger(EncuestaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoDocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             con.cerrar();
         }        
@@ -126,7 +121,7 @@ public class EncuestaDAO implements iEncuestaDAO{
                 return true;
             }           
         } catch (SQLException ex) {
-            Logger.getLogger(EncuestaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoDocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             con.cerrar();
         }

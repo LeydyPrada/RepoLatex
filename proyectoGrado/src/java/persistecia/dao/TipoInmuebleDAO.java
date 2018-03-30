@@ -13,38 +13,35 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import persistecia.config.Conexion;
-import persistecia.dto.EncuestaDTO;
-import persistecia.dto.TipoEncuestaDTO;
+import persistecia.dto.TipoInmuebleDTO;
 
 /**
  *
  * @author jnieton
  */
-public class EncuestaDAO implements iEncuestaDAO{
+public class TipoInmuebleDAO implements iTipoInmuebleDAO{
     
-    private static final String CREAR_SQL = "INSERT INTO encuesta (id, descripcion, activo, id_tipo_encuesta) VALUES (?, ?, ?, ?)";
-    private static final String ACTUALIZAR_SQL = "UPDATE encuesta SET descripcion = ?, activo = ?, id_tipo_encuesta = ? WHERE id = ?";
-    private static final String BORRAR_SQL = "DELETE FROM encuesta WHERE id = ?";
-    private static final String CONSULTAR_SQL = "SELECT * FROM encuesta WHERE id = ?";
-    private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM encuesta";
+    private static final String CREAR_SQL = "INSERT INTO tipo_inmueble (id, tipo_inmueble) VALUES (?, ?)";
+    private static final String ACTUALIZAR_SQL = "UPDATE tipo_inmueble SET tipo_inmueble = ? WHERE id = ?";
+    private static final String BORRAR_SQL = "DELETE FROM tipo_inmueble WHERE id = ?";
+    private static final String CONSULTAR_SQL = "SELECT * FROM tipo_inmueble WHERE id = ?";
+    private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM tipo_inmueble";
     
     private static final Conexion con = Conexion.obtener();
 
     @Override
-    public boolean registrar(EncuestaDTO encuesta) {
+    public boolean registrar(TipoInmuebleDTO tipoInmueble) {
         PreparedStatement ps;
         try {            
             ps = con.getConn().prepareStatement(CREAR_SQL);
-            ps.setInt(1, encuesta.getId());   
-            ps.setString(2, encuesta.getDescripcion()); 
-            ps.setInt(3, encuesta.getActivo()); 
-            ps.setInt(4, encuesta.getTipoEncuesta().getId());
+            ps.setInt(1, tipoInmueble.getId());   
+            ps.setString(2, tipoInmueble.getTipoInmueble()); 
                                    
             if (ps.executeUpdate() > 0){
                 return true;
             }           
         } catch (SQLException ex) {
-            Logger.getLogger(EncuestaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoInmuebleDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             con.cerrar();
         }        
@@ -52,10 +49,10 @@ public class EncuestaDAO implements iEncuestaDAO{
     }
 
     @Override
-    public EncuestaDTO consultarPorId(Integer id) {
+    public TipoInmuebleDTO consultarPorId(Integer id) {
         PreparedStatement ps;
         ResultSet rs;
-        EncuestaDTO encuesta = new EncuestaDTO();
+        TipoInmuebleDTO tipoInmueble = new TipoInmuebleDTO();
         
         try {           
             ps = con.getConn().prepareStatement(CONSULTAR_SQL);
@@ -63,52 +60,50 @@ public class EncuestaDAO implements iEncuestaDAO{
             rs = ps.executeQuery();
             
             while(rs.next()){
-                encuesta = new EncuestaDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), new TipoEncuestaDTO(rs.getInt(4)));
+                tipoInmueble = new TipoInmuebleDTO(rs.getInt(1), rs.getString(2));
             }  
-            return encuesta;
+            return tipoInmueble;
         } catch (SQLException ex) {
-            Logger.getLogger(EncuestaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoInmuebleDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             con.cerrar();
         }
-        return encuesta;
+        return tipoInmueble;  
     }
 
     @Override
-    public List<EncuestaDTO> consultarTodos() {
+    public List<TipoInmuebleDTO> consultarTodos() {
         PreparedStatement ps;
         ResultSet rs;
-        ArrayList<EncuestaDTO> encuesta = new ArrayList();
+        ArrayList<TipoInmuebleDTO> tipoInmueble = new ArrayList<>();
         
         try {           
             ps = con.getConn().prepareStatement(CONSULTAR_TODOS_SQL);            
             rs = ps.executeQuery();
             
             while(rs.next()){
-               encuesta.add(new EncuestaDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), new TipoEncuestaDTO(rs.getInt(4))));
+               tipoInmueble.add(new TipoInmuebleDTO(rs.getInt(1), rs.getString(2)));
             }            
         } catch (SQLException ex) {
-            Logger.getLogger(EncuestaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoInmuebleDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             con.cerrar();
         }
-        return encuesta;
+        return tipoInmueble;
     }
 
     @Override
-    public boolean actualizar(EncuestaDTO encuesta) {
+    public boolean actualizar(TipoInmuebleDTO tipoInmueble) {
         PreparedStatement ps;
         try {            
             ps = con.getConn().prepareStatement(ACTUALIZAR_SQL);
-            ps.setString(1, encuesta.getDescripcion());
-            ps.setInt(2, encuesta.getActivo());
-            ps.setInt(3, encuesta.getTipoEncuesta().getId());
+            ps.setString(1, tipoInmueble.getTipoInmueble());
                         
             if (ps.executeUpdate() > 0){
                 return true;
             }             
         } catch (SQLException ex) {
-            Logger.getLogger(EncuestaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoInmuebleDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             con.cerrar();
         }        
@@ -126,11 +121,12 @@ public class EncuestaDAO implements iEncuestaDAO{
                 return true;
             }           
         } catch (SQLException ex) {
-            Logger.getLogger(EncuestaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoInmuebleDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             con.cerrar();
         }
         return false;
     }
+    
     
 }

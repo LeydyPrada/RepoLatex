@@ -14,7 +14,7 @@ import persistecia.dto.TipoUsuarioDTO;
  */
 public interface iTipoUsuarioDAO {
     
-    public boolean registrar(TipoUsuarioDTO tipoUsuario);
+        public boolean registrar(TipoUsuarioDTO tipoUsuario);
         public TipoUsuarioDTO consultarPorId(Integer id);
 	public List<TipoUsuarioDTO> consultarTodos();
 	public boolean actualizar(TipoUsuarioDTO tipoUsuario);

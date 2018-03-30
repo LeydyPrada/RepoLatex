@@ -15,6 +15,7 @@ public class TipoUsuarioDTO {
     
     private Integer id;
     private String tipo;
+    List<UsuarioDTO> usuarios;
     
     
     public TipoUsuarioDTO() {
@@ -43,6 +44,14 @@ public class TipoUsuarioDTO {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public List<UsuarioDTO> getUsuarios() {
+        return usuarios;
+    }
+
+    public void setUsuarios(List<UsuarioDTO> usuarios) {
+        this.usuarios = usuarios;
     }
     
     

@@ -21,8 +21,8 @@ import persistecia.dto.TipoDocumentoDTO;
  */
 public class TipoDocumentoDAO implements iTipoDocumentoDAO{
     
-    private static final String CREAR_SQL = "INSERT INTO tipo_documento (id, tipo_documento, activo) VALUES (?, ?, ?)";
-    private static final String ACTUALIZAR_SQL = "UPDATE tipo_documento SET tipo_documento = ?, activo = ? WHERE id = ?";
+    private static final String CREAR_SQL = "INSERT INTO tipo_documento (id, codigo, tipo_documento, activo) VALUES (?, ?, ?, ?)";
+    private static final String ACTUALIZAR_SQL = "UPDATE tipo_documento SET codigo = ?, tipo_documento = ?, activo = ? WHERE id = ?";
     private static final String BORRAR_SQL = "DELETE FROM tipo_documento WHERE id = ?";
     private static final String CONSULTAR_SQL = "SELECT * FROM tipo_documento WHERE id = ?";
     private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM tipo_documento";
@@ -35,8 +35,9 @@ public class TipoDocumentoDAO implements iTipoDocumentoDAO{
         try {            
             ps = con.getConn().prepareStatement(CREAR_SQL);
             ps.setInt(1, tipoDocumento.getId());   
-            ps.setString(2, tipoDocumento.getTipoDocumento());
-            ps.setInt(3, tipoDocumento.getActivo());
+            ps.setString(2, tipoDocumento.getCodigo());
+            ps.setString(3, tipoDocumento.getTipoDocumento());
+            ps.setInt(4, tipoDocumento.getActivo());
                                    
             if (ps.executeUpdate() > 0){
                 return true;
@@ -61,7 +62,7 @@ public class TipoDocumentoDAO implements iTipoDocumentoDAO{
             rs = ps.executeQuery();
             
             while(rs.next()){
-                tipoDocumento = new TipoDocumentoDTO(rs.getInt(1), rs.getString(2), rs.getInt(3));
+                tipoDocumento = new TipoDocumentoDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4));
             }  
             return tipoDocumento;
         } catch (SQLException ex) {
@@ -83,7 +84,7 @@ public class TipoDocumentoDAO implements iTipoDocumentoDAO{
             rs = ps.executeQuery();
             
             while(rs.next()){
-               tipoDocumento.add(new TipoDocumentoDTO(rs.getInt(1), rs.getString(2), rs.getInt(3)));
+               tipoDocumento.add(new TipoDocumentoDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4)));
             }            
         } catch (SQLException ex) {
             Logger.getLogger(TipoDocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -98,8 +99,9 @@ public class TipoDocumentoDAO implements iTipoDocumentoDAO{
         PreparedStatement ps;
         try {            
             ps = con.getConn().prepareStatement(ACTUALIZAR_SQL);
-            ps.setString(1, tipoDocumento.getTipoDocumento());
-            ps.setInt(2, tipoDocumento.getActivo());
+            ps.setString(1, tipoDocumento.getCodigo());
+            ps.setString(2, tipoDocumento.getTipoDocumento());
+            ps.setInt(3, tipoDocumento.getActivo());
                         
             if (ps.executeUpdate() > 0){
                 return true;

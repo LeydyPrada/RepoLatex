@@ -14,6 +14,7 @@ import java.util.List;
 public class TipoDocumentoDTO {
     
     private Integer id;
+    private String codigo;
     private String tipoDocumento;
     private Integer activo;
     List<UsuarioDTO> usuarios;
@@ -25,8 +26,9 @@ public class TipoDocumentoDTO {
         this.id = id;
     }
 
-    public TipoDocumentoDTO(Integer id, String tipoDocumento, Integer activo) {
+    public TipoDocumentoDTO(Integer id, String codigo, String tipoDocumento, Integer activo) {
         this.id = id;
+        this.codigo = codigo;
         this.tipoDocumento = tipoDocumento;
         this.activo = activo;
     }    
@@ -37,6 +39,14 @@ public class TipoDocumentoDTO {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public String getTipoDocumento() {

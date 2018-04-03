@@ -18,6 +18,7 @@ public class PreguntasDTO {
     private Integer activo;
     private EncuestaDTO encuesta;
     private List<RespuestasDTO> respuestas;
+    private List<VotoDTO> votos;
 
     public PreguntasDTO() {
     }
@@ -71,6 +72,14 @@ public class PreguntasDTO {
 
     public void setRespuestas(List<RespuestasDTO> respuestas) {
         this.respuestas = respuestas;
+    }
+
+    public List<VotoDTO> getVotos() {
+        return votos;
+    }
+
+    public void setVotos(List<VotoDTO> votos) {
+        this.votos = votos;
     }
     
     

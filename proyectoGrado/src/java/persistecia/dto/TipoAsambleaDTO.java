@@ -5,6 +5,8 @@
  */
 package persistecia.dto;
 
+import java.util.List;
+
 /**
  *
  * @author jnieton
@@ -14,6 +16,7 @@ public class TipoAsambleaDTO {
     private Integer id;
     private String tipo;
     private Integer activo;
+    private List<AsambleaDTO> asamblea;
 
     public TipoAsambleaDTO() {
     }
@@ -50,6 +53,14 @@ public class TipoAsambleaDTO {
 
     public void setActivo(Integer activo) {
         this.activo = activo;
+    }
+
+    public List<AsambleaDTO> getAsamblea() {
+        return asamblea;
+    }
+
+    public void setAsamblea(List<AsambleaDTO> asamblea) {
+        this.asamblea = asamblea;
     }
     
     

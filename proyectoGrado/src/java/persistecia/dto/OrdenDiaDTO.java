@@ -5,6 +5,8 @@
  */
 package persistecia.dto;
 
+import java.util.List;
+
 /**
  *
  * @author jnieton
@@ -15,6 +17,7 @@ public class OrdenDiaDTO {
     private String orden;
     private String descripcion;
     private Integer activo;
+    private List<AsambleaDTO> asamblea;
 
     public OrdenDiaDTO() {
     }
@@ -60,6 +63,14 @@ public class OrdenDiaDTO {
 
     public void setActivo(Integer activo) {
         this.activo = activo;
+    }
+
+    public List<AsambleaDTO> getAsamblea() {
+        return asamblea;
+    }
+
+    public void setAsamblea(List<AsambleaDTO> asamblea) {
+        this.asamblea = asamblea;
     }
 
     

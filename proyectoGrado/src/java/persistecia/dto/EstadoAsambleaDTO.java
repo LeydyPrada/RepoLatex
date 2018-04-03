@@ -5,6 +5,8 @@
  */
 package persistecia.dto;
 
+import java.util.List;
+
 /**
  *
  * @author jnieton
@@ -14,6 +16,7 @@ public class EstadoAsambleaDTO {
     private Integer id;
     private String descripcion;
     private Integer activo;
+    private List<AsambleaDTO> asambleas;
 
     public EstadoAsambleaDTO() {
     }
@@ -50,6 +53,14 @@ public class EstadoAsambleaDTO {
 
     public void setActivo(Integer activo) {
         this.activo = activo;
+    }
+
+    public List<AsambleaDTO> getAsambleas() {
+        return asambleas;
+    }
+
+    public void setAsambleas(List<AsambleaDTO> asambleas) {
+        this.asambleas = asambleas;
     }
     
     

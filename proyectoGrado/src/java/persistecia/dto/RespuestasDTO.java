@@ -5,6 +5,8 @@
  */
 package persistecia.dto;
 
+import java.util.List;
+
 /**
  *
  * @author jnieton
@@ -14,6 +16,7 @@ public class RespuestasDTO {
     private Integer id;
     private String descripcion;
     private PreguntasDTO pregunta;
+    private List<VotoDTO> votos;
 
     public RespuestasDTO() {
     }
@@ -50,6 +53,14 @@ public class RespuestasDTO {
 
     public void setPregunta(PreguntasDTO pregunta) {
         this.pregunta = pregunta;
+    }
+
+    public List<VotoDTO> getVotos() {
+        return votos;
+    }
+
+    public void setVotos(List<VotoDTO> votos) {
+        this.votos = votos;
     }
     
     

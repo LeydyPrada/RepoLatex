@@ -26,6 +26,7 @@ public class UsuarioDTO {
     private TipoDocumentoDTO tipoDocumento;
     private TipoUsuarioDTO tipoUusario;
     private List<InmuebleDTO> inmuebles;
+    private List<HistoricoVotacionDTO> historicoVotacion;
 
     public UsuarioDTO() {
     }
@@ -151,6 +152,14 @@ public class UsuarioDTO {
 
     public void setInmuebles(List<InmuebleDTO> inmuebles) {
         this.inmuebles = inmuebles;
+    }
+
+    public List<HistoricoVotacionDTO> getHistoricoVotacion() {
+        return historicoVotacion;
+    }
+
+    public void setHistoricoVotacion(List<HistoricoVotacionDTO> historicoVotacion) {
+        this.historicoVotacion = historicoVotacion;
     }
     
                            

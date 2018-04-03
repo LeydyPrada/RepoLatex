@@ -18,6 +18,7 @@ public class EncuestaDTO {
     private Integer activo;
     private TipoEncuestaDTO tipoEncuesta;
     private List<PreguntasDTO> preguntas;
+    private List<VotoDTO> votos;
 
     public EncuestaDTO() {
     }
@@ -72,6 +73,14 @@ public class EncuestaDTO {
 
     public void setPreguntas(List<PreguntasDTO> preguntas) {
         this.preguntas = preguntas;
+    }
+
+    public List<VotoDTO> getVotos() {
+        return votos;
+    }
+
+    public void setVotos(List<VotoDTO> votos) {
+        this.votos = votos;
     }
 
                

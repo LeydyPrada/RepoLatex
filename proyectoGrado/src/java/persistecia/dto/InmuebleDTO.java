@@ -16,9 +16,10 @@ public class InmuebleDTO {
     private Integer area_total;
     private Integer area_construida;
     private Integer area_ponderar;
-    private Integer coeficiente;
+    private Integer coeficiente;    
     private TipoInmuebleDTO tipoInmueble;
     private UsuarioDTO usuario;
+    private Integer activo;
 
     public InmuebleDTO() {
     }
@@ -27,7 +28,7 @@ public class InmuebleDTO {
         this.id = id;
     }
 
-    public InmuebleDTO(Integer id, String inmueble, Integer area_total, Integer area_construida, Integer area_ponderar, Integer coeficiente, TipoInmuebleDTO tipoInmueble, UsuarioDTO usuario) {
+    public InmuebleDTO(Integer id, String inmueble, Integer area_total, Integer area_construida, Integer area_ponderar, Integer coeficiente, TipoInmuebleDTO tipoInmueble, UsuarioDTO usuario, Integer activo) {
         this.id = id;
         this.inmueble = inmueble;
         this.area_total = area_total;
@@ -36,7 +37,10 @@ public class InmuebleDTO {
         this.coeficiente = coeficiente;
         this.tipoInmueble = tipoInmueble;
         this.usuario = usuario;
+        this.activo = activo;
     }
+
+   
 
     public Integer getId() {
         return id;
@@ -100,6 +104,14 @@ public class InmuebleDTO {
 
     public void setUsuario(UsuarioDTO usuario) {
         this.usuario = usuario;
+    }
+
+    public Integer getActivo() {
+        return activo;
+    }
+
+    public void setActivo(Integer activo) {
+        this.activo = activo;
     }
     
         

@@ -13,47 +13,48 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import persistecia.config.Conexion;
-import persistecia.dto.TipoDocumentoDTO;
+import persistecia.dto.PreguntasDTO;
+import persistecia.dto.RespuestasDTO;
 
 /**
  *
  * @author jnieton
  */
-public class TipoDocumentoDAO implements iTipoDocumentoDAO{
+public class RespuestasDAO implements iRespuestasDAO{
     
-    private static final String CREAR_SQL = "INSERT INTO tipo_documento (id, tipo_documento, activo) VALUES (?, ?, ?)";
-    private static final String ACTUALIZAR_SQL = "UPDATE tipo_documento SET tipo_documento = ?, activo = ? WHERE id = ?";
-    private static final String BORRAR_SQL = "DELETE FROM tipo_documento WHERE id = ?";
-    private static final String CONSULTAR_SQL = "SELECT * FROM tipo_documento WHERE id = ?";
-    private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM tipo_documento";
+    private static final String CREAR_SQL = "INSERT INTO respuestas (id, descripcion, id_pregunta) VALUES (?, ?, ?)";
+    private static final String ACTUALIZAR_SQL = "UPDATE respuestas SET descripcion = ?, id_pregunta = ? WHERE id = ?";
+    private static final String BORRAR_SQL = "DELETE FROM respuestas WHERE id = ?";
+    private static final String CONSULTAR_SQL = "SELECT * FROM respuestas WHERE id = ?";
+    private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM respuestas";
     
     private static final Conexion con = Conexion.obtener();
 
     @Override
-    public boolean registrar(TipoDocumentoDTO tipoDocumento) {
+    public boolean registrar(RespuestasDTO respuesta) {
         PreparedStatement ps;
         try {            
             ps = con.getConn().prepareStatement(CREAR_SQL);
-            ps.setInt(1, tipoDocumento.getId());   
-            ps.setString(2, tipoDocumento.getTipoDocumento());
-            ps.setInt(3, tipoDocumento.getActivo());
+            ps.setInt(1, respuesta.getId());   
+            ps.setString(2, respuesta.getDescripcion()); 
+            ps.setInt(3, respuesta.getPregunta().getId());            
                                    
             if (ps.executeUpdate() > 0){
                 return true;
             }           
         } catch (SQLException ex) {
-            Logger.getLogger(TipoDocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RespuestasDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             con.cerrar();
-        }        
-        return false; 
+        }  
+        return false;
     }
 
     @Override
-    public TipoDocumentoDTO consultarPorId(Integer id) {
+    public RespuestasDTO consultarPorId(Integer id) {
         PreparedStatement ps;
         ResultSet rs;
-        TipoDocumentoDTO tipoDocumento = new TipoDocumentoDTO();
+        RespuestasDTO respuesta = new RespuestasDTO();
         
         try {           
             ps = con.getConn().prepareStatement(CONSULTAR_SQL);
@@ -61,51 +62,51 @@ public class TipoDocumentoDAO implements iTipoDocumentoDAO{
             rs = ps.executeQuery();
             
             while(rs.next()){
-                tipoDocumento = new TipoDocumentoDTO(rs.getInt(1), rs.getString(2), rs.getInt(3));
+                respuesta = new RespuestasDTO(rs.getInt(1), rs.getString(2), new PreguntasDTO(rs.getInt(4)));
             }  
-            return tipoDocumento;
+            return respuesta;
         } catch (SQLException ex) {
-            Logger.getLogger(TipoDocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RespuestasDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             con.cerrar();
         }
-        return tipoDocumento;
+        return respuesta;
     }
 
     @Override
-    public List<TipoDocumentoDTO> consultarTodos() {
+    public List<RespuestasDTO> consultarTodos() {
         PreparedStatement ps;
         ResultSet rs;
-        ArrayList<TipoDocumentoDTO> tipoDocumento = new ArrayList<>();
+        ArrayList<RespuestasDTO> respuestas = new ArrayList();
         
         try {           
             ps = con.getConn().prepareStatement(CONSULTAR_TODOS_SQL);            
             rs = ps.executeQuery();
             
             while(rs.next()){
-               tipoDocumento.add(new TipoDocumentoDTO(rs.getInt(1), rs.getString(2), rs.getInt(3)));
+               respuestas.add(new RespuestasDTO(rs.getInt(1), rs.getString(2), new PreguntasDTO(rs.getInt(4))));
             }            
         } catch (SQLException ex) {
-            Logger.getLogger(TipoDocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RespuestasDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             con.cerrar();
         }
-        return tipoDocumento;
+        return respuestas;
     }
 
     @Override
-    public boolean actualizar(TipoDocumentoDTO tipoDocumento) {
+    public boolean actualizar(RespuestasDTO respuesta) {
         PreparedStatement ps;
         try {            
             ps = con.getConn().prepareStatement(ACTUALIZAR_SQL);
-            ps.setString(1, tipoDocumento.getTipoDocumento());
-            ps.setInt(2, tipoDocumento.getActivo());
-                        
+            ps.setString(1, respuesta.getDescripcion());
+            ps.setInt(2, respuesta.getPregunta().getId());
+                                    
             if (ps.executeUpdate() > 0){
                 return true;
             }             
         } catch (SQLException ex) {
-            Logger.getLogger(TipoDocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RespuestasDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             con.cerrar();
         }        
@@ -123,11 +124,14 @@ public class TipoDocumentoDAO implements iTipoDocumentoDAO{
                 return true;
             }           
         } catch (SQLException ex) {
-            Logger.getLogger(TipoDocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RespuestasDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             con.cerrar();
         }
         return false;
     }
+    
+    
+    
     
 }

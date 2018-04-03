@@ -11,21 +11,21 @@ import java.util.Date;
  *
  * @author jnieton
  */
-public class historicoVotacionDTO {
+public class HistoricoVotacionDTO {
     
     private Integer id;
     private UsuarioDTO usuario;
     private Integer voto;
     private Date fecha;
 
-    public historicoVotacionDTO() {
+    public HistoricoVotacionDTO() {
     }
 
-    public historicoVotacionDTO(Integer id) {
+    public HistoricoVotacionDTO(Integer id) {
         this.id = id;
     }
 
-    public historicoVotacionDTO(Integer id, UsuarioDTO usuario, Integer voto, Date fecha) {
+    public HistoricoVotacionDTO(Integer id, UsuarioDTO usuario, Integer voto, Date fecha) {
         this.id = id;
         this.usuario = usuario;
         this.voto = voto;

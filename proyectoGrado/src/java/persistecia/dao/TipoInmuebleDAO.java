@@ -21,8 +21,8 @@ import persistecia.dto.TipoInmuebleDTO;
  */
 public class TipoInmuebleDAO implements iTipoInmuebleDAO{
     
-    private static final String CREAR_SQL = "INSERT INTO tipo_inmueble (id, tipo_inmueble) VALUES (?, ?)";
-    private static final String ACTUALIZAR_SQL = "UPDATE tipo_inmueble SET tipo_inmueble = ? WHERE id = ?";
+    private static final String CREAR_SQL = "INSERT INTO tipo_inmueble (id, tipo_inmueble, activo) VALUES (?, ?, ?)";
+    private static final String ACTUALIZAR_SQL = "UPDATE tipo_inmueble SET tipo_inmueble = ?, activo = ? WHERE id = ?";
     private static final String BORRAR_SQL = "DELETE FROM tipo_inmueble WHERE id = ?";
     private static final String CONSULTAR_SQL = "SELECT * FROM tipo_inmueble WHERE id = ?";
     private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM tipo_inmueble";
@@ -35,7 +35,8 @@ public class TipoInmuebleDAO implements iTipoInmuebleDAO{
         try {            
             ps = con.getConn().prepareStatement(CREAR_SQL);
             ps.setInt(1, tipoInmueble.getId());   
-            ps.setString(2, tipoInmueble.getTipoInmueble()); 
+            ps.setString(2, tipoInmueble.getTipoInmueble());
+            ps.setInt(3, tipoInmueble.getActivo());
                                    
             if (ps.executeUpdate() > 0){
                 return true;
@@ -60,7 +61,7 @@ public class TipoInmuebleDAO implements iTipoInmuebleDAO{
             rs = ps.executeQuery();
             
             while(rs.next()){
-                tipoInmueble = new TipoInmuebleDTO(rs.getInt(1), rs.getString(2));
+                tipoInmueble = new TipoInmuebleDTO(rs.getInt(1), rs.getString(2), rs.getInt(3));
             }  
             return tipoInmueble;
         } catch (SQLException ex) {
@@ -82,7 +83,7 @@ public class TipoInmuebleDAO implements iTipoInmuebleDAO{
             rs = ps.executeQuery();
             
             while(rs.next()){
-               tipoInmueble.add(new TipoInmuebleDTO(rs.getInt(1), rs.getString(2)));
+               tipoInmueble.add(new TipoInmuebleDTO(rs.getInt(1), rs.getString(2), rs.getInt(3)));
             }            
         } catch (SQLException ex) {
             Logger.getLogger(TipoInmuebleDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -98,6 +99,7 @@ public class TipoInmuebleDAO implements iTipoInmuebleDAO{
         try {            
             ps = con.getConn().prepareStatement(ACTUALIZAR_SQL);
             ps.setString(1, tipoInmueble.getTipoInmueble());
+            ps.setInt(2, tipoInmueble.getActivo());
                         
             if (ps.executeUpdate() > 0){
                 return true;

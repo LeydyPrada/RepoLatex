@@ -15,6 +15,7 @@ public class TipoInmuebleDTO {
     
     private Integer id;
     private String tipoInmueble;
+    private Integer activo;
     private List<InmuebleDTO> inmuebles;
 
     public TipoInmuebleDTO() {
@@ -24,10 +25,11 @@ public class TipoInmuebleDTO {
         this.id = id;
     }
 
-    public TipoInmuebleDTO(Integer id, String tipoInmueble) {
+    public TipoInmuebleDTO(Integer id, String tipoInmueble, Integer activo) {
         this.id = id;
         this.tipoInmueble = tipoInmueble;
-    }
+        this.activo = activo;
+    }    
 
     public Integer getId() {
         return id;
@@ -51,6 +53,14 @@ public class TipoInmuebleDTO {
 
     public void setInmuebles(List<InmuebleDTO> inmuebles) {
         this.inmuebles = inmuebles;
+    }
+
+    public Integer getActivo() {
+        return activo;
+    }
+
+    public void setActivo(Integer activo) {
+        this.activo = activo;
     }
     
        

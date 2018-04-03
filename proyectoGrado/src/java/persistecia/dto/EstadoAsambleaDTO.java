@@ -5,34 +5,28 @@
  */
 package persistecia.dto;
 
-import java.util.List;
-
 /**
  *
  * @author jnieton
  */
-public class EncuestaDTO {
+public class EstadoAsambleaDTO {
     
     private Integer id;
     private String descripcion;
     private Integer activo;
-    private TipoEncuestaDTO tipoEncuesta;
-    private List<PreguntasDTO> preguntas;
 
-    public EncuestaDTO() {
+    public EstadoAsambleaDTO() {
     }
 
-    public EncuestaDTO(Integer id) {
+    public EstadoAsambleaDTO(Integer id) {
         this.id = id;
     }
 
-    public EncuestaDTO(Integer id, String descripcion, Integer activo, TipoEncuestaDTO tipoEncuesta) {
+    public EstadoAsambleaDTO(Integer id, String descripcion, Integer activo) {
         this.id = id;
         this.descripcion = descripcion;
         this.activo = activo;
-        this.tipoEncuesta = tipoEncuesta;
     }
-   
 
     public Integer getId() {
         return id;
@@ -57,23 +51,7 @@ public class EncuestaDTO {
     public void setActivo(Integer activo) {
         this.activo = activo;
     }
-
-    public TipoEncuestaDTO getTipoEncuesta() {
-        return tipoEncuesta;
-    }
-
-    public void setTipoEncuesta(TipoEncuestaDTO tipoEncuesta) {
-        this.tipoEncuesta = tipoEncuesta;
-    }
-
-    public List<PreguntasDTO> getPreguntas() {
-        return preguntas;
-    }
-
-    public void setPreguntas(List<PreguntasDTO> preguntas) {
-        this.preguntas = preguntas;
-    }
-
-               
+    
+    
     
 }

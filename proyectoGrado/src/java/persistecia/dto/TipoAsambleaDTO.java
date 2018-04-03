@@ -5,31 +5,28 @@
  */
 package persistecia.dto;
 
-import java.util.List;
-
 /**
  *
  * @author jnieton
  */
-public class TipoDocumentoDTO {
+public class TipoAsambleaDTO {
     
     private Integer id;
-    private String tipoDocumento;
+    private String tipo;
     private Integer activo;
-    List<UsuarioDTO> usuarios;
 
-    public TipoDocumentoDTO() {
+    public TipoAsambleaDTO() {
     }
 
-    public TipoDocumentoDTO(Integer id) {
+    public TipoAsambleaDTO(Integer id) {
         this.id = id;
     }
 
-    public TipoDocumentoDTO(Integer id, String tipoDocumento, Integer activo) {
+    public TipoAsambleaDTO(Integer id, String tipo, Integer activo) {
         this.id = id;
-        this.tipoDocumento = tipoDocumento;
+        this.tipo = tipo;
         this.activo = activo;
-    }    
+    }
 
     public Integer getId() {
         return id;
@@ -39,20 +36,12 @@ public class TipoDocumentoDTO {
         this.id = id;
     }
 
-    public String getTipoDocumento() {
-        return tipoDocumento;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setTipoDocumento(String tipoDocumento) {
-        this.tipoDocumento = tipoDocumento;
-    }
-
-    public List<UsuarioDTO> getUsuarios() {
-        return usuarios;
-    }
-
-    public void setUsuarios(List<UsuarioDTO> usuarios) {
-        this.usuarios = usuarios;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public Integer getActivo() {

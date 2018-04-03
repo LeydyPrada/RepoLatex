@@ -23,8 +23,8 @@ import persistecia.dto.UsuarioDTO;
  */
 public class InmuebleDAO implements iInmuebleDAO{
     
-    private static final String CREAR_SQL = "INSERT INTO inmueble (id, inmueble, area_total, area_construida, area_ponderar, coeficiente, id_tipo_inmueble, id_usuario) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-    private static final String ACTUALIZAR_SQL = "UPDATE inmueble SET inmueble = ?, area_total = ?, area_construida = ?, area_ponderar = ?, coeficiente = ?, id_tipo_inmueble = ?, id_usuario = ? WHERE id = ?";
+    private static final String CREAR_SQL = "INSERT INTO inmueble (id, inmueble, area_total, area_construida, area_ponderar, coeficiente, id_tipo_inmueble, id_usuario, activo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    private static final String ACTUALIZAR_SQL = "UPDATE inmueble SET inmueble = ?, area_total = ?, area_construida = ?, area_ponderar = ?, coeficiente = ?, id_tipo_inmueble = ?, id_usuario = ?, activo = ? WHERE id = ?";
     private static final String BORRAR_SQL = "DELETE FROM inmueble WHERE id = ?";
     private static final String CONSULTAR_SQL = "SELECT * FROM inmueble WHERE id = ?";
     private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM inmueble";
@@ -44,6 +44,7 @@ public class InmuebleDAO implements iInmuebleDAO{
             ps.setInt(6, inmueble.getCoeficiente());
             ps.setInt(7, inmueble.getTipoInmueble().getId());
             ps.setString(8, inmueble.getUsuario().getId());
+            ps.setInt(9, inmueble.getActivo());
                                    
             if (ps.executeUpdate() > 0){
                 return true;
@@ -68,7 +69,7 @@ public class InmuebleDAO implements iInmuebleDAO{
             rs = ps.executeQuery();
             
             while(rs.next()){
-                inmueble = new InmuebleDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getInt(5), rs.getInt(6), new TipoInmuebleDTO(rs.getInt(7)), new UsuarioDTO(rs.getString(8)));
+                inmueble = new InmuebleDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getInt(5), rs.getInt(6), new TipoInmuebleDTO(rs.getInt(7)), new UsuarioDTO(rs.getString(8)), rs.getInt(9));
             }  
             return inmueble;
         } catch (SQLException ex) {
@@ -90,7 +91,7 @@ public class InmuebleDAO implements iInmuebleDAO{
             rs = ps.executeQuery();
             
             while(rs.next()){
-               inmueble.add(new InmuebleDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getInt(5), rs.getInt(6), new TipoInmuebleDTO(rs.getInt(7)), new UsuarioDTO(rs.getString(8))));
+               inmueble.add(new InmuebleDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getInt(5), rs.getInt(6), new TipoInmuebleDTO(rs.getInt(7)), new UsuarioDTO(rs.getString(8)), rs.getInt(9)));
             }            
         } catch (SQLException ex) {
             Logger.getLogger(InmuebleDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -112,6 +113,7 @@ public class InmuebleDAO implements iInmuebleDAO{
             ps.setInt(5, inmueble.getCoeficiente());
             ps.setInt(6, inmueble.getTipoInmueble().getId());
             ps.setString(7, inmueble.getUsuario().getId());
+            ps.setInt(8, inmueble.getActivo());
                         
             if (ps.executeUpdate() > 0){
                 return true;

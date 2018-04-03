@@ -21,8 +21,8 @@ import persistecia.dto.TipoUsuarioDTO;
  */
 public class TipoUsuarioDAO implements iTipoUsuarioDAO{
     
-    private static final String CREAR_SQL = "INSERT INTO tipo_usuario (id, tipo) VALUES (?, ?)";
-    private static final String ACTUALIZAR_SQL = "UPDATE tipo_usuario SET tipo = ? WHERE id = ?";
+    private static final String CREAR_SQL = "INSERT INTO tipo_usuario (id, tipo, activo) VALUES (?, ?, ?)";
+    private static final String ACTUALIZAR_SQL = "UPDATE tipo_usuario SET tipo = ?, activo = ? WHERE id = ?";
     private static final String BORRAR_SQL = "DELETE FROM tipo_usuario WHERE id = ?";
     private static final String CONSULTAR_SQL = "SELECT * FROM tipo_usuario WHERE id = ?";
     private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM tipo_usuario";
@@ -35,7 +35,8 @@ public class TipoUsuarioDAO implements iTipoUsuarioDAO{
         try {            
             ps = con.getConn().prepareStatement(CREAR_SQL);
             ps.setInt(1, tipoUsuario.getId());   
-            ps.setString(2, tipoUsuario.getTipo()); 
+            ps.setString(2, tipoUsuario.getTipo());
+            ps.setInt(3, tipoUsuario.getActivo());
                                    
             if (ps.executeUpdate() > 0){
                 return true;
@@ -60,7 +61,7 @@ public class TipoUsuarioDAO implements iTipoUsuarioDAO{
             rs = ps.executeQuery();
             
             while(rs.next()){
-                tipoUsuario = new TipoUsuarioDTO(rs.getInt(1), rs.getString(2));
+                tipoUsuario = new TipoUsuarioDTO(rs.getInt(1), rs.getString(2), rs.getInt(3));
             }  
             return tipoUsuario;
         } catch (SQLException ex) {
@@ -82,7 +83,7 @@ public class TipoUsuarioDAO implements iTipoUsuarioDAO{
             rs = ps.executeQuery();
             
             while(rs.next()){
-               tipoUsuario.add(new TipoUsuarioDTO(rs.getInt(1), rs.getString(2)));
+               tipoUsuario.add(new TipoUsuarioDTO(rs.getInt(1), rs.getString(2), rs.getInt(3)));
             }            
         } catch (SQLException ex) {
             Logger.getLogger(TipoUsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -98,6 +99,7 @@ public class TipoUsuarioDAO implements iTipoUsuarioDAO{
         try {            
             ps = con.getConn().prepareStatement(ACTUALIZAR_SQL);
             ps.setString(1, tipoUsuario.getTipo());
+            ps.setInt(2, tipoUsuario.getActivo());
                         
             if (ps.executeUpdate() > 0){
                 return true;

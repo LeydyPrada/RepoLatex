@@ -11,28 +11,27 @@ import java.util.List;
  *
  * @author jnieton
  */
-public class EncuestaDTO {
+public class PreguntasDTO {
     
     private Integer id;
     private String descripcion;
     private Integer activo;
-    private TipoEncuestaDTO tipoEncuesta;
-    private List<PreguntasDTO> preguntas;
+    private EncuestaDTO encuesta;
+    private List<RespuestasDTO> respuestas;
 
-    public EncuestaDTO() {
+    public PreguntasDTO() {
     }
 
-    public EncuestaDTO(Integer id) {
+    public PreguntasDTO(Integer id) {
         this.id = id;
     }
 
-    public EncuestaDTO(Integer id, String descripcion, Integer activo, TipoEncuestaDTO tipoEncuesta) {
+    public PreguntasDTO(Integer id, String descripcion, Integer activo, EncuestaDTO encuesta) {
         this.id = id;
         this.descripcion = descripcion;
         this.activo = activo;
-        this.tipoEncuesta = tipoEncuesta;
+        this.encuesta = encuesta;
     }
-   
 
     public Integer getId() {
         return id;
@@ -58,22 +57,22 @@ public class EncuestaDTO {
         this.activo = activo;
     }
 
-    public TipoEncuestaDTO getTipoEncuesta() {
-        return tipoEncuesta;
+    public EncuestaDTO getEncuesta() {
+        return encuesta;
     }
 
-    public void setTipoEncuesta(TipoEncuestaDTO tipoEncuesta) {
-        this.tipoEncuesta = tipoEncuesta;
+    public void setEncuesta(EncuestaDTO encuesta) {
+        this.encuesta = encuesta;
     }
 
-    public List<PreguntasDTO> getPreguntas() {
-        return preguntas;
+    public List<RespuestasDTO> getRespuestas() {
+        return respuestas;
     }
 
-    public void setPreguntas(List<PreguntasDTO> preguntas) {
-        this.preguntas = preguntas;
+    public void setRespuestas(List<RespuestasDTO> respuestas) {
+        this.respuestas = respuestas;
     }
-
-               
+    
+    
     
 }

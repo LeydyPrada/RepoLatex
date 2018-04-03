@@ -15,13 +15,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import persistecia.config.Conexion;
 import persistecia.dto.UsuarioDTO;
-import persistecia.dto.historicoVotacionDTO;
+import persistecia.dto.HistoricoVotacionDTO;
 
 /**
  *
  * @author jnieton
  */
-public class HistoricoVotacionDAO implements iHistoricoVotacion{
+public class HistoricoVotacionDAO implements iHistoricoVotacionDAO{
     
     private static final String CREAR_SQL = "INSERT INTO historico_votacion (id, id_usuario, voto, fecha) VALUES (?, ?, ?, ?)";
     private static final String ACTUALIZAR_SQL = "UPDATE historico_votacion SET id_usuario = ?, voto = ?, fecha = ? WHERE id = ?";
@@ -32,7 +32,7 @@ public class HistoricoVotacionDAO implements iHistoricoVotacion{
     private static final Conexion con = Conexion.obtener();
 
     @Override
-    public boolean registrar(historicoVotacionDTO histVotacion) {
+    public boolean registrar(HistoricoVotacionDTO histVotacion) {
         PreparedStatement ps;
         Date date;
         try {          
@@ -55,10 +55,10 @@ public class HistoricoVotacionDAO implements iHistoricoVotacion{
     }
 
     @Override
-    public historicoVotacionDTO consultarPorId(Integer id) {
+    public HistoricoVotacionDTO consultarPorId(Integer id) {
         PreparedStatement ps;
         ResultSet rs;
-        historicoVotacionDTO histVotacion = new historicoVotacionDTO();
+        HistoricoVotacionDTO histVotacion = new HistoricoVotacionDTO();
         
         try {           
             ps = con.getConn().prepareStatement(CONSULTAR_SQL);
@@ -66,7 +66,7 @@ public class HistoricoVotacionDAO implements iHistoricoVotacion{
             rs = ps.executeQuery();
             
             while(rs.next()){
-                histVotacion = new historicoVotacionDTO(rs.getInt(1), new UsuarioDTO(rs.getString(2)), rs.getInt(3), rs.getDate(4));
+                histVotacion = new HistoricoVotacionDTO(rs.getInt(1), new UsuarioDTO(rs.getString(2)), rs.getInt(3), rs.getDate(4));
             }  
             return histVotacion;
         } catch (SQLException ex) {
@@ -78,17 +78,17 @@ public class HistoricoVotacionDAO implements iHistoricoVotacion{
     }
 
     @Override
-    public List<historicoVotacionDTO> consultarTodos() {
+    public List<HistoricoVotacionDTO> consultarTodos() {
         PreparedStatement ps;
         ResultSet rs;
-        ArrayList<historicoVotacionDTO> histVotacion = new ArrayList();
+        ArrayList<HistoricoVotacionDTO> histVotacion = new ArrayList();
         
         try {           
             ps = con.getConn().prepareStatement(CONSULTAR_TODOS_SQL);            
             rs = ps.executeQuery();
             
             while(rs.next()){
-               histVotacion.add(new historicoVotacionDTO(rs.getInt(1), new UsuarioDTO(rs.getString(2)), rs.getInt(3), rs.getDate(4)));
+               histVotacion.add(new HistoricoVotacionDTO(rs.getInt(1), new UsuarioDTO(rs.getString(2)), rs.getInt(3), rs.getDate(4)));
             }            
         } catch (SQLException ex) {
             Logger.getLogger(HistoricoVotacionDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -99,7 +99,7 @@ public class HistoricoVotacionDAO implements iHistoricoVotacion{
     }
 
     @Override
-    public boolean actualizar(historicoVotacionDTO histVotacion) {
+    public boolean actualizar(HistoricoVotacionDTO histVotacion) {
         PreparedStatement ps;
         Date date;
         try {     

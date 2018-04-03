@@ -13,47 +13,47 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import persistecia.config.Conexion;
-import persistecia.dto.TipoDocumentoDTO;
-
+import persistecia.dto.OrdenDiaDTO;
 /**
  *
  * @author jnieton
  */
-public class TipoDocumentoDAO implements iTipoDocumentoDAO{
+public class OrdenDiaDAO implements iOrdenDiaDAO{
     
-    private static final String CREAR_SQL = "INSERT INTO tipo_documento (id, tipo_documento, activo) VALUES (?, ?, ?)";
-    private static final String ACTUALIZAR_SQL = "UPDATE tipo_documento SET tipo_documento = ?, activo = ? WHERE id = ?";
-    private static final String BORRAR_SQL = "DELETE FROM tipo_documento WHERE id = ?";
-    private static final String CONSULTAR_SQL = "SELECT * FROM tipo_documento WHERE id = ?";
-    private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM tipo_documento";
+    private static final String CREAR_SQL = "INSERT INTO orden_dia (id, orden, descripcion, activo) VALUES (?, ?, ?, ?)";
+    private static final String ACTUALIZAR_SQL = "UPDATE orden_dia SET orden = ?, descripcion = ?, activo = ? WHERE id = ?";
+    private static final String BORRAR_SQL = "DELETE FROM orden_dia WHERE id = ?";
+    private static final String CONSULTAR_SQL = "SELECT * FROM orden_dia WHERE id = ?";
+    private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM orden_dia";
     
     private static final Conexion con = Conexion.obtener();
 
     @Override
-    public boolean registrar(TipoDocumentoDTO tipoDocumento) {
+    public boolean registrar(OrdenDiaDTO ordenDia) {
         PreparedStatement ps;
         try {            
             ps = con.getConn().prepareStatement(CREAR_SQL);
-            ps.setInt(1, tipoDocumento.getId());   
-            ps.setString(2, tipoDocumento.getTipoDocumento());
-            ps.setInt(3, tipoDocumento.getActivo());
+            ps.setInt(1, ordenDia.getId());   
+            ps.setString(2, ordenDia.getOrden()); 
+            ps.setString(3, ordenDia.getDescripcion());
+            ps.setInt(4, ordenDia.getActivo());
                                    
             if (ps.executeUpdate() > 0){
                 return true;
             }           
         } catch (SQLException ex) {
-            Logger.getLogger(TipoDocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(OrdenDiaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             con.cerrar();
         }        
-        return false; 
+        return false;
     }
 
     @Override
-    public TipoDocumentoDTO consultarPorId(Integer id) {
+    public OrdenDiaDTO consultarPorId(Integer id) {
         PreparedStatement ps;
         ResultSet rs;
-        TipoDocumentoDTO tipoDocumento = new TipoDocumentoDTO();
+        OrdenDiaDTO ordenDia = new OrdenDiaDTO();
         
         try {           
             ps = con.getConn().prepareStatement(CONSULTAR_SQL);
@@ -61,55 +61,56 @@ public class TipoDocumentoDAO implements iTipoDocumentoDAO{
             rs = ps.executeQuery();
             
             while(rs.next()){
-                tipoDocumento = new TipoDocumentoDTO(rs.getInt(1), rs.getString(2), rs.getInt(3));
+                ordenDia = new OrdenDiaDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4));
             }  
-            return tipoDocumento;
+            return ordenDia;
         } catch (SQLException ex) {
-            Logger.getLogger(TipoDocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(OrdenDiaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             con.cerrar();
         }
-        return tipoDocumento;
+        return ordenDia;
     }
 
     @Override
-    public List<TipoDocumentoDTO> consultarTodos() {
+    public List<OrdenDiaDTO> consultarTodos() {
         PreparedStatement ps;
         ResultSet rs;
-        ArrayList<TipoDocumentoDTO> tipoDocumento = new ArrayList<>();
+        ArrayList<OrdenDiaDTO> ordenDia = new ArrayList();
         
         try {           
             ps = con.getConn().prepareStatement(CONSULTAR_TODOS_SQL);            
             rs = ps.executeQuery();
             
             while(rs.next()){
-               tipoDocumento.add(new TipoDocumentoDTO(rs.getInt(1), rs.getString(2), rs.getInt(3)));
+               ordenDia.add(new OrdenDiaDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4)));
             }            
         } catch (SQLException ex) {
-            Logger.getLogger(TipoDocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(OrdenDiaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             con.cerrar();
         }
-        return tipoDocumento;
+        return ordenDia;
     }
 
     @Override
-    public boolean actualizar(TipoDocumentoDTO tipoDocumento) {
+    public boolean actualizar(OrdenDiaDTO ordenDia) {
         PreparedStatement ps;
         try {            
             ps = con.getConn().prepareStatement(ACTUALIZAR_SQL);
-            ps.setString(1, tipoDocumento.getTipoDocumento());
-            ps.setInt(2, tipoDocumento.getActivo());
+            ps.setString(1, ordenDia.getOrden());
+            ps.setString(2, ordenDia.getDescripcion());
+            ps.setInt(3, ordenDia.getActivo());
                         
             if (ps.executeUpdate() > 0){
                 return true;
             }             
         } catch (SQLException ex) {
-            Logger.getLogger(TipoDocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(OrdenDiaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             con.cerrar();
         }        
-        return false;
+        return false; 
     }
 
     @Override
@@ -123,11 +124,17 @@ public class TipoDocumentoDAO implements iTipoDocumentoDAO{
                 return true;
             }           
         } catch (SQLException ex) {
-            Logger.getLogger(TipoDocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(OrdenDiaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             con.cerrar();
         }
         return false;
     }
+
+   
+
+ 
+    
+    
     
 }

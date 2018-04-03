@@ -13,47 +13,46 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import persistecia.config.Conexion;
-import persistecia.dto.TipoDocumentoDTO;
+import persistecia.dto.TipoAsambleaDTO;
 
 /**
  *
  * @author jnieton
  */
-public class TipoDocumentoDAO implements iTipoDocumentoDAO{
+public class TipoAsambleaDAO implements iTipoAsambleaDAO{
     
-    private static final String CREAR_SQL = "INSERT INTO tipo_documento (id, tipo_documento, activo) VALUES (?, ?, ?)";
-    private static final String ACTUALIZAR_SQL = "UPDATE tipo_documento SET tipo_documento = ?, activo = ? WHERE id = ?";
-    private static final String BORRAR_SQL = "DELETE FROM tipo_documento WHERE id = ?";
-    private static final String CONSULTAR_SQL = "SELECT * FROM tipo_documento WHERE id = ?";
-    private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM tipo_documento";
+    private static final String CREAR_SQL = "INSERT INTO tipo_asamblea (id, tipo, activo) VALUES (?, ?, ?)";
+    private static final String ACTUALIZAR_SQL = "UPDATE tipo_asamblea SET tipo = ?, activo = ? WHERE id = ?";
+    private static final String BORRAR_SQL = "DELETE FROM tipo_asamblea WHERE id = ?";
+    private static final String CONSULTAR_SQL = "SELECT * FROM tipo_asamblea WHERE id = ?";
+    private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM tipo_asamblea";
     
     private static final Conexion con = Conexion.obtener();
 
     @Override
-    public boolean registrar(TipoDocumentoDTO tipoDocumento) {
+    public boolean registrar(TipoAsambleaDTO tipoAsamblea) {
         PreparedStatement ps;
         try {            
             ps = con.getConn().prepareStatement(CREAR_SQL);
-            ps.setInt(1, tipoDocumento.getId());   
-            ps.setString(2, tipoDocumento.getTipoDocumento());
-            ps.setInt(3, tipoDocumento.getActivo());
+            ps.setInt(1, tipoAsamblea.getId());   
+            ps.setString(2, tipoAsamblea.getTipo()); 
                                    
             if (ps.executeUpdate() > 0){
                 return true;
             }           
         } catch (SQLException ex) {
-            Logger.getLogger(TipoDocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoAsambleaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             con.cerrar();
         }        
-        return false; 
+        return false;
     }
 
     @Override
-    public TipoDocumentoDTO consultarPorId(Integer id) {
+    public TipoAsambleaDTO consultarPorId(Integer id) {
         PreparedStatement ps;
         ResultSet rs;
-        TipoDocumentoDTO tipoDocumento = new TipoDocumentoDTO();
+        TipoAsambleaDTO tipoAsamblea = new TipoAsambleaDTO();
         
         try {           
             ps = con.getConn().prepareStatement(CONSULTAR_SQL);
@@ -61,55 +60,55 @@ public class TipoDocumentoDAO implements iTipoDocumentoDAO{
             rs = ps.executeQuery();
             
             while(rs.next()){
-                tipoDocumento = new TipoDocumentoDTO(rs.getInt(1), rs.getString(2), rs.getInt(3));
+                tipoAsamblea = new TipoAsambleaDTO(rs.getInt(1), rs.getString(2), rs.getInt(3));
             }  
-            return tipoDocumento;
+            return tipoAsamblea;
         } catch (SQLException ex) {
-            Logger.getLogger(TipoDocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoAsambleaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             con.cerrar();
         }
-        return tipoDocumento;
+        return tipoAsamblea;
     }
 
     @Override
-    public List<TipoDocumentoDTO> consultarTodos() {
+    public List<TipoAsambleaDTO> consultarTodos() {
         PreparedStatement ps;
         ResultSet rs;
-        ArrayList<TipoDocumentoDTO> tipoDocumento = new ArrayList<>();
+        ArrayList<TipoAsambleaDTO> tiposAsamblea = new ArrayList();
         
         try {           
             ps = con.getConn().prepareStatement(CONSULTAR_TODOS_SQL);            
             rs = ps.executeQuery();
             
             while(rs.next()){
-               tipoDocumento.add(new TipoDocumentoDTO(rs.getInt(1), rs.getString(2), rs.getInt(3)));
+               tiposAsamblea.add(new TipoAsambleaDTO(rs.getInt(1), rs.getString(2), rs.getInt(3)));
             }            
         } catch (SQLException ex) {
-            Logger.getLogger(TipoDocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoAsambleaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             con.cerrar();
         }
-        return tipoDocumento;
+        return tiposAsamblea;
     }
 
     @Override
-    public boolean actualizar(TipoDocumentoDTO tipoDocumento) {
+    public boolean actualizar(TipoAsambleaDTO tipoAsamblea) {
         PreparedStatement ps;
         try {            
             ps = con.getConn().prepareStatement(ACTUALIZAR_SQL);
-            ps.setString(1, tipoDocumento.getTipoDocumento());
-            ps.setInt(2, tipoDocumento.getActivo());
+            ps.setString(1, tipoAsamblea.getTipo());
+            ps.setInt(2, tipoAsamblea.getActivo());
                         
             if (ps.executeUpdate() > 0){
                 return true;
             }             
         } catch (SQLException ex) {
-            Logger.getLogger(TipoDocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoAsambleaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             con.cerrar();
         }        
-        return false;
+        return false; 
     }
 
     @Override
@@ -123,7 +122,7 @@ public class TipoDocumentoDAO implements iTipoDocumentoDAO{
                 return true;
             }           
         } catch (SQLException ex) {
-            Logger.getLogger(TipoDocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoAsambleaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             con.cerrar();
         }

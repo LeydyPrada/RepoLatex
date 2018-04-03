@@ -23,10 +23,10 @@ import persistecia.dto.UsuarioDTO;
  */
 public class UsuarioDAO implements iUsuarioDAO{
     
-    private static final String CREAR_SQL = "INSERT INTO usuario (id, nombre, apellido, direccion, telefono, genero, email, usuario_login, contraseña, id_tipo_documento, id_tipo_usuario) "
-                                             + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    private static final String CREAR_SQL = "INSERT INTO usuario (id, nombre, apellido, direccion, telefono, genero, email, usuario_login, contraseña, activo, id_tipo_documento, id_tipo_usuario) "
+                                             + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     private static final String ACTUALIZAR_SQL = "UPDATE usuario SET nombre = ?, apellido = ?, direccion = ?, telefono = ?, genero = ?, email = ?"
-                                             + "usuario_login = ?, contraseña = ?, id_tipo_documento = ?, id_tipo_usuario = ?  WHERE id = ?";
+                                             + "usuario_login = ?, contraseña = ?, activo = ?, id_tipo_documento = ?, id_tipo_usuario = ?  WHERE id = ?";
     private static final String BORRAR_SQL = "DELETE FROM usuario WHERE id = ?";
     private static final String CONSULTAR_SQL = "SELECT * FROM usuario WHERE id = ?";
     private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM usuario";

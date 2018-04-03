@@ -15,6 +15,7 @@ public class TipoEncuestaDTO {
     
     private Integer id;
     private String tipo;
+    private Integer activo;
     private List<EncuestaDTO> encuestas;
 
     public TipoEncuestaDTO() {
@@ -24,10 +25,12 @@ public class TipoEncuestaDTO {
         this.id = id;
     }
 
-    public TipoEncuestaDTO(Integer id, String tipo) {
+    public TipoEncuestaDTO(Integer id, String tipo, Integer activo) {
         this.id = id;
         this.tipo = tipo;
+        this.activo = activo;
     }
+
 
     public Integer getId() {
         return id;
@@ -51,6 +54,14 @@ public class TipoEncuestaDTO {
 
     public void setEncuestas(List<EncuestaDTO> encuestas) {
         this.encuestas = encuestas;
+    }
+
+    public Integer getActivo() {
+        return activo;
+    }
+
+    public void setActivo(Integer activo) {
+        this.activo = activo;
     }
     
     

@@ -28,8 +28,7 @@ public static Conexion instance;
                 
                 Properties props = new ConfigProperties().getProperties();
                 Class.forName(props.getProperty("className"));
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/proyectogrado?zeroDataTimeBehavior=convertToNull","root","root");
-                //conn = DriverManager.getConnection(props.getProperty("url"), props.getProperty("user"), props.getProperty("password"));
+                conn = DriverManager.getConnection(props.getProperty("url"), props.getProperty("user"), props.getProperty("password"));
             } catch (SQLException ex) {
                Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
             } catch (ClassNotFoundException ex) {

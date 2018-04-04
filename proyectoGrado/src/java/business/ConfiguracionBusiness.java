@@ -23,8 +23,7 @@ public class ConfiguracionBusiness {
     public List<TipoDocumentoDTO> listarTipoDeDocumentos(){
         List<TipoDocumentoDTO> tipoDocumento = new ArrayList<>();
         
-        try{
-            
+        try{            
             tipoDocumento = tipoDocDAO.consultarTodos();
             
         }catch(Exception ex){

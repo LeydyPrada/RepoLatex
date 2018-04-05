@@ -19,5 +19,6 @@ public interface iTipoDocumentoDAO {
 	public List<TipoDocumentoDTO> consultarTodos();
 	public boolean actualizar(TipoDocumentoDTO tipoDocumento);
 	public boolean borrar(Integer id);
+        public List<TipoDocumentoDTO> consultarPorCodigo(String codigo);
     
 }

@@ -38,38 +38,44 @@ public class ConfiguracionController extends HttpServlet {
         
         switch (request.getParameter("action")) {
             case "crear":
-                /*Reserva reserva = new Reserva();
-                String codigo = reserva.generarCodigo();
-                reserva.setCodigo(codigo);
-                reserva.setFechaFin(request.getParameter("txtFechaFin"));
-                reserva.setFechaInicio(request.getParameter("txtFechaInicio"));
-                reserva.setIdHabitacion(Long.parseLong(request.getParameter("txtHabitacion")));
-                reserva.setIdCliente(Long.parseLong(request.getParameter("txtIdCliente")));
-                reservaModel.crearReserva(reserva);
-                
-                request.getSession().setAttribute("codigo", codigo);
-                request.getRequestDispatcher("Reserva/confirmacion.jsp").forward(request, response);*/
+                TipoDocumentoDTO tipoDoc = new TipoDocumentoDTO();
+                tipoDoc.setCodigo(request.getParameter("txtCodigo"));
+                tipoDoc.setTipoDocumento(request.getParameter("txtTipoDoc"));
+                tipoDoc.setActivo(1);
+                configBusiness.crearTipoDocumento(tipoDoc);
+                request.getRequestDispatcher("configuracionController?method=get&&action=consul").forward(request, response);
                 break;
             case "consultar":
-                /*List<Reserva> reservas = reservaModel.consultarReservas(request.getParameter("txtCodigoBuscar"), request.getParameter("txtNombreBuscar"));
-                String bandera = "True";
-                request.getSession().setAttribute("reservas", reservas);
-                request.getSession().setAttribute("bandera", bandera);
-                request.getRequestDispatcher("Reserva/consultar.jsp").forward(request, response);*/
+                List<TipoDocumentoDTO> documentos = configBusiness.consultarTipoDoc(request.getParameter("txtCodigoBuscar"));
+                request.getSession().setAttribute("Tipos", documentos);
+                request.getRequestDispatcher("Configuracion/tipoDocumento.jsp").forward(request, response);
+                break;
+            case "modificar":
+                TipoDocumentoDTO documento = configBusiness.consultarTipoDocPorId(Integer.parseInt(request.getParameter("idTipoDoc")));
+                documento.setCodigo(request.getParameter("txtCodigo"));
+                documento.setTipoDocumento(request.getParameter("txtTipoDoc"));
+                configBusiness.actualizarTipoDocumento(documento);
+                request.getRequestDispatcher("configuracionController?method=get&&action=consul").forward(request, response);
                 break;
         }
 
         /*METHOD GET*/
         if ("get".equals(request.getParameter("method"))) {
             switch (request.getParameter("action")) {
-                case "dl"://Eliminar
-                    /*reservaModel.eliminarReserva(Long.parseLong(request.getParameter("code")));
-                    request.getRequestDispatcher("Reserva/consultar.jsp").forward(request, response);*/
-                    break;
                 case "consul":
                     List<TipoDocumentoDTO> tipos = configBusiness.listarTipoDeDocumentos();
                     request.getSession().setAttribute("Tipos", tipos);
                     request.getRequestDispatcher("Configuracion/tipoDocumento.jsp").forward(request, response);
+                    break;
+                case "up"://actualizar
+                    TipoDocumentoDTO doc = configBusiness.consultarTipoDocPorId(Integer.parseInt(request.getParameter("code")));
+                    request.getSession().setAttribute("Doc", doc);
+                    request.getRequestDispatcher("Configuracion/modificarTipoDocumento.jsp").forward(request, response);
+                    break;                    
+                case "dl"://Eliminar
+                    TipoDocumentoDTO tipoDoc = configBusiness.consultarTipoDocPorId(Integer.parseInt(request.getParameter("code")));
+                    configBusiness.cambiarEstadoTipoDoc(tipoDoc);
+                    request.getRequestDispatcher("configuracionController?method=get&&action=consul").forward(request, response);
                     break;
             }
         }

@@ -21,10 +21,11 @@ import persistecia.dto.TipoDocumentoDTO;
  */
 public class TipoDocumentoDAO implements iTipoDocumentoDAO{
     
-    private static final String CREAR_SQL = "INSERT INTO tipo_documento (id, codigo, tipo_documento, activo) VALUES (?, ?, ?, ?)";
+    private static final String CREAR_SQL = "INSERT INTO tipo_documento (codigo, tipo_documento, activo) VALUES (?, ?, ?)";
     private static final String ACTUALIZAR_SQL = "UPDATE tipo_documento SET codigo = ?, tipo_documento = ?, activo = ? WHERE id = ?";
     private static final String BORRAR_SQL = "DELETE FROM tipo_documento WHERE id = ?";
     private static final String CONSULTAR_SQL = "SELECT * FROM tipo_documento WHERE id = ?";
+    private static final String CONSULTAR_CODIGO_SQL = "SELECT * FROM tipo_documento WHERE codigo like ?";
     private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM tipo_documento";
     
     private static final Conexion con = Conexion.obtener();
@@ -33,11 +34,10 @@ public class TipoDocumentoDAO implements iTipoDocumentoDAO{
     public boolean registrar(TipoDocumentoDTO tipoDocumento) {
         PreparedStatement ps;
         try {            
-            ps = con.getConn().prepareStatement(CREAR_SQL);
-            ps.setInt(1, tipoDocumento.getId());   
-            ps.setString(2, tipoDocumento.getCodigo());
-            ps.setString(3, tipoDocumento.getTipoDocumento());
-            ps.setInt(4, tipoDocumento.getActivo());
+            ps = con.getConn().prepareStatement(CREAR_SQL); 
+            ps.setString(1, tipoDocumento.getCodigo());
+            ps.setString(2, tipoDocumento.getTipoDocumento());
+            ps.setInt(3, tipoDocumento.getActivo());
                                    
             if (ps.executeUpdate() > 0){
                 return true;
@@ -102,6 +102,7 @@ public class TipoDocumentoDAO implements iTipoDocumentoDAO{
             ps.setString(1, tipoDocumento.getCodigo());
             ps.setString(2, tipoDocumento.getTipoDocumento());
             ps.setInt(3, tipoDocumento.getActivo());
+            ps.setInt(4, tipoDocumento.getId());
                         
             if (ps.executeUpdate() > 0){
                 return true;
@@ -130,6 +131,29 @@ public class TipoDocumentoDAO implements iTipoDocumentoDAO{
             con.cerrar();
         }
         return false;
+    }
+    
+    @Override
+    public List<TipoDocumentoDTO> consultarPorCodigo(String codigo){
+        PreparedStatement ps;
+        ResultSet rs;
+        List<TipoDocumentoDTO> tipoDocumento = new ArrayList<>();
+        
+        try {           
+            ps = con.getConn().prepareStatement(CONSULTAR_CODIGO_SQL);
+            ps.setString(1, "%"+codigo+"%");
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                tipoDocumento.add(new TipoDocumentoDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4)));
+            }  
+            return tipoDocumento;
+        } catch (SQLException ex) {
+            Logger.getLogger(TipoDocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            con.cerrar();
+        }
+        return tipoDocumento;
     }
     
 }

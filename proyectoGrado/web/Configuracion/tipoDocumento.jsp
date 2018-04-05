@@ -23,7 +23,7 @@
 
         <div class="col-md-6">
             <div class="CentrarForm">
-                <form class="form-horizontal" role="form" method="post" action="\proyectoGrado\ConfiguracionController">
+                <form class="form-horizontal" role="form" method="post" action="\proyectoGrado\configuracionController">
                     <input type="hidden" id="action" name="action" value="consultar"/>
                     <div class="form-group">
                         <div class="col-sm-2">
@@ -81,7 +81,7 @@
                                 out.println("<td>" + tipos.get(i).getCodigo() + "</td>");
                                 out.println("<td>" + tipos.get(i).getTipoDocumento()+ "</td>");
                                 out.println("<td>" + (tipos.get(i).getActivo() == 1? "activo": "inactivo")+ "</td>");
-                                out.println("<td><a href='ConfiguracionController.do?method=get&&action=up&&code=" + tipos.get(i).getId() + "'><i class='fa fa-2x fa-pencil-square-o fa-fw'></i></a><a href='ConfiguracionController.do?method=get&&action=del&&code=" + tipos.get(i).getId() + "'><i class='fa fa-2x fa-trash fa-fw'></i></a></td>");
+                                out.println("<td><a href='configuracionController?method=get&&action=up&&code=" + tipos.get(i).getId() + "'><i class='fa fa-2x fa-pencil-square-o fa-fw'></i></a><a href='configuracionController?method=get&&action=dl&&code=" + tipos.get(i).getId() + "'><i class='fa fa-2x fa-exchange fa-fw'></i></a></td>");
                                 out.println("</tr>");
                             }
                         %>

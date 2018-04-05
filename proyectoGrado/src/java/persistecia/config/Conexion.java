@@ -41,8 +41,9 @@ public static Conexion instance;
     public static Conexion obtener(){
         if(instance == null){
            instance = new Conexion();
+           System.out.println("Conexion Exitosa");
         }   
-        System.out.println("Conexion Exitosa");
+        System.out.println("Conexion Fallida");
         return instance;
     }
 

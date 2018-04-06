@@ -16,7 +16,7 @@ import persistecia.dto.TipoDocumentoDTO;
  *
  * @author USUARIO
  */
-public class ConfiguracionBusiness {
+public class TipoDocumentoBusiness {
     
     /* METODOS PARA EL TIPO DE DOCUMENTO */
     
@@ -29,7 +29,7 @@ public class ConfiguracionBusiness {
             tipoDocumento = tipoDocDAO.consultarTodos();
             
         }catch(Exception ex){
-            Logger.getLogger(ConfiguracionBusiness.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoDocumentoBusiness.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         return tipoDocumento;
@@ -42,7 +42,7 @@ public class ConfiguracionBusiness {
             tipoDocumento = tipoDocDAO.consultarPorCodigo(codigo);
             
         }catch(Exception ex){
-            Logger.getLogger(ConfiguracionBusiness.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoDocumentoBusiness.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         return tipoDocumento;
@@ -53,7 +53,7 @@ public class ConfiguracionBusiness {
             tipoDocDAO.registrar(tipoDoc);
             
         }catch(Exception ex){
-            Logger.getLogger(ConfiguracionBusiness.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoDocumentoBusiness.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//crearTipoDocumento
     
@@ -64,7 +64,7 @@ public class ConfiguracionBusiness {
             tipoDoc = tipoDocDAO.consultarPorId(id);
             
         }catch(Exception ex){
-            Logger.getLogger(ConfiguracionBusiness.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoDocumentoBusiness.class.getName()).log(Level.SEVERE, null, ex);
         }
         return tipoDoc;
     }//consultarTipoDocPorId
@@ -74,7 +74,7 @@ public class ConfiguracionBusiness {
             tipoDocDAO.actualizar(tipo);
             
         }catch(Exception ex){
-            Logger.getLogger(ConfiguracionBusiness.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoDocumentoBusiness.class.getName()).log(Level.SEVERE, null, ex);
         } 
     }//actualizarTipoDocumento
     
@@ -88,7 +88,7 @@ public class ConfiguracionBusiness {
             tipoDocDAO.actualizar(tipo);
             
         }catch(Exception ex){
-            Logger.getLogger(ConfiguracionBusiness.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TipoDocumentoBusiness.class.getName()).log(Level.SEVERE, null, ex);
         } 
     }//cambiarEstadoTipoDoc
     

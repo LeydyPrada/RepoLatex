@@ -5,7 +5,7 @@
  */
 package controller;
 
-import business.ConfiguracionBusiness;
+import business.TipoDocumentoBusiness;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -22,7 +22,7 @@ import persistecia.dto.TipoDocumentoDTO;
 @WebServlet(name = "TipoDocumentoController", urlPatterns = {"/tipoDocumento.do"})
 public class TipoDocumentoController extends HttpServlet {
 
-     ConfiguracionBusiness configBusiness = new ConfiguracionBusiness();
+     TipoDocumentoBusiness tipoDocBusiness = new TipoDocumentoBusiness();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,19 +42,19 @@ public class TipoDocumentoController extends HttpServlet {
                 tipoDoc.setCodigo(request.getParameter("txtCodigo"));
                 tipoDoc.setTipoDocumento(request.getParameter("txtTipoDoc"));
                 tipoDoc.setActivo(1);
-                configBusiness.crearTipoDocumento(tipoDoc);
+                tipoDocBusiness.crearTipoDocumento(tipoDoc);
                 request.getRequestDispatcher("tipoDocumento.do?method=get&&action=consul").forward(request, response);
                 break;
             case "consultar":
-                List<TipoDocumentoDTO> documentos = configBusiness.consultarTipoDoc(request.getParameter("txtCodigoBuscar"));
+                List<TipoDocumentoDTO> documentos = tipoDocBusiness.consultarTipoDoc(request.getParameter("txtCodigoBuscar"));
                 request.getSession().setAttribute("Tipos", documentos);
                 request.getRequestDispatcher("Configuracion/tipoDocumento.jsp").forward(request, response);
                 break;
             case "modificar":
-                TipoDocumentoDTO documento = configBusiness.consultarTipoDocPorId(Integer.parseInt(request.getParameter("idTipoDoc")));
+                TipoDocumentoDTO documento = tipoDocBusiness.consultarTipoDocPorId(Integer.parseInt(request.getParameter("idTipoDoc")));
                 documento.setCodigo(request.getParameter("txtCodigo"));
                 documento.setTipoDocumento(request.getParameter("txtTipoDoc"));
-                configBusiness.actualizarTipoDocumento(documento);
+                tipoDocBusiness.actualizarTipoDocumento(documento);
                 request.getRequestDispatcher("tipoDocumento.do?method=get&&action=consul").forward(request, response);
                 break;
         }
@@ -63,18 +63,18 @@ public class TipoDocumentoController extends HttpServlet {
         if ("get".equals(request.getParameter("method"))) {
             switch (request.getParameter("action")) {
                 case "consul":
-                    List<TipoDocumentoDTO> tipos = configBusiness.listarTipoDeDocumentos();
+                    List<TipoDocumentoDTO> tipos = tipoDocBusiness.listarTipoDeDocumentos();
                     request.getSession().setAttribute("Tipos", tipos);
                     request.getRequestDispatcher("Configuracion/tipoDocumento.jsp").forward(request, response);
                     break;
                 case "up"://actualizar
-                    TipoDocumentoDTO doc = configBusiness.consultarTipoDocPorId(Integer.parseInt(request.getParameter("code")));
+                    TipoDocumentoDTO doc = tipoDocBusiness.consultarTipoDocPorId(Integer.parseInt(request.getParameter("code")));
                     request.getSession().setAttribute("Doc", doc);
                     request.getRequestDispatcher("Configuracion/modificarTipoDocumento.jsp").forward(request, response);
                     break;                    
                 case "dl"://Eliminar
-                    TipoDocumentoDTO tipoDoc = configBusiness.consultarTipoDocPorId(Integer.parseInt(request.getParameter("code")));
-                    configBusiness.cambiarEstadoTipoDoc(tipoDoc);
+                    TipoDocumentoDTO tipoDoc = tipoDocBusiness.consultarTipoDocPorId(Integer.parseInt(request.getParameter("code")));
+                    tipoDocBusiness.cambiarEstadoTipoDoc(tipoDoc);
                     request.getRequestDispatcher("tipoDocumento.do?method=get&&action=consul").forward(request, response);
                     break;
             }

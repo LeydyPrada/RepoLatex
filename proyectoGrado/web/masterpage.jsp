@@ -86,7 +86,7 @@
                                         <a href="..\..\proyectoGrado\Configuracion\consultar.jsp">Estado Asamblea</a>
                                     </li>
                                     <li>
-                                        <a href="..\..\proyectoGrado\configuracionController?method=get&&action=consul">Tipo documento</a>
+                                        <a href="..\..\proyectoGrado\tipoDocumento.do?method=get&&action=consul">Tipo documento</a>
                                     </li>
                                     <li>
                                         <a href="..\..\proyectoGrado\Configuracion\consultar.jsp">Tipo encuesta</a>

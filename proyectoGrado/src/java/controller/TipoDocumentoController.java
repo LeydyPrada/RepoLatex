@@ -19,8 +19,8 @@ import persistecia.dto.TipoDocumentoDTO;
  *
  * @author USUARIO
  */
-@WebServlet(name = "ConfiguracionController", urlPatterns = {"/configuracionController"})
-public class ConfiguracionController extends HttpServlet {
+@WebServlet(name = "TipoDocumentoController", urlPatterns = {"/tipoDocumento.do"})
+public class TipoDocumentoController extends HttpServlet {
 
      ConfiguracionBusiness configBusiness = new ConfiguracionBusiness();
 
@@ -43,7 +43,7 @@ public class ConfiguracionController extends HttpServlet {
                 tipoDoc.setTipoDocumento(request.getParameter("txtTipoDoc"));
                 tipoDoc.setActivo(1);
                 configBusiness.crearTipoDocumento(tipoDoc);
-                request.getRequestDispatcher("configuracionController?method=get&&action=consul").forward(request, response);
+                request.getRequestDispatcher("tipoDocumento.do?method=get&&action=consul").forward(request, response);
                 break;
             case "consultar":
                 List<TipoDocumentoDTO> documentos = configBusiness.consultarTipoDoc(request.getParameter("txtCodigoBuscar"));
@@ -55,7 +55,7 @@ public class ConfiguracionController extends HttpServlet {
                 documento.setCodigo(request.getParameter("txtCodigo"));
                 documento.setTipoDocumento(request.getParameter("txtTipoDoc"));
                 configBusiness.actualizarTipoDocumento(documento);
-                request.getRequestDispatcher("configuracionController?method=get&&action=consul").forward(request, response);
+                request.getRequestDispatcher("tipoDocumento.do?method=get&&action=consul").forward(request, response);
                 break;
         }
 
@@ -75,11 +75,10 @@ public class ConfiguracionController extends HttpServlet {
                 case "dl"://Eliminar
                     TipoDocumentoDTO tipoDoc = configBusiness.consultarTipoDocPorId(Integer.parseInt(request.getParameter("code")));
                     configBusiness.cambiarEstadoTipoDoc(tipoDoc);
-                    request.getRequestDispatcher("configuracionController?method=get&&action=consul").forward(request, response);
+                    request.getRequestDispatcher("tipoDocumento.do?method=get&&action=consul").forward(request, response);
                     break;
             }
         }
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

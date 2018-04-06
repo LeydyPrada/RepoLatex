@@ -21,7 +21,7 @@
 
         <div class="col-md-6">
             <div class="CentrarForm">
-                <form class="form-horizontal" method="post" action="\proyectoGrado\configuracionController">
+                <form class="form-horizontal" method="post" action="\proyectoGrado\tipoDocumento.do">
                     <input type="hidden" id="action" name="action" value="modificar"/>
                     <input type="hidden" id="idTipoDoc" name="idTipoDoc" value="<%out.print(doc.getId());%>"/>
                     <div class="form-group">

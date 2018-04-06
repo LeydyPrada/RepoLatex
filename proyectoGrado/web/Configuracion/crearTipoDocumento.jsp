@@ -15,7 +15,7 @@
 
         <div class="col-md-6">
             <div class="CentrarForm">
-                <form class="form-horizontal" method="post" action="\proyectoGrado\configuracionController">
+                <form class="form-horizontal" method="post" action="\proyectoGrado\tipoDocumento.do">
                     <input type="hidden" id="action" name="action" value="crear"/>
                     <div class="form-group">
                         <div class="col-sm-5">

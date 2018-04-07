@@ -21,10 +21,11 @@ import persistecia.dto.TipoUsuarioDTO;
  */
 public class TipoUsuarioDAO implements iTipoUsuarioDAO{
     
-    private static final String CREAR_SQL = "INSERT INTO tipo_usuario (id, tipo, activo) VALUES (?, ?, ?)";
+    private static final String CREAR_SQL = "INSERT INTO tipo_usuario (tipo, activo) VALUES (?, ?)";
     private static final String ACTUALIZAR_SQL = "UPDATE tipo_usuario SET tipo = ?, activo = ? WHERE id = ?";
     private static final String BORRAR_SQL = "DELETE FROM tipo_usuario WHERE id = ?";
     private static final String CONSULTAR_SQL = "SELECT * FROM tipo_usuario WHERE id = ?";
+    private static final String CONSULTAR_TIPO_SQL = "SELECT * FROM tipo_usuario WHERE tipo LIKE ?";
     private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM tipo_usuario";
     
     private static final Conexion con = Conexion.obtener();
@@ -34,9 +35,8 @@ public class TipoUsuarioDAO implements iTipoUsuarioDAO{
         PreparedStatement ps;
         try {            
             ps = con.getConn().prepareStatement(CREAR_SQL);
-            ps.setInt(1, tipoUsuario.getId());   
-            ps.setString(2, tipoUsuario.getTipo());
-            ps.setInt(3, tipoUsuario.getActivo());
+            ps.setString(1, tipoUsuario.getTipo());
+            ps.setInt(2, tipoUsuario.getActivo());
                                    
             if (ps.executeUpdate() > 0){
                 return true;
@@ -100,6 +100,7 @@ public class TipoUsuarioDAO implements iTipoUsuarioDAO{
             ps = con.getConn().prepareStatement(ACTUALIZAR_SQL);
             ps.setString(1, tipoUsuario.getTipo());
             ps.setInt(2, tipoUsuario.getActivo());
+            ps.setInt(3, tipoUsuario.getId());
                         
             if (ps.executeUpdate() > 0){
                 return true;
@@ -128,6 +129,28 @@ public class TipoUsuarioDAO implements iTipoUsuarioDAO{
             con.cerrar();
         }
         return false;
+    }
+
+    @Override
+    public List<TipoUsuarioDTO> consultarTipo(String tipo) {
+        PreparedStatement ps;
+        ResultSet rs;
+        ArrayList<TipoUsuarioDTO> tiposUsuario = new ArrayList<>();
+        
+        try {           
+            ps = con.getConn().prepareStatement(CONSULTAR_TIPO_SQL); 
+            ps.setString(1, "%"+tipo+"%");
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+               tiposUsuario.add(new TipoUsuarioDTO(rs.getInt(1), rs.getString(2), rs.getInt(3)));
+            }            
+        } catch (SQLException ex) {
+            Logger.getLogger(TipoUsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            con.cerrar();
+        }
+        return tiposUsuario;
     }
     
     

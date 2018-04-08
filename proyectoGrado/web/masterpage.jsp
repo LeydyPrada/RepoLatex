@@ -50,13 +50,13 @@
                                    aria-expanded="false">Encuestas <i class="fa fa-caret-down"></i></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="..\..\proyectoGrado\Encuesta\Encuesta.jsp">Encuestas</a>
+                                        <a href="..\..\proyectoGrado\encuesta.do?method=get&&action=consul">Encuestas</a>
                                     </li>
                                     <li>
-                                        <a href="..\..\proyectoGrado\Encuesta\Preguntas.jsp">Preguntas</a>
+                                        <a href="..\..\proyectoGrado\pregunta.do?method=get&&action=consul">Preguntas</a>
                                     </li>
                                     <li>
-                                        <a href="..\..\proyectoGrado\Encuesta\Respuestas.jsp">Respuestas</a>
+                                        <a href="..\..\proyectoGrado\respuesta.do?method=get&&action=consul">Respuestas</a>
                                     </li>
                                 </ul>
                             </li>
@@ -89,7 +89,7 @@
                                         <a href="..\..\proyectoGrado\tipoDocumento.do?method=get&&action=consul">Tipo documento</a>
                                     </li>
                                     <li>
-                                        <a href="..\..\proyectoGrado\Configuracion\consultar.jsp">Tipo encuesta</a>
+                                        <a href="..\..\proyectoGrado\tipoEncuesta.do?method=get&&action=consul">Tipo encuesta</a>
                                     </li>
                                     <li>
                                         <a href="..\..\proyectoGrado\Configuracion\consultar.jsp">Tipo inmueble</a>

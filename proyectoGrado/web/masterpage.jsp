@@ -95,7 +95,7 @@
                                         <a href="..\..\proyectoGrado\Configuracion\consultar.jsp">Tipo inmueble</a>
                                     </li>
                                     <li>
-                                        <a href="..\..\proyectoGrado\Configuracion\consultar.jsp">Tipo usuario</a>
+                                        <a href="..\..\proyectoGrado\tipoUsuario.do?method=get&&action=consul">Tipo usuario</a>
                                     </li>
                                 </ul>
                             </li>

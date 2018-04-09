@@ -18,5 +18,6 @@ public interface iTipoUsuarioDAO {
         public TipoUsuarioDTO consultarPorId(Integer id);
 	public List<TipoUsuarioDTO> consultarTodos();
 	public boolean actualizar(TipoUsuarioDTO tipoUsuario);
-	public boolean borrar(Integer id);    
+	public boolean borrar(Integer id);
+        public List<TipoUsuarioDTO> consultarTipo(String tipo);
 }

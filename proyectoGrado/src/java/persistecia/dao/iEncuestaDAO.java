@@ -19,5 +19,6 @@ public interface iEncuestaDAO {
 	public List<EncuestaDTO> consultarTodos();
 	public boolean actualizar(EncuestaDTO encuesta);
 	public boolean borrar(Integer id);
+        public List<EncuestaDTO> consultarPorDescripcion(String desc);
     
 }

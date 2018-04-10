@@ -15,28 +15,21 @@
 
         <div class="col-md-6">
             <div class="CentrarForm">
-                <form class="form-horizontal" method="post" action="\proyectoGrado\tipoDocumento.do">
+                <form method="post" action="\proyectoGrado\tipoDocumento.do">
                     <input type="hidden" id="action" name="action" value="crear"/>
-                    <div class="form-group">
-                        <div class="col-sm-5">
+                    <div class="col-md-12">
+                        <div class="form-group">
                             <label for="inputEmail3" class="control-label">Código</label>
-                        </div>
-                        <div class="col-sm-7">
                             <input type="text" class="form-control" id="txtCodigo" name="txtCodigo" placeholder="Código" required>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-5">
+                        <div class="form-group">
                             <label for="inputEmail3" class="control-label">Tipo de Documento</label>
-                        </div>
-                        <div class="col-sm-7">
                             <input type="text" class="form-control" id="txtTipoDoc" name="txtTipoDoc" placeholder="Tipo de documento" required>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-5 col-sm-7">
-                            <button type="submit" class="btn btn-default">Crear</button>
-                        </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-default">Crear</button>
+                        <a href="..\tipoDocumento.do?method=get&&action=consul" class="btn btn-default">Cancelar</a>
                     </div>
                 </form>
             </div>

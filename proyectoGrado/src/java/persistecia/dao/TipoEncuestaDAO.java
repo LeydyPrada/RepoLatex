@@ -21,10 +21,11 @@ import persistecia.dto.TipoEncuestaDTO;
  */
 public class TipoEncuestaDAO implements iTipoEncuestaDAO{
     
-    private static final String CREAR_SQL = "INSERT INTO tipo_encuesta (id, tipo, activo) VALUES (?, ?, ?)";
+    private static final String CREAR_SQL = "INSERT INTO tipo_encuesta (tipo, activo) VALUES (?, ?)";
     private static final String ACTUALIZAR_SQL = "UPDATE tipo_encuesta SET tipo = ?, activo = ? WHERE id = ?";
     private static final String BORRAR_SQL = "DELETE FROM tipo_encuesta WHERE id = ?";
     private static final String CONSULTAR_SQL = "SELECT * FROM tipo_encuesta WHERE id = ?";
+    private static final String CONSULTAR_TIPO_SQL = "SELECT * FROM tipo_encuesta WHERE tipo like ?";
     private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM tipo_encuesta";
     
     private static final Conexion con = Conexion.obtener();
@@ -34,9 +35,8 @@ public class TipoEncuestaDAO implements iTipoEncuestaDAO{
         PreparedStatement ps;
         try {            
             ps = con.getConn().prepareStatement(CREAR_SQL);
-            ps.setInt(1, tipoEncuesta.getId());   
-            ps.setString(2, tipoEncuesta.getTipo());
-            ps.setInt(3, tipoEncuesta.getActivo());
+            ps.setString(1, tipoEncuesta.getTipo());
+            ps.setInt(2, tipoEncuesta.getActivo());
                                    
             if (ps.executeUpdate() > 0){
                 return true;
@@ -98,8 +98,9 @@ public class TipoEncuestaDAO implements iTipoEncuestaDAO{
         PreparedStatement ps;
         try {            
             ps = con.getConn().prepareStatement(ACTUALIZAR_SQL);
-            ps.setString(1, tipoEncuesta.getTipo());
-            ps.setInt(2, tipoEncuesta.getActivo());
+            ps.setInt(1, tipoEncuesta.getId());
+            ps.setString(2, tipoEncuesta.getTipo());
+            ps.setInt(3, tipoEncuesta.getActivo());
                         
             if (ps.executeUpdate() > 0){
                 return true;
@@ -128,6 +129,29 @@ public class TipoEncuestaDAO implements iTipoEncuestaDAO{
             con.cerrar();
         }
         return false;
+    }
+    
+    @Override
+    public List<TipoEncuestaDTO> consultarPorTipo(String tipo) {
+        PreparedStatement ps;
+        ResultSet rs;
+        List<TipoEncuestaDTO> tipoEncuesta = new ArrayList<>();
+        
+        try {           
+            ps = con.getConn().prepareStatement(CONSULTAR_TIPO_SQL);
+            ps.setString(1, "%"+tipo+"%");
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                tipoEncuesta.add(new TipoEncuestaDTO(rs.getInt(1), rs.getString(2), rs.getInt(3)));
+            }  
+            return tipoEncuesta;
+        } catch (SQLException ex) {
+            Logger.getLogger(TipoEncuestaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            con.cerrar();
+        }
+        return tipoEncuesta;
     }
     
 }

@@ -19,4 +19,5 @@ public interface iTipoEncuestaDAO {
 	public List<TipoEncuestaDTO> consultarTodos();
 	public boolean actualizar(TipoEncuestaDTO tipoEncuesta);
 	public boolean borrar(Integer id); 
+        public List<TipoEncuestaDTO> consultarPorTipo(String tipo);
 }

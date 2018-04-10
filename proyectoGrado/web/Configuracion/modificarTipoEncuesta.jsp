@@ -4,41 +4,41 @@
     Author     : USUARIO
 --%>
 
-<%@page import="persistecia.dto.TipoUsuarioDTO"%>
+<%@page import="persistecia.dto.TipoEncuestaDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ include file="/masterpage.jsp" %>
 
 <%
-    TipoUsuarioDTO tipoUsuario = (TipoUsuarioDTO) request.getSession().getAttribute("TipoUsr");
+    TipoEncuestaDTO doc = (TipoEncuestaDTO) request.getSession().getAttribute("Doc");
 %>
 
 <html>
     <body>
         <div class="col-md-12"><p><br></p></div>
-        <div class="col-md-12 container"><div class="col-md-12"><p><h1>Modificar Tipo de Usuario</h1></p><br><hr><br></div></div>
+        <div class="col-md-12 container"><div class="col-md-12"><p><h1>Modificar Tipo Encuesta</h1></p><br><hr><br></div></div>
 
 
         <div class="col-md-6">
             <div class="CentrarForm">
-                <form method="post" action="\proyectoGrado\tipoUsuario.do">
+                <form method="post" action="\proyectoGrado\tipoEncuesta.do">
                     <input type="hidden" id="action" name="action" value="modificar"/>
-                    <input type="hidden" id="idTipoUsr" name="idTipoUsr" value="<%out.print(tipoUsuario.getId());%>"/>
+                    <input type="hidden" id="idTipoDoc" name="idTipoEnc" value="<%out.print(doc.getId());%>"/>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label for="inputEmail3" class="control-label">Tipo de Usuario</label>
-                            <input type="text" class="form-control" id="txtTipoUsr" name="txtTipoUsr" placeholder="Tipo de usuario" required value="<%out.print(tipoUsuario.getTipo());%>">
+                            <label for="inputEmail3" class="control-label">Tipo Encuesta</label>
+                            <input type="text" class="form-control" id="txtTipo" name="txtTipo" placeholder="Tipo Encuesta" required value="<%out.print(doc.getTipo());%>">
                         </div>
                     </div>
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-default">Modificar</button>
-                        <a href="tipoUsuario.do?method=get&&action=consul" class="btn btn-default">Cancelar</a>
+                        <a href="tipoEncuesta.do?method=get&&action=consul" class="btn btn-default">Cancelar</a>
                     </div>
                 </form>
             </div>
         </div>
         <div class="col-md-6 CentrarForm">
-            <img src="..\..\proyectoGrado\Content\img\TipoDocumento.jpg" class="img-responsive">
+            <img src="..\..\proyectoGrado\Content\img\encuesta1.png" class="img-responsive">
         </div>
         <div class="col-md-12"><p></p><br><hr><br></div>
     </body>

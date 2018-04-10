@@ -11,7 +11,7 @@
 
 <%
     ArrayList<TipoUsuarioDTO> tiposUsr = null;
-        tiposUsr = (ArrayList<TipoUsuarioDTO>) request.getSession().getAttribute("TipoUsr");
+    tiposUsr = (ArrayList<TipoUsuarioDTO>) request.getSession().getAttribute("TipoUsr");
 %>
 
 <html>
@@ -23,26 +23,17 @@
 
         <div class="col-md-6">
             <div class="CentrarForm">
-                <form class="form-horizontal" role="form" method="post" action="\proyectoGrado\tipoUsuario.do">
+                <form role="form" method="post" action="\proyectoGrado\tipoUsuario.do">
                     <input type="hidden" id="action" name="action" value="consultar"/>
-                    <div class="form-group">
-                        <div class="col-sm-2">
+                    <div class="col-md-12">
+                        <div class="form-group">
                             <label for="inputEmail3" class="control-label">Tipo</label>
-                        </div>
-                        <div class="col-sm-10">
                             <input type="text" class="form-control" id="txtCodigoBuscar" name="txtTipoBuscar" placeholder="Tipo">
                         </div>
                     </div>
-
-                    <div class="col-md-3">
-                        <div class="col-sm-offset-2 col-sm-1">
-                            <button type="submit" class="btn btn-default">Buscar</button>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="col-sm-offset-2 col-sm-1">
-                            <button type="button" class="btn btn-default" onclick="location='Configuracion/crearTipoUsuario.jsp'">Crear</button>
-                        </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-default">Buscar</button>
+                        <button type="button" class="btn btn-default" onclick="location = 'Configuracion/crearTipoUsuario.jsp'">Crear</button>
                     </div>
                 </form>
             </div>
@@ -53,7 +44,7 @@
         <div class="col-md-12"><p></p><hr></div>
 
 
-     
+
         <div class="col-md-12">
             <div class="container">
                 <div class="col-sm-2">
@@ -74,8 +65,8 @@
                             for (int i = 0; i < tiposUsr.size(); i++) {
                                 out.println("<tr>");
                                 out.println("<td>" + tiposUsr.get(i).getId() + "</td>");
-                                out.println("<td>" + tiposUsr.get(i).getTipo()+ "</td>");
-                                out.println("<td>" + (tiposUsr.get(i).getActivo() == 1? "activo": "inactivo")+ "</td>");
+                                out.println("<td>" + tiposUsr.get(i).getTipo() + "</td>");
+                                out.println("<td>" + (tiposUsr.get(i).getActivo() == 1 ? "activo" : "inactivo") + "</td>");
                                 out.println("<td><a href='tipoUsuario.do?method=get&&action=up&&code=" + tiposUsr.get(i).getId() + "'><i class='fa fa-2x fa-pencil-square-o fa-fw'></i></a><a href='tipoUsuario.do?method=get&&action=dl&&code=" + tiposUsr.get(i).getId() + "'><i class='fa fa-2x fa-exchange fa-fw'></i></a></td>");
                                 out.println("</tr>");
                             }

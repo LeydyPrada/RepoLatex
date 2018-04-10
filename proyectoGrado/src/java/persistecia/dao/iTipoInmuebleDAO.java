@@ -19,5 +19,6 @@ public interface iTipoInmuebleDAO {
 	public List<TipoInmuebleDTO> consultarTodos();
 	public boolean actualizar(TipoInmuebleDTO tipoInmueble);
 	public boolean borrar(Integer id);
+        public List<TipoInmuebleDTO> consultarPorTipo(String tipo);
     
 }

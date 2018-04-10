@@ -68,7 +68,7 @@
                                         <a href="..\..\proyectoGrado\usuario.do?method=get&&action=consul">Usuario</a>
                                     </li>
                                     <li>
-                                        <a href="..\..\proyectoGrado\Persona\consultar.jsp">Inmueble</a>
+                                        <a href="..\..\proyectoGrado\inmueble.do?method=get&&action=consul">Inmueble</a>
                                     </li>
                                     <li>
                                         <a href="..\..\proyectoGrado\Persona\consultar.jsp">Voto</a>
@@ -92,7 +92,7 @@
                                         <a href="..\..\proyectoGrado\tipoEncuesta.do?method=get&&action=consul">Tipo encuesta</a>
                                     </li>
                                     <li>
-                                        <a href="..\..\proyectoGrado\Configuracion\consultar.jsp">Tipo inmueble</a>
+                                        <a href="..\..\proyectoGrado\tipoInmueble.do?method=get&&action=consul">Tipo inmueble</a>
                                     </li>
                                     <li>
                                         <a href="..\..\proyectoGrado\tipoUsuario.do?method=get&&action=consul">Tipo usuario</a>

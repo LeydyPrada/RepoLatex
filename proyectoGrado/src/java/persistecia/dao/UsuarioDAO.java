@@ -23,12 +23,13 @@ import persistecia.dto.UsuarioDTO;
  */
 public class UsuarioDAO implements iUsuarioDAO{
     
-    private static final String CREAR_SQL = "INSERT INTO usuario (id, nombre, apellido, direccion, telefono, genero, email, usuario_login, contraseña, activo, id_tipo_documento, id_tipo_usuario) "
-                                             + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    private static final String CREAR_SQL = "INSERT INTO usuario (nombre, apellido, direccion, telefono, genero, email, usuario_login, contraseña, activo, id_tipo_documento, id_tipo_usuario) "
+                                             + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     private static final String ACTUALIZAR_SQL = "UPDATE usuario SET nombre = ?, apellido = ?, direccion = ?, telefono = ?, genero = ?, email = ?"
                                              + "usuario_login = ?, contraseña = ?, activo = ?, id_tipo_documento = ?, id_tipo_usuario = ?  WHERE id = ?";
     private static final String BORRAR_SQL = "DELETE FROM usuario WHERE id = ?";
     private static final String CONSULTAR_SQL = "SELECT * FROM usuario WHERE id = ?";
+    private static final String CONSULTAR_NOMBRE_SQL = "SELECT * FROM usuario WHERE nombre LIKE ?";
     private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM usuario";
     
     private static final Conexion con = Conexion.obtener();
@@ -38,18 +39,17 @@ public class UsuarioDAO implements iUsuarioDAO{
         PreparedStatement ps;
         try {            
             ps = con.getConn().prepareStatement(CREAR_SQL);
-            ps.setString(1, usuario.getId());   
-            ps.setString(2, usuario.getNombre()); 
-            ps.setString(3, usuario.getApellido());
-            ps.setString(4, usuario.getDireccion());
-            ps.setString(5, usuario.getTelefono());
-            ps.setString(6, usuario.getGenero());
-            ps.setString(7, usuario.getEmail());
-            ps.setString(8, usuario.getUsuarioLogin());
-            ps.setString(9, usuario.getContraseña());
-            ps.setInt(10, usuario.getActivo());
-            ps.setInt(11, usuario.getTipoDocumento().getId());
-            ps.setInt(12, usuario.getTipoUusario().getId());                        
+            ps.setString(1, usuario.getNombre()); 
+            ps.setString(2, usuario.getApellido());
+            ps.setString(3, usuario.getDireccion());
+            ps.setString(4, usuario.getTelefono());
+            ps.setString(5, usuario.getGenero());
+            ps.setString(6, usuario.getEmail());
+            ps.setString(7, usuario.getUsuarioLogin());
+            ps.setString(8, usuario.getContraseña());
+            ps.setInt(9, usuario.getActivo());
+            ps.setInt(10, usuario.getTipoDocumento().getId());
+            ps.setInt(11, usuario.getTipoUusario().getId());                        
                                    
             if (ps.executeUpdate() > 0){
                 return true;
@@ -123,9 +123,10 @@ public class UsuarioDAO implements iUsuarioDAO{
             ps.setString(6, usuario.getEmail());
             ps.setString(7, usuario.getUsuarioLogin());
             ps.setString(8, usuario.getContraseña());
-            ps.setInt(10, usuario.getActivo());
-            ps.setInt(9, usuario.getTipoDocumento().getId());
-            ps.setInt(10, usuario.getTipoUusario().getId());
+            ps.setInt(9, usuario.getActivo());
+            ps.setInt(10, usuario.getTipoDocumento().getId());
+            ps.setInt(11, usuario.getTipoUusario().getId());
+            ps.setString(12, usuario.getId());
                         
             if (ps.executeUpdate() > 0){
                 return true;
@@ -155,5 +156,32 @@ public class UsuarioDAO implements iUsuarioDAO{
         }
         return false;
     }
+
+    @Override
+    public List<UsuarioDTO> consultarUsuarioNombre(String nombre) {
+        
+        PreparedStatement ps;
+        ResultSet rs;
+        ArrayList<UsuarioDTO> usuario = new ArrayList();
+        
+        try {           
+            ps = con.getConn().prepareStatement(CONSULTAR_NOMBRE_SQL);
+            ps.setString(1, "%"+nombre+"%");            
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+               usuario.add(new UsuarioDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),
+                                           rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getInt(10),
+                                           new TipoDocumentoDTO(rs.getInt(11)), new TipoUsuarioDTO(rs.getInt(12))));
+            }            
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            con.cerrar();
+        }
+        return usuario;
+    }
+    
+    
     
 }

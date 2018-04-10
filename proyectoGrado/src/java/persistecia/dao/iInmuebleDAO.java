@@ -19,5 +19,6 @@ public interface iInmuebleDAO {
 	public List<InmuebleDTO> consultarTodos();
 	public boolean actualizar(InmuebleDTO inmueble);
 	public boolean borrar(Integer id);
+        public List<InmuebleDTO> consultarPorInmueble(String inmueble);
     
 }

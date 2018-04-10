@@ -18,6 +18,7 @@ public interface iUsuarioDAO {
         public UsuarioDTO consultarPorId(String id);
 	public List<UsuarioDTO> consultarTodos();
 	public boolean actualizar(UsuarioDTO usuario);
-	public boolean borrar(String id);  
+	public boolean borrar(String id);
+        public List<UsuarioDTO> consultarUsuarioNombre(String nombre);
     
 }

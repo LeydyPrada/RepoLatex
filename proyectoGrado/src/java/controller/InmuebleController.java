@@ -6,6 +6,8 @@
 package controller;
 
 import business.InmuebleBusiness;
+import business.TipoInmuebleBusiness;
+import business.UsuarioBusiness;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -26,6 +28,8 @@ import persistecia.dto.UsuarioDTO;
 public class InmuebleController extends HttpServlet {
 
      InmuebleBusiness inmuebleBusiness = new InmuebleBusiness();
+     TipoInmuebleBusiness tipoInmuBusiness = new TipoInmuebleBusiness();
+     UsuarioBusiness usuarioBusiness = new UsuarioBusiness();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,13 +46,15 @@ public class InmuebleController extends HttpServlet {
         switch (request.getParameter("action")) {
             case "crear":
                 InmuebleDTO inmueble = new InmuebleDTO();
+                UsuarioDTO usuario = usuarioBusiness.consultarUsuarioPorId(request.getParameter("txtIdUsuario"));
+                TipoInmuebleDTO tipoInmueble = tipoInmuBusiness.consultarTipoInmueblePorId(Integer.parseInt(request.getParameter("txtIdTipoInm")));
                 inmueble.setInmueble(request.getParameter("txtInmueble"));
                 inmueble.setArea_total(Integer.parseInt(request.getParameter("txtAreaTot")));
                 inmueble.setArea_construida(Integer.parseInt(request.getParameter("txtAreaCons")));
                 inmueble.setArea_ponderar(Integer.parseInt(request.getParameter("txtAreaPond")));
                 inmueble.setCoeficiente(Integer.parseInt(request.getParameter("txtCoeficiente")));
-                inmueble.setTipoInmueble(new TipoInmuebleDTO(Integer.parseInt(request.getParameter("txtIdTipoInm"))));
-                inmueble.setUsuario(new UsuarioDTO(request.getParameter("txtInmueble")));
+                inmueble.setTipoInmueble(tipoInmueble);
+                inmueble.setUsuario(usuario);
                 inmueble.setActivo(1);
                 inmuebleBusiness.crearInmueble(inmueble);
                 request.getRequestDispatcher("inmueble.do?method=get&&action=consul").forward(request, response);
@@ -56,17 +62,19 @@ public class InmuebleController extends HttpServlet {
             case "consultar":
                 List<InmuebleDTO> inmuebles = inmuebleBusiness.consultarPorInmueble(request.getParameter("txtInmuBuscar"));
                 request.getSession().setAttribute("Inmueble", inmuebles);
-                request.getRequestDispatcher("Configuracion/Inmueble.jsp").forward(request, response);
+                request.getRequestDispatcher("Usuario/inmueble.jsp").forward(request, response);
                 break;
             case "modificar":
                 InmuebleDTO inmuebleMod = inmuebleBusiness.consultarInmueblePorId(Integer.parseInt(request.getParameter("idInmueble")));
+                UsuarioDTO usuarioMod = usuarioBusiness.consultarUsuarioPorId(request.getParameter("txtIdUsuario"));
+                TipoInmuebleDTO tipoInmuebleMod = tipoInmuBusiness.consultarTipoInmueblePorId(Integer.parseInt(request.getParameter("txtIdTipoInm")));
                 inmuebleMod.setInmueble(request.getParameter("txtInmueble"));
                 inmuebleMod.setArea_total(Integer.parseInt(request.getParameter("txtAreaTot")));
                 inmuebleMod.setArea_construida(Integer.parseInt(request.getParameter("txtAreaCons")));
                 inmuebleMod.setArea_ponderar(Integer.parseInt(request.getParameter("txtAreaPond")));
                 inmuebleMod.setCoeficiente(Integer.parseInt(request.getParameter("txtCoeficiente")));
-                inmuebleMod.setTipoInmueble(new TipoInmuebleDTO(Integer.parseInt(request.getParameter("txtIdTipoInm"))));
-                inmuebleMod.setUsuario(new UsuarioDTO(request.getParameter("txtInmueble")));
+                inmuebleMod.setTipoInmueble(tipoInmuebleMod);
+                inmuebleMod.setUsuario(usuarioMod);
                 inmuebleBusiness.actualizarInmueble(inmuebleMod);
                 request.getRequestDispatcher("inmueble.do?method=get&&action=consul").forward(request, response);
                 break;
@@ -78,12 +86,23 @@ public class InmuebleController extends HttpServlet {
                 case "consul":
                     List<InmuebleDTO> inmuebles = inmuebleBusiness.listarInmuebles();
                     request.getSession().setAttribute("Inmuebles", inmuebles);
-                    request.getRequestDispatcher("Configuracion/Inmueble.jsp").forward(request, response);
+                    request.getRequestDispatcher("Usuario/inmueble.jsp").forward(request, response);
+                    break;
+                case "consulTipos":
+                    List<TipoInmuebleDTO> tiposInmu = tipoInmuBusiness.listarTipoDeInmuebles();
+                    request.getSession().setAttribute("TiposInmu", tiposInmu);
+                    List<UsuarioDTO> usuarios = usuarioBusiness.listarUsuarios();
+                    request.getSession().setAttribute("Usr", usuarios);                    
+                    request.getRequestDispatcher("Usuario/crearInmueble.jsp").forward(request, response);
                     break;
                 case "up"://actualizar
                     InmuebleDTO inmueble = inmuebleBusiness.consultarInmueblePorId(Integer.parseInt(request.getParameter("code")));
                     request.getSession().setAttribute("Inmueble", inmueble);
-                    request.getRequestDispatcher("Configuracion/modificarInmueble.jsp").forward(request, response);
+                    List<TipoInmuebleDTO> tiposInmuMod = tipoInmuBusiness.listarTipoDeInmuebles();
+                    request.getSession().setAttribute("TiposInmu", tiposInmuMod);
+                    List<UsuarioDTO> usuariosMod = usuarioBusiness.listarUsuarios();
+                    request.getSession().setAttribute("Usr", usuariosMod); 
+                    request.getRequestDispatcher("Usuario/modificarInmueble.jsp").forward(request, response);
                     break;                    
                 case "dl"://Eliminar
                     InmuebleDTO inmuebleElim = inmuebleBusiness.consultarInmueblePorId(Integer.parseInt(request.getParameter("code")));

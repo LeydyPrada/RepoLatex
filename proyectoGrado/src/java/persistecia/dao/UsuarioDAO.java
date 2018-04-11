@@ -23,10 +23,10 @@ import persistecia.dto.UsuarioDTO;
  */
 public class UsuarioDAO implements iUsuarioDAO{
     
-    private static final String CREAR_SQL = "INSERT INTO usuario (nombre, apellido, direccion, telefono, genero, email, usuario_login, contraseña, activo, id_tipo_documento, id_tipo_usuario) "
-                                             + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    private static final String ACTUALIZAR_SQL = "UPDATE usuario SET nombre = ?, apellido = ?, direccion = ?, telefono = ?, genero = ?, email = ?"
-                                             + "usuario_login = ?, contraseña = ?, activo = ?, id_tipo_documento = ?, id_tipo_usuario = ?  WHERE id = ?";
+    private static final String CREAR_SQL = "INSERT INTO usuario (id, nombre, apellido, direccion, telefono, genero, email, usuario_loguin, contrasena, activo, id_tipo_documento, id_tipo_usuario) "
+                                             + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    private static final String ACTUALIZAR_SQL = "UPDATE usuario SET nombre = ?, apellido = ?, direccion = ?, telefono = ?, genero = ?, email = ?,"
+                                             + "usuario_loguin = ?, contrasena = ?, activo = ?, id_tipo_documento = ?, id_tipo_usuario = ?  WHERE id = ?";
     private static final String BORRAR_SQL = "DELETE FROM usuario WHERE id = ?";
     private static final String CONSULTAR_SQL = "SELECT * FROM usuario WHERE id = ?";
     private static final String CONSULTAR_NOMBRE_SQL = "SELECT * FROM usuario WHERE nombre LIKE ?";
@@ -39,17 +39,18 @@ public class UsuarioDAO implements iUsuarioDAO{
         PreparedStatement ps;
         try {            
             ps = con.getConn().prepareStatement(CREAR_SQL);
-            ps.setString(1, usuario.getNombre()); 
-            ps.setString(2, usuario.getApellido());
-            ps.setString(3, usuario.getDireccion());
-            ps.setString(4, usuario.getTelefono());
-            ps.setString(5, usuario.getGenero());
-            ps.setString(6, usuario.getEmail());
-            ps.setString(7, usuario.getUsuarioLogin());
-            ps.setString(8, usuario.getContraseña());
-            ps.setInt(9, usuario.getActivo());
-            ps.setInt(10, usuario.getTipoDocumento().getId());
-            ps.setInt(11, usuario.getTipoUusario().getId());                        
+            ps.setString(1, usuario.getId());
+            ps.setString(2, usuario.getNombre()); 
+            ps.setString(3, usuario.getApellido());
+            ps.setString(4, usuario.getDireccion());
+            ps.setString(5, usuario.getTelefono());
+            ps.setString(6, usuario.getGenero());
+            ps.setString(7, usuario.getEmail());
+            ps.setString(8, usuario.getUsuarioLogin());
+            ps.setString(9, usuario.getContraseña());
+            ps.setInt(10, usuario.getActivo());
+            ps.setInt(11, usuario.getTipoDocumento().getId());
+            ps.setInt(12, usuario.getTipoUusario().getId());                        
                                    
             if (ps.executeUpdate() > 0){
                 return true;

@@ -12,7 +12,7 @@
 <%@ include file="/masterpage.jsp" %>
 
 <%
-    UsuarioDTO usuario = (UsuarioDTO) request.getSession().getAttribute("TipoUsr");
+    UsuarioDTO usuario = (UsuarioDTO) request.getSession().getAttribute("Usuario");
     ArrayList<TipoUsuarioDTO> tiposUsr = null;
     tiposUsr = (ArrayList<TipoUsuarioDTO>) request.getSession().getAttribute("TipoUsr");    
 
@@ -23,14 +23,14 @@
 <html>
     <body>
         <div class="col-md-12"><p><br></p></div>
-        <div class="col-md-12 container"><div class="col-md-12"><p><h1>Modificar Tipo de Usuario</h1></p><br><hr><br></div></div>
+        <div class="col-md-12 container"><div class="col-md-12"><p><h1>Modificar Usuario</h1></p><br><hr><br></div></div>
 
 
         <div class="col-md-6">
             <div class="CentrarForm">
                 <form method="post" action="\proyectoGrado\usuario.do">
                     <input type="hidden" id="action" name="action" value="modificar"/>
-                    <input type="hidden" id="idTipoUsr" name="idTipoUsr" value="<%out.print(usuario.getId());%>"/>
+                    <input type="hidden" id="idUsuario" name="idUsuario" value="<%out.print(usuario.getId());%>"/>
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="inputEmail3" class="control-label">Nombre</label>
@@ -69,7 +69,7 @@
                     
                         <div class="form-group">
                             <label for="inputEmail3" class="control-label">Contraseña</label>
-                            <input type="text" class="form-control" id="txtContraseña" name="txtContraseña" placeholder="Contraseña" required value="<%out.print(usuario.getContraseña());%>">
+                            <input type="text" class="form-control" id="txtContrasena" name="txtContrasena" placeholder="Contrasena" required value="<%out.print(usuario.getContraseña());%>">
                         </div>
                     
                         <div class="form-group">
@@ -93,8 +93,7 @@
                             <select class="form-control" id="txtIdTipoUsr" name="txtIdTipoUsr" required>
                                 <%
                                     out.println("<option value="+"></option>");
-                                    for (int i = 0; i < tiposUsr.size(); i++) {
-                                        out.println("<option value=" + tiposUsr.get(i).getId() + ">" + tiposUsr.get(i).getTipo() + "</option>");
+                                    for (int i = 0; i < tiposUsr.size(); i++) {                                    
                                     if (tiposUsr.get(i).getId() == usuario.getTipoUusario().getId()) {
                                             out.println("<option value=" + tiposUsr.get(i).getId() + " selected>" + tiposUsr.get(i).getTipo() + "</option>");
                                         } else {

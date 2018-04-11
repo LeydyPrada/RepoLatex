@@ -28,7 +28,7 @@
             <div class="CentrarForm">
                 <form method="post" action="\proyectoGrado\usuario.do">
                     <input type="hidden" id="action" name="action" value="crear"/>
-                    <div class="col-md-12">
+                    <div class="col-md-12">                                           
                         <div class="form-group">
                             <label for="inputEmail3" class="control-label">Nombre</label>
                             <input type="text" class="form-control" id="txtNombre" name="txtNombre" placeholder="Nombre" required>
@@ -66,7 +66,7 @@
                     
                         <div class="form-group">
                             <label for="inputEmail3" class="control-label">Contraseña</label>
-                            <input type="text" class="form-control" id="txtContraseña" name="txtContraseña" placeholder="Contraseña" required>
+                            <input type="text" class="form-control" id="txtContrasena" name="txtContrasena" placeholder="Contrasena" required>
                         </div>
                     
                         <div class="form-group">
@@ -80,6 +80,11 @@
                                 %>
                             </select>
                         </div>
+                            
+                        <div class="form-group">
+                            <label for="inputEmail3" class="control-label">Num Identificación</label>
+                            <input type="text" class="form-control" id="txtIdUsuario" name="txtIdUsuario" placeholder="Num Identificacion" required>
+                        </div>    
                     
                         <div class="form-group">
                             <label for="inputEmail3" class="control-label">Tipo Usuario</label>

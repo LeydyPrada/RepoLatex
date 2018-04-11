@@ -46,6 +46,7 @@ public class UsuarioController extends HttpServlet {
                 UsuarioDTO usuario = new UsuarioDTO();
                 TipoUsuarioDTO tipoUsr = tipoUsuarioBusiness.consultarTipoUsrPorId(Integer.parseInt(request.getParameter("txtIdTipoUsr")));
                 TipoDocumentoDTO tipoDoc = tipoDocumentoBusiness.consultarTipoDocPorId(Integer.parseInt(request.getParameter("txtIdTipoDoc")));
+                usuario.setId(request.getParameter("txtIdUsuario"));
                 usuario.setNombre(request.getParameter("txtNombre"));
                 usuario.setApellido(request.getParameter("txtApellido"));
                 usuario.setDireccion(request.getParameter("txtDireccion"));
@@ -53,7 +54,7 @@ public class UsuarioController extends HttpServlet {
                 usuario.setGenero(request.getParameter("txtGenero"));
                 usuario.setEmail(request.getParameter("txtEmail"));
                 usuario.setUsuarioLogin(request.getParameter("txtLogin"));
-                usuario.setContraseña(request.getParameter("txtContraseña"));                
+                usuario.setContraseña(request.getParameter("txtContrasena"));                
                 usuario.setActivo(1);
                 usuario.setTipoDocumento(tipoDoc);
                 usuario.setTipoUusario(tipoUsr);                
@@ -76,7 +77,7 @@ public class UsuarioController extends HttpServlet {
                 usuarioMod.setGenero(request.getParameter("txtGenero"));
                 usuarioMod.setEmail(request.getParameter("txtEmail"));
                 usuarioMod.setUsuarioLogin(request.getParameter("txtLogin"));
-                usuarioMod.setContraseña(request.getParameter("txtContraseña"));                
+                usuarioMod.setContraseña(request.getParameter("txtContrasena"));                
                 usuarioMod.setTipoDocumento(tipoDocumento);
                 usuarioMod.setTipoUusario(tipoUsuario);
                 usuarioBusiness.actualizarUsuario(usuarioMod);

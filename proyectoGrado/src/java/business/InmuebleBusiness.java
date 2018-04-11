@@ -11,8 +11,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import persistecia.dao.InmuebleDAO;
 import persistecia.dao.TipoInmuebleDAO;
+import persistecia.dao.UsuarioDAO;
 import persistecia.dto.InmuebleDTO;
 import persistecia.dto.TipoInmuebleDTO;
+import persistecia.dto.UsuarioDTO;
 
 /**
  *
@@ -22,6 +24,7 @@ public class InmuebleBusiness {
     
      InmuebleDAO inmuebleDAO = new InmuebleDAO();
      TipoInmuebleDAO tipoInmuebleDAO = new TipoInmuebleDAO();
+     UsuarioDAO usuarioDAO = new UsuarioDAO();
      
  
  /* METODOS PARA EL TIPO DE USUARIO*/
@@ -29,13 +32,16 @@ public class InmuebleBusiness {
     public List<InmuebleDTO> listarInmuebles(){
         List<InmuebleDTO> inmuebles = new ArrayList<>();
         TipoInmuebleDTO tipoInmueble;
+        UsuarioDTO usuario;
         
         try{            
             inmuebles = inmuebleDAO.consultarTodos();
             
             for(int i = 0; i < inmuebles.size(); i++) {
                 tipoInmueble = tipoInmuebleDAO.consultarPorId(inmuebles.get(i).getTipoInmueble().getId());
-                inmuebles.get(i).setTipoInmueble(tipoInmueble);                    
+                usuario = usuarioDAO.consultarPorId(inmuebles.get(i).getUsuario().getId());
+                inmuebles.get(i).setTipoInmueble(tipoInmueble);                
+                inmuebles.get(i).setUsuario(usuario);
             }
             
         }catch(Exception ex){
@@ -47,13 +53,16 @@ public class InmuebleBusiness {
     
     public InmuebleDTO consultarInmueblePorId(Integer id){
         InmuebleDTO inmueble = new InmuebleDTO();
+        UsuarioDTO usuario;
         TipoInmuebleDTO tipoInmueble;
-        
+                
         try {
             inmueble = inmuebleDAO.consultarPorId(id);
-            
             tipoInmueble = tipoInmuebleDAO.consultarPorId(inmueble.getTipoInmueble().getId());
-            inmueble.setTipoInmueble(tipoInmueble);     
+            inmueble.setTipoInmueble(tipoInmueble);  
+            
+            usuario = usuarioDAO.consultarPorId(inmueble.getUsuario().getId());
+            inmueble.setUsuario(usuario);
             
         } catch (Exception ex) {
             Logger.getLogger(InmuebleBusiness.class.getName()).log(Level.SEVERE, null, ex);            
@@ -98,13 +107,16 @@ public class InmuebleBusiness {
     public List<InmuebleDTO> consultarPorInmueble(String inmueble){
          List<InmuebleDTO> inmuebles = new ArrayList<>();
          TipoInmuebleDTO tipoInmueble;
+         UsuarioDTO usuario;
         
         try {
             inmuebles = inmuebleDAO.consultarPorInmueble(inmueble);
             
              for(int i = 0; i < inmuebles.size(); i++) {
                 tipoInmueble = tipoInmuebleDAO.consultarPorId(inmuebles.get(i).getTipoInmueble().getId());
-                inmuebles.get(i).setTipoInmueble(tipoInmueble);                    
+                usuario = usuarioDAO.consultarPorId(inmuebles.get(i).getUsuario().getId());
+                inmuebles.get(i).setTipoInmueble(tipoInmueble);
+                inmuebles.get(i).setUsuario(usuario);
             }
             
         } catch (Exception ex) {

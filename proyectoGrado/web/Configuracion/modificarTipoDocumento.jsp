@@ -16,7 +16,7 @@
 <html>
     <body>
         <div class="col-md-12"><p><br></p></div>
-        <div class="col-md-12 container"><div class="col-md-12"><p><h1>Modificar Hotel</h1></p><br><hr><br></div></div>
+        <div class="col-md-12 container"><div class="col-md-12"><p><h1>Modificar Tipo Documento</h1></p><br><hr><br></div></div>
 
 
         <div class="col-md-6">

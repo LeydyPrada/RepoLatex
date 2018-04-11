@@ -41,7 +41,7 @@
                                         <a href="..\..\proyectoGrado\Asamblea\Asamblea.jsp">Asamblea</a>
                                     </li>
                                     <li>
-                                        <a href="..\..\proyectoGrado\Asamblea\OrdenDia.jsp">Orden del día</a>
+                                        <a href="..\..\proyectoGrado\ordenDia.do?method=get&&action=consul">Orden del día</a>
                                     </li>
                                 </ul>
                             </li>

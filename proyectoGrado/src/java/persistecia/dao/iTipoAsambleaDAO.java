@@ -19,5 +19,5 @@ public interface iTipoAsambleaDAO {
 	public List<TipoAsambleaDTO> consultarTodos();
 	public boolean actualizar(TipoAsambleaDTO tipoAsamblea);
 	public boolean borrar(Integer id); 
-    
+        public List<TipoAsambleaDTO> consultarPorTipo(String tipo);
 }

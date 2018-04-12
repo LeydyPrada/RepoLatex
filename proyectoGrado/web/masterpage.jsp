@@ -80,7 +80,7 @@
                                    aria-expanded="false">Configuración <i class="fa fa-caret-down"></i></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="..\..\proyectoGrado\reservas.do?method=get&&action=consul">Tipo Asamblea</a>
+                                        <a href="..\..\proyectoGrado\tipoAsamblea.do?method=get&&action=consul">Tipo Asamblea</a>
                                     </li>
                                     <li>
                                         <a href="..\..\proyectoGrado\Configuracion\consultar.jsp">Estado Asamblea</a>

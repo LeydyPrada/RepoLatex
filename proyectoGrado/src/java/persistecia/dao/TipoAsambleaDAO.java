@@ -21,10 +21,11 @@ import persistecia.dto.TipoAsambleaDTO;
  */
 public class TipoAsambleaDAO implements iTipoAsambleaDAO{
     
-    private static final String CREAR_SQL = "INSERT INTO tipo_asamblea (id, tipo, activo) VALUES (?, ?, ?)";
+    private static final String CREAR_SQL = "INSERT INTO tipo_asamblea (tipo, activo) VALUES (?, ?)";
     private static final String ACTUALIZAR_SQL = "UPDATE tipo_asamblea SET tipo = ?, activo = ? WHERE id = ?";
     private static final String BORRAR_SQL = "DELETE FROM tipo_asamblea WHERE id = ?";
     private static final String CONSULTAR_SQL = "SELECT * FROM tipo_asamblea WHERE id = ?";
+    private static final String CONSULTAR_TIPO_SQL = "SELECT * FROM tipo_asamblea WHERE tipo_asamblea LIKE ?";
     private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM tipo_asamblea";
     
     private static final Conexion con = Conexion.obtener();
@@ -34,8 +35,8 @@ public class TipoAsambleaDAO implements iTipoAsambleaDAO{
         PreparedStatement ps;
         try {            
             ps = con.getConn().prepareStatement(CREAR_SQL);
-            ps.setInt(1, tipoAsamblea.getId());   
-            ps.setString(2, tipoAsamblea.getTipo()); 
+            ps.setString(1, tipoAsamblea.getTipo());   
+            ps.setInt(2, tipoAsamblea.getActivo()); 
                                    
             if (ps.executeUpdate() > 0){
                 return true;
@@ -99,6 +100,7 @@ public class TipoAsambleaDAO implements iTipoAsambleaDAO{
             ps = con.getConn().prepareStatement(ACTUALIZAR_SQL);
             ps.setString(1, tipoAsamblea.getTipo());
             ps.setInt(2, tipoAsamblea.getActivo());
+            ps.setInt(3, tipoAsamblea.getId());
                         
             if (ps.executeUpdate() > 0){
                 return true;
@@ -127,6 +129,28 @@ public class TipoAsambleaDAO implements iTipoAsambleaDAO{
             con.cerrar();
         }
         return false;
+    }
+
+    @Override
+    public List<TipoAsambleaDTO> consultarPorTipo(String tipo) {
+        PreparedStatement ps;
+        ResultSet rs;
+        List<TipoAsambleaDTO> tipoAsamblea = new ArrayList<>();
+        
+        try {           
+            ps = con.getConn().prepareStatement(CONSULTAR_TIPO_SQL);
+            ps.setString(1, "%"+tipo+"%");
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                tipoAsamblea.add(new TipoAsambleaDTO(rs.getInt(1), rs.getString(2), rs.getInt(3)));
+            }  
+         } catch (SQLException ex) {
+            Logger.getLogger(TipoAsambleaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            con.cerrar();
+        }
+        return tipoAsamblea;
     }
     
 }

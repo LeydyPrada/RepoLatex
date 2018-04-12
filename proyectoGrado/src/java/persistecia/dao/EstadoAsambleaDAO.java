@@ -21,10 +21,11 @@ import persistecia.dto.EstadoAsambleaDTO;
  */
 public class EstadoAsambleaDAO implements iEstadoAsambleaDAO{
     
-    private static final String CREAR_SQL = "INSERT INTO estados_asamblea (id, descripcion, activo) VALUES (?, ?, ?)";
+    private static final String CREAR_SQL = "INSERT INTO estados_asamblea (descripcion, activo) VALUES (?, ?)";
     private static final String ACTUALIZAR_SQL = "UPDATE estados_asamblea SET descripcion = ?, activo = ? WHERE id = ?";
     private static final String BORRAR_SQL = "DELETE FROM estados_asamblea WHERE id = ?";
     private static final String CONSULTAR_SQL = "SELECT * FROM estados_asamblea WHERE id = ?";
+    private static final String CONSULTAR_ESTADOS_SQL = "SELECT * FROM estados_asamblea WHERE descripcion LIKE ?";
     private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM estados_asamblea";
     
     private static final Conexion con = Conexion.obtener();
@@ -34,9 +35,8 @@ public class EstadoAsambleaDAO implements iEstadoAsambleaDAO{
         PreparedStatement ps;
         try {            
             ps = con.getConn().prepareStatement(CREAR_SQL);
-            ps.setInt(1, estadoAsamblea.getId());   
-            ps.setString(2, estadoAsamblea.getDescripcion());
-            ps.setInt(3, estadoAsamblea.getActivo());
+            ps.setString(1, estadoAsamblea.getDescripcion());
+            ps.setInt(2, estadoAsamblea.getActivo());
                                    
             if (ps.executeUpdate() > 0){
                 return true;
@@ -100,6 +100,8 @@ public class EstadoAsambleaDAO implements iEstadoAsambleaDAO{
             ps = con.getConn().prepareStatement(ACTUALIZAR_SQL);
             ps.setString(1, estadoAsamblea.getDescripcion());
             ps.setInt(2, estadoAsamblea.getActivo());
+            ps.setInt(3, estadoAsamblea.getId());
+            
                         
             if (ps.executeUpdate() > 0){
                 return true;
@@ -128,6 +130,28 @@ public class EstadoAsambleaDAO implements iEstadoAsambleaDAO{
             con.cerrar();
         }
         return false;
+    }
+
+    @Override
+    public List<EstadoAsambleaDTO> consultarPorDescrip(String desc) {
+        PreparedStatement ps;
+        ResultSet rs;
+        List<EstadoAsambleaDTO> estadosAsamblea = new ArrayList<>();
+        
+        try {           
+            ps = con.getConn().prepareStatement(CONSULTAR_ESTADOS_SQL);
+            ps.setString(1, "%"+desc+"%");
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                estadosAsamblea.add(new EstadoAsambleaDTO(rs.getInt(1), rs.getString(2), rs.getInt(3)));
+            }  
+         } catch (SQLException ex) {
+            Logger.getLogger(EstadoAsambleaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            con.cerrar();
+        }
+        return estadosAsamblea;
     }
     
 }

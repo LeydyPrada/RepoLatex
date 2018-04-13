@@ -83,7 +83,7 @@
                                         <a href="..\..\proyectoGrado\tipoAsamblea.do?method=get&&action=consul">Tipo Asamblea</a>
                                     </li>
                                     <li>
-                                        <a href="..\..\proyectoGrado\Configuracion\consultar.jsp">Estado Asamblea</a>
+                                        <a href="..\..\proyectoGrado\estadoAsamblea.do?method=get&&action=consul">Estado Asamblea</a>
                                     </li>
                                     <li>
                                         <a href="..\..\proyectoGrado\tipoDocumento.do?method=get&&action=consul">Tipo documento</a>

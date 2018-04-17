@@ -15,6 +15,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import persistecia.config.Conexion;
 import persistecia.dto.AsambleaDTO;
+import persistecia.dto.EstadoAsambleaDTO;
+import persistecia.dto.OrdenDiaDTO;
+import persistecia.dto.TipoAsambleaDTO;
 
 /**
  *
@@ -22,11 +25,12 @@ import persistecia.dto.AsambleaDTO;
  */
 public class AsambleaDAO implements iAsambleaDAO{
     
-    private static final String CREAR_SQL = "INSERT INTO asamblea (id, id_tipo_asamblea, descripcion, fecha_ejecucion, hora_inicio, hora_fin, id_orden_dia, id_estado_asamblea) "
-                                            + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    private static final String CREAR_SQL = "INSERT INTO asamblea (id_tipo_asamblea, descripcion, fecha_ejecucion, hora_inicio, hora_fin, id_orden_dia, id_estado_asamblea) "
+                                            + "VALUES (?, ?, ?, ?, ?, ?, ?)";
     private static final String ACTUALIZAR_SQL = "UPDATE asamblea SET id_tipo_asamblea = ?, descripcion = ?, fecha_ejecucion = ?, hora_inicio = ?, hora_fin = ?, id_orden_dia = ?, id_estado_asamblea = ? WHERE id = ?";
     private static final String BORRAR_SQL = "DELETE FROM asamblea WHERE id = ?";
     private static final String CONSULTAR_SQL = "SELECT * FROM asamblea WHERE id = ?";
+    private static final String CONSULTAR_DESC_SQL = "SELECT * FROM asamblea WHERE descipcion LIKE ?";
     private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM asamblea";
     
     private static final Conexion con = Conexion.obtener();
@@ -38,14 +42,13 @@ public class AsambleaDAO implements iAsambleaDAO{
         try {  
             date = new Date(asamblea.getFechaEjecucion().getTime());
             ps = con.getConn().prepareStatement(CREAR_SQL);
-            ps.setInt(1, asamblea.getId());   
-            ps.setInt(2, asamblea.getIdTipoAsamblea());
-            ps.setString(3, asamblea.getDescripcion());
-            ps.setDate(4, date);
-            ps.setTime(5, asamblea.getHoraInicio());
-            ps.setTime(6, asamblea.getHoraFin());
-            ps.setInt(7, asamblea.getIdOrdenDia());
-            ps.setInt(8, asamblea.getIdEstadoAsamblea());
+            ps.setInt(1, asamblea.getIdTipoAsamblea().getId());
+            ps.setString(2, asamblea.getDescripcion());
+            ps.setDate(3, date);
+            ps.setTime(4, asamblea.getHoraInicio());
+            ps.setTime(5, asamblea.getHoraFin());
+            ps.setInt(6, asamblea.getIdOrdenDia().getId());
+            ps.setInt(7, asamblea.getIdEstadoAsamblea().getId());
                                    
             if (ps.executeUpdate() > 0){
                 return true;
@@ -70,7 +73,7 @@ public class AsambleaDAO implements iAsambleaDAO{
             rs = ps.executeQuery();
             
             while(rs.next()){
-                asamblea = new AsambleaDTO(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getDate(4), rs.getTime(5), rs.getTime(6), rs.getInt(7), rs.getInt(8));
+                asamblea = new AsambleaDTO(rs.getInt(1), new TipoAsambleaDTO(rs.getInt(2)), rs.getString(3), rs.getDate(4), rs.getTime(5), rs.getTime(6), new OrdenDiaDTO(rs.getInt(7)), new EstadoAsambleaDTO(rs.getInt(8)));
             }  
             return asamblea;
         } catch (SQLException ex) {
@@ -92,7 +95,7 @@ public class AsambleaDAO implements iAsambleaDAO{
             rs = ps.executeQuery();
             
             while(rs.next()){
-               asamblea.add(new AsambleaDTO(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getDate(4), rs.getTime(5), rs.getTime(6), rs.getInt(7), rs.getInt(8)));
+               asamblea.add(new AsambleaDTO(rs.getInt(1), new TipoAsambleaDTO(rs.getInt(2)), rs.getString(3), rs.getDate(4), rs.getTime(5), rs.getTime(6), new OrdenDiaDTO(rs.getInt(7)), new EstadoAsambleaDTO(rs.getInt(8))));
             }            
         } catch (SQLException ex) {
             Logger.getLogger(AsambleaDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -109,13 +112,14 @@ public class AsambleaDAO implements iAsambleaDAO{
         try {           
             date = new Date(asamblea.getFechaEjecucion().getTime());
             ps = con.getConn().prepareStatement(ACTUALIZAR_SQL);
-            ps.setInt(1, asamblea.getIdTipoAsamblea());
+            ps.setInt(1, asamblea.getIdTipoAsamblea().getId());
             ps.setString(2, asamblea.getDescripcion());
             ps.setDate(3, date);
             ps.setTime(4, asamblea.getHoraInicio());
             ps.setTime(5, asamblea.getHoraFin());
-            ps.setInt(6, asamblea.getIdOrdenDia());
-            ps.setInt(7, asamblea.getIdEstadoAsamblea());
+            ps.setInt(6, asamblea.getIdOrdenDia().getId());
+            ps.setInt(7, asamblea.getIdEstadoAsamblea().getId());
+            ps.setInt(8, asamblea.getId());
                         
             if (ps.executeUpdate() > 0){
                 return true;
@@ -144,6 +148,28 @@ public class AsambleaDAO implements iAsambleaDAO{
             con.cerrar();
         }
         return false;
+    }
+    
+    @Override
+    public List<AsambleaDTO> consultarPorDesc(String desc){
+        PreparedStatement ps;
+        ResultSet rs;
+        ArrayList<AsambleaDTO> asamblea = new ArrayList();
+        
+        try {           
+            ps = con.getConn().prepareStatement(CONSULTAR_DESC_SQL);   
+            ps.setString(1, '%'+desc+'%');
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+               asamblea.add(new AsambleaDTO(rs.getInt(1), new TipoAsambleaDTO(rs.getInt(2)), rs.getString(3), rs.getDate(4), rs.getTime(5), rs.getTime(6), new OrdenDiaDTO(rs.getInt(7)), new EstadoAsambleaDTO(rs.getInt(8))));
+            }            
+        } catch (SQLException ex) {
+            Logger.getLogger(AsambleaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            con.cerrar();
+        }
+        return asamblea;
     }
     
 }

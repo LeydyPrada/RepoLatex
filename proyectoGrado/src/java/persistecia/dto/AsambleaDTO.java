@@ -17,13 +17,13 @@ import java.util.List;
 public class AsambleaDTO {
     
     private Integer id;
-    private Integer idTipoAsamblea;
+    private TipoAsambleaDTO idTipoAsamblea;
     private String descripcion;
     private Date fechaEjecucion;
     private Time horaInicio;
     private Time horaFin;
-    private Integer idOrdenDia;
-    private Integer idEstadoAsamblea;
+    private OrdenDiaDTO idOrdenDia;
+    private EstadoAsambleaDTO idEstadoAsamblea;
     private List<VotoDTO> votos;
 
     public AsambleaDTO() {
@@ -33,7 +33,7 @@ public class AsambleaDTO {
         this.id = id;
     }
 
-    public AsambleaDTO(Integer id, Integer idTipoAsamblea, String descripcion, Date fechaEjecucion, Time horaInicio, Time horaFin, Integer idOrdenDia, Integer idEstadoAsamblea) {
+    public AsambleaDTO(Integer id, TipoAsambleaDTO idTipoAsamblea, String descripcion, Date fechaEjecucion, Time horaInicio, Time horaFin, OrdenDiaDTO idOrdenDia, EstadoAsambleaDTO idEstadoAsamblea) {
         this.id = id;
         this.idTipoAsamblea = idTipoAsamblea;
         this.descripcion = descripcion;
@@ -52,11 +52,11 @@ public class AsambleaDTO {
         this.id = id;
     }
 
-    public Integer getIdTipoAsamblea() {
+    public TipoAsambleaDTO getIdTipoAsamblea() {
         return idTipoAsamblea;
     }
 
-    public void setIdTipoAsamblea(Integer idTipoAsamblea) {
+    public void setIdTipoAsamblea(TipoAsambleaDTO idTipoAsamblea) {
         this.idTipoAsamblea = idTipoAsamblea;
     }
 
@@ -92,19 +92,19 @@ public class AsambleaDTO {
         this.horaFin = horaFin;
     }
 
-    public Integer getIdOrdenDia() {
+    public OrdenDiaDTO getIdOrdenDia() {
         return idOrdenDia;
     }
 
-    public void setIdOrdenDia(Integer idOrdenDia) {
+    public void setIdOrdenDia(OrdenDiaDTO idOrdenDia) {
         this.idOrdenDia = idOrdenDia;
     }
 
-    public Integer getIdEstadoAsamblea() {
+    public EstadoAsambleaDTO getIdEstadoAsamblea() {
         return idEstadoAsamblea;
     }
 
-    public void setIdEstadoAsamblea(Integer idEstadoAsamblea) {
+    public void setIdEstadoAsamblea(EstadoAsambleaDTO idEstadoAsamblea) {
         this.idEstadoAsamblea = idEstadoAsamblea;
     }
 

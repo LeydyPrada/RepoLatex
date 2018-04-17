@@ -12,10 +12,8 @@ package persistecia.dto;
 public class VotoDTO {
     
     private Integer id;
-    private EncuestaDTO encuesta;
     private PreguntasDTO preguntas;
     private AsambleaDTO asamblea;
-    private RespuestasDTO respuestas;
     private String inmueble;
 
     public VotoDTO() {
@@ -25,12 +23,10 @@ public class VotoDTO {
         this.id = id;
     }
 
-    public VotoDTO(Integer id, EncuestaDTO encuesta, PreguntasDTO preguntas, AsambleaDTO asamblea, RespuestasDTO respuestas, String inmueble) {
+    public VotoDTO(Integer id, PreguntasDTO preguntas, AsambleaDTO asamblea, String inmueble) {
         this.id = id;
-        this.encuesta = encuesta;
         this.preguntas = preguntas;
         this.asamblea = asamblea;
-        this.respuestas = respuestas;
         this.inmueble = inmueble;
     }
 
@@ -40,14 +36,6 @@ public class VotoDTO {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public EncuestaDTO getEncuesta() {
-        return encuesta;
-    }
-
-    public void setEncuesta(EncuestaDTO encuesta) {
-        this.encuesta = encuesta;
     }
 
     public PreguntasDTO getPreguntas() {
@@ -64,14 +52,6 @@ public class VotoDTO {
 
     public void setAsamblea(AsambleaDTO asamblea) {
         this.asamblea = asamblea;
-    }
-
-    public RespuestasDTO getRespuestas() {
-        return respuestas;
-    }
-
-    public void setRespuestas(RespuestasDTO respuestas) {
-        this.respuestas = respuestas;
     }
 
     public String getInmueble() {

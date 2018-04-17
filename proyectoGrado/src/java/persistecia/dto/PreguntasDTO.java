@@ -16,8 +16,7 @@ public class PreguntasDTO {
     private Integer id;
     private String descripcion;
     private Integer activo;
-    private EncuestaDTO encuesta;
-    private List<RespuestasDTO> respuestas;
+    private AsambleaDTO asamblea;
     private List<VotoDTO> votos;
 
     public PreguntasDTO() {
@@ -27,11 +26,11 @@ public class PreguntasDTO {
         this.id = id;
     }
 
-    public PreguntasDTO(Integer id, String descripcion, Integer activo, EncuestaDTO encuesta) {
+    public PreguntasDTO(Integer id, String descripcion, Integer activo, AsambleaDTO encuesta) {
         this.id = id;
         this.descripcion = descripcion;
         this.activo = activo;
-        this.encuesta = encuesta;
+        this.asamblea = encuesta;
     }
 
     public Integer getId() {
@@ -58,20 +57,12 @@ public class PreguntasDTO {
         this.activo = activo;
     }
 
-    public EncuestaDTO getEncuesta() {
-        return encuesta;
+    public AsambleaDTO getAsamblea() {
+        return asamblea;
     }
 
-    public void setEncuesta(EncuestaDTO encuesta) {
-        this.encuesta = encuesta;
-    }
-
-    public List<RespuestasDTO> getRespuestas() {
-        return respuestas;
-    }
-
-    public void setRespuestas(List<RespuestasDTO> respuestas) {
-        this.respuestas = respuestas;
+    public void setAsamblea(AsambleaDTO asamblea) {
+        this.asamblea = asamblea;
     }
 
     public List<VotoDTO> getVotos() {

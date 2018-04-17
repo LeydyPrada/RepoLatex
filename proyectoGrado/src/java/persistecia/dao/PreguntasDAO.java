@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import persistecia.config.Conexion;
-import persistecia.dto.EncuestaDTO;
+import persistecia.dto.AsambleaDTO;
 import persistecia.dto.PreguntasDTO;
 
 /**
@@ -22,10 +22,11 @@ import persistecia.dto.PreguntasDTO;
  */
 public class PreguntasDAO implements iPreguntasDAO{
     
-    private static final String CREAR_SQL = "INSERT INTO preguntas (id, descripcion, activo, id_encuesta) VALUES (?, ?, ?, ?)";
+    private static final String CREAR_SQL = "INSERT INTO preguntas (descripcion, activo, id_encuesta) VALUES (?, ?, ?)";
     private static final String ACTUALIZAR_SQL = "UPDATE preguntas SET descripcion = ?, activo = ?, id_encuesta = ? WHERE id = ?";
     private static final String BORRAR_SQL = "DELETE FROM preguntas WHERE id = ?";
     private static final String CONSULTAR_SQL = "SELECT * FROM preguntas WHERE id = ?";
+    private static final String CONSULTAR_DESC_SQL = "SELECT * FROM preguntas WHERE descripcion LIKE ?";
     private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM preguntas";
     
     private static final Conexion con = Conexion.obtener();
@@ -34,11 +35,10 @@ public class PreguntasDAO implements iPreguntasDAO{
     public boolean registrar(PreguntasDTO pregunta) {
         PreparedStatement ps;
         try {            
-            ps = con.getConn().prepareStatement(CREAR_SQL);
-            ps.setInt(1, pregunta.getId());   
-            ps.setString(2, pregunta.getDescripcion()); 
-            ps.setInt(3, pregunta.getActivo()); 
-            ps.setInt(4, pregunta.getEncuesta().getId());
+            ps = con.getConn().prepareStatement(CREAR_SQL);  
+            ps.setString(1, pregunta.getDescripcion()); 
+            ps.setInt(2, pregunta.getActivo()); 
+            ps.setInt(3, pregunta.getAsamblea().getId());
                                    
             if (ps.executeUpdate() > 0){
                 return true;
@@ -63,7 +63,7 @@ public class PreguntasDAO implements iPreguntasDAO{
             rs = ps.executeQuery();
             
             while(rs.next()){
-                preguntas = new PreguntasDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), new EncuestaDTO(rs.getInt(4)));
+                preguntas = new PreguntasDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), new AsambleaDTO(rs.getInt(4)));
             }  
             return preguntas;
         } catch (SQLException ex) {
@@ -85,7 +85,7 @@ public class PreguntasDAO implements iPreguntasDAO{
             rs = ps.executeQuery();
             
             while(rs.next()){
-               preguntas.add(new PreguntasDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), new EncuestaDTO(rs.getInt(4))));
+               preguntas.add(new PreguntasDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), new AsambleaDTO(rs.getInt(4))));
             }            
         } catch (SQLException ex) {
             Logger.getLogger(PreguntasDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -102,7 +102,8 @@ public class PreguntasDAO implements iPreguntasDAO{
             ps = con.getConn().prepareStatement(ACTUALIZAR_SQL);
             ps.setString(1, pregunta.getDescripcion());
             ps.setInt(2, pregunta.getActivo());
-            ps.setInt(3, pregunta.getEncuesta().getId());
+            ps.setInt(3, pregunta.getAsamblea().getId());
+            ps.setInt(4, pregunta.getId());
                         
             if (ps.executeUpdate() > 0){
                 return true;
@@ -131,6 +132,28 @@ public class PreguntasDAO implements iPreguntasDAO{
             con.cerrar();
         }
         return false;
+    }
+    
+    @Override
+    public List<PreguntasDTO> consultarPorDesc(String desc){
+        PreparedStatement ps;
+        ResultSet rs;
+        ArrayList<PreguntasDTO> preguntas = new ArrayList();
+        
+        try {           
+            ps = con.getConn().prepareStatement(CONSULTAR_DESC_SQL);  
+            ps.setString(1, '%'+desc+'%');
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+               preguntas.add(new PreguntasDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), new AsambleaDTO(rs.getInt(4))));
+            }            
+        } catch (SQLException ex) {
+            Logger.getLogger(PreguntasDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            con.cerrar();
+        }
+        return preguntas;
     }
     
 }

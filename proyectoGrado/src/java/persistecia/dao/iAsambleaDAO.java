@@ -19,5 +19,6 @@ public interface iAsambleaDAO {
 	public List<AsambleaDTO> consultarTodos();
 	public boolean actualizar(AsambleaDTO asamblea);
 	public boolean borrar(Integer id);
+	public List<AsambleaDTO> consultarPorDesc(String desc);
     
 }

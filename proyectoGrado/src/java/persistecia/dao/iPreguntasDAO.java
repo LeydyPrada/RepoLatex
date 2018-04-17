@@ -19,6 +19,7 @@ public interface iPreguntasDAO {
         public PreguntasDTO consultarPorId(Integer id);
 	public List<PreguntasDTO> consultarTodos();
 	public boolean actualizar(PreguntasDTO pregunta);
-	public boolean borrar(Integer id);        
+	public boolean borrar(Integer id);
+        public List<PreguntasDTO> consultarPorDesc(String desc);
     
 }

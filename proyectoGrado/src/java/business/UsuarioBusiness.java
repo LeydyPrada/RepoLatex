@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import persistecia.config.Hash;
 import persistecia.dao.TipoDocumentoDAO;
 import persistecia.dao.TipoUsuarioDAO;
 import persistecia.dao.UsuarioDAO;
@@ -72,7 +73,9 @@ public class UsuarioBusiness {
     
     public void  crearUsuario (UsuarioDTO usuario){
         
-        try {            
+        try {
+            String nuevoPassw = Hash.sha1(usuario.getContraseña());
+            usuario.setContraseña(nuevoPassw);
             usuarioDAO.registrar(usuario);
             
         } catch (Exception ex) {
@@ -124,5 +127,19 @@ public class UsuarioBusiness {
         }
         return usuarios;
     }//consultarUsuarioNombre
+    
+    public UsuarioDTO autenticacionUsaurio(String usuario, String password){
+                
+        String nuevoPassw;
+        UsuarioDTO usr = new UsuarioDTO();
+        try {            
+            nuevoPassw = Hash.sha1(password);
+            usr = usuarioDAO.autenticacionUsuario(usuario, nuevoPassw);           
+            
+        } catch (Exception ex) {
+            Logger.getLogger(UsuarioBusiness.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return usr;
+    }
     
 }

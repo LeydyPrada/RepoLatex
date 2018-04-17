@@ -9,7 +9,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ include file="/masterpage.jsp" %>
 
-<%
+<%  if(request.getSession().getAttribute("usuario") == null){
+      response.sendRedirect("index.html");
+    }
     ArrayList<AsambleaDTO> tipos = null;
     tipos = (ArrayList<AsambleaDTO>) request.getSession().getAttribute("TipoEncuestas");
 %>

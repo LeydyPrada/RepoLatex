@@ -31,6 +31,7 @@ public class UsuarioDAO implements iUsuarioDAO{
     private static final String CONSULTAR_SQL = "SELECT * FROM usuario WHERE id = ?";
     private static final String CONSULTAR_NOMBRE_SQL = "SELECT * FROM usuario WHERE nombre LIKE ?";
     private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM usuario";
+    private static final String CONSULTAR_USR_PASSW = "SELECT * FROM usuario WHERE usuario_loguin = ? AND contrasena = ?";
     
     private static final Conexion con = Conexion.obtener();
 
@@ -182,7 +183,35 @@ public class UsuarioDAO implements iUsuarioDAO{
         }
         return usuario;
     }
-    
+
+    @Override
+    public UsuarioDTO autenticacionUsuario(String usuario, String password) {
+        
+        PreparedStatement ps;
+        ResultSet rs;
+        UsuarioDTO usr = new UsuarioDTO();
+        
+        try {
+            ps = con.getConn().prepareStatement(CONSULTAR_USR_PASSW);
+            ps.setString(1, usuario);
+            ps.setString(2, password);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                usr = new UsuarioDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),
+                                           rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getInt(10),
+                                           new TipoDocumentoDTO(rs.getInt(11)), new TipoUsuarioDTO(rs.getInt(12)));
+            } 
+                                            
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            con.cerrar();
+        }
+        return usr;
+        }
+       
+     
     
     
 }

@@ -10,8 +10,11 @@
 <%@ include file="/masterpage.jsp" %>
 
 <%
+    if(request.getSession().getAttribute("usuario") == null){
+      response.sendRedirect("index.html");
+    }
     ArrayList<TipoDocumentoDTO> tipos = null;
-    tipos = (ArrayList<TipoDocumentoDTO>) request.getSession().getAttribute("Tipos");
+    tipos = (ArrayList<TipoDocumentoDTO>) request.getSession().getAttribute("Tipos");        
 %>
 
 <html>

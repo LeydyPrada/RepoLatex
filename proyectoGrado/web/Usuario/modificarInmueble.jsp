@@ -11,7 +11,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ include file="/masterpage.jsp" %>
 
-<%
+<%  if(request.getSession().getAttribute("usuario") == null){
+      response.sendRedirect("index.html");
+    }    
     InmuebleDTO inmueble = (InmuebleDTO) request.getSession().getAttribute("Inmueble");
     ArrayList<UsuarioDTO> usuarios = null;
     usuarios = (ArrayList<UsuarioDTO>) request.getSession().getAttribute("Usr");

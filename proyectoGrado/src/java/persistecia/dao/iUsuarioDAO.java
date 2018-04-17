@@ -20,5 +20,6 @@ public interface iUsuarioDAO {
 	public boolean actualizar(UsuarioDTO usuario);
 	public boolean borrar(String id);
         public List<UsuarioDTO> consultarUsuarioNombre(String nombre);
+        public UsuarioDTO autenticacionUsuario(String usuario, String password);
     
 }

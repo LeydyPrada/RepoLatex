@@ -13,7 +13,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import persistecia.dto.TipoDocumentoDTO;
+import persistecia.dto.UsuarioDTO;
 
 /**
  *
@@ -34,8 +36,11 @@ public class TipoDocumentoController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException {  
         
+        HttpSession misession= (HttpSession) request.getSession(); 
+        misession.getAttribute("usuario");
+               
         switch (request.getParameter("action")) {
             case "crear":
                 TipoDocumentoDTO tipoDoc = new TipoDocumentoDTO();
@@ -64,7 +69,7 @@ public class TipoDocumentoController extends HttpServlet {
             switch (request.getParameter("action")) {
                 case "consul":
                     List<TipoDocumentoDTO> tipos = tipoDocBusiness.listarTipoDeDocumentos();
-                    request.getSession().setAttribute("Tipos", tipos);
+                    request.getSession().setAttribute("Tipos", tipos);  
                     request.getRequestDispatcher("Configuracion/tipoDocumento.jsp").forward(request, response);
                     break;
                 case "up"://actualizar

@@ -9,7 +9,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ include file="/masterpage.jsp" %>
 
-<%
+<%  if(request.getSession().getAttribute("usuario") == null){
+      response.sendRedirect("index.html");
+    }
     TipoAsambleaDTO tipoAsam = (TipoAsambleaDTO) request.getSession().getAttribute("Doc");
 %>
 

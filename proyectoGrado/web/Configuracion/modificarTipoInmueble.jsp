@@ -10,6 +10,9 @@
 <%@ include file="/masterpage.jsp" %>
 
 <%
+    if(request.getSession().getAttribute("usuario") == null){
+      response.sendRedirect("index.html");
+    }
     TipoInmuebleDTO tipoInmueble = (TipoInmuebleDTO) request.getSession().getAttribute("TipoInm");
 %>
 
@@ -35,6 +38,7 @@
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <button type="submit" class="btn btn-default">Modificar</button>
+                            <a href="tipoInmueble.do?method=get&&action=consul" class="btn btn-default">Cancelar</a>
                         </div>
                     </div>
                 </form>

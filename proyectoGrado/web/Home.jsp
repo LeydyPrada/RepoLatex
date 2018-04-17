@@ -6,6 +6,12 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ include file="masterpage.jsp" %>
+
+<%
+     if(session.getAttribute("usuario") == null){
+      response.sendRedirect("index.html");
+  } 
+%>    
 <html>    
     <div class="col-md-12">
         <p><br><br></p>

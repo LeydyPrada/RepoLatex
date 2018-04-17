@@ -10,7 +10,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ include file="/masterpage.jsp" %>
 
-<%
+<%  if(request.getSession().getAttribute("usuario") == null){
+      response.sendRedirect("index.html");
+    }
     EncuestaDTO encuesta = (EncuestaDTO) request.getSession().getAttribute("Encuesta");
     ArrayList<TipoEncuestaDTO> tipos = (ArrayList<TipoEncuestaDTO>) request.getSession().getAttribute("TipoEncuestas");
 %>

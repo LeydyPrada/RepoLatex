@@ -11,6 +11,9 @@
 <%@ include file="/masterpage.jsp" %>
 
 <%
+    if(request.getSession().getAttribute("usuario") == null){
+      response.sendRedirect("index.html");
+    }
     ArrayList<TipoUsuarioDTO> tiposUsr = null;
     tiposUsr = (ArrayList<TipoUsuarioDTO>) request.getSession().getAttribute("TipoUsr");    
 

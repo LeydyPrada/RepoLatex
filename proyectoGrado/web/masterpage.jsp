@@ -29,6 +29,7 @@
                             <span class="icon-bar body"></span>
                         </button>
                         <a class="navbar-brand TextoMenu" href="#"><span>AR PERDOMO</span></a>
+                        <a href="..\..\proyectoGrado\cerrar.do">Cerrar Sesion</a>
                     </div>
                     <div class="collapse navbar-collapse TextoMenu" id="navbar-ex-collapse">
                         <ul class="nav navbar-nav navbar-right colorLink colorLista">

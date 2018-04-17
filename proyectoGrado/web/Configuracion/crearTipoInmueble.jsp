@@ -6,6 +6,11 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ include file="/masterpage.jsp" %>
+<%
+    if(request.getSession().getAttribute("usuario") == null){
+      response.sendRedirect("index.html");
+    }
+%>
 
 <html>
     <body>
@@ -28,6 +33,7 @@
                     <div class="form-group">
                         <div class="col-sm-offset-5 col-sm-7">
                             <button type="submit" class="btn btn-default">Crear</button>
+                            <a href="..\tipoInmueble.do?method=get&&action=consul" class="btn btn-default">Cancelar</a>
                         </div>
                     </div>
                 </form>

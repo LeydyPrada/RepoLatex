@@ -8,19 +8,36 @@
         <link href="..\..\proyectoGrado\Content\css\Style.css" rel="stylesheet" type="text/css">
         <link href="..\..\proyectoGrado\Content\css\General.css" rel="stylesheet" type="text/css">
     </head>
-    <body class="body">
-        <div class="cover general title">
-            <div class="cover-image"></div>
-            <div class="container">
-                <div class="row">
+   <body class="body">      
+     <div class="container">
+        <div class="row text-center login-page">
+	   <div class="col-md-12 login-form">
+	      <form role="form" method="post" action="\proyectoGrado\acceso.do">                  
+              <div class="row">
                     <div class="col-md-12 text-center">
                         <p class="title"><h1 class="title">ARPERDOMO</h1></p>
                         <p class="title">PROTOTIPO DE APLICACIÓN WEB PARA LA SISTEMATIZACIÓN DEL PROCESO DE ASAMBLEA GENERAL DE COPROPIETARIOS EN PROPIEDAD HORIZONTAL MEDIANTE SERVICIOS SOAP
-                        </p><br><br>
-                        <a href="Home.jsp" class="btn btn-lg btn-default">Ingresar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
+                        </p><br><br>                        
+                    </div>                    
+                </div>	         
+		<div class="row">
+		   <div class="col-md-12 login-from-row">
+		      <input name="usuario" type="text" placeholder="Usuario" required/>
+		   </div>
+		</div><br>
+		<div class="row">
+		   <div class="col-md-12 login-from-row">
+		      <input name="password" type="password" placeholder="Password" required/>
+		   </div>
+		</div><br><br>
+		<div class="row">
+		   <div class="col-md-12 login-from-row">
+		      <button class="btn btn-info">Ingresar</button>
+		   </div>
+		</div>
+	    </form>
+	</div>
+     </div>
+  </div>         
+</body>
 </html>

@@ -43,20 +43,8 @@
                                     <li>
                                         <a href="..\..\proyectoGrado\ordenDia.do?method=get&&action=consul">Orden del día</a>
                                     </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                   aria-expanded="false">Encuestas <i class="fa fa-caret-down"></i></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="..\..\proyectoGrado\encuesta.do?method=get&&action=consul">Encuestas</a>
-                                    </li>
                                     <li>
                                         <a href="..\..\proyectoGrado\pregunta.do?method=get&&action=consul">Preguntas</a>
-                                    </li>
-                                    <li>
-                                        <a href="..\..\proyectoGrado\respuesta.do?method=get&&action=consul">Respuestas</a>
                                     </li>
                                 </ul>
                             </li>
@@ -83,13 +71,10 @@
                                         <a href="..\..\proyectoGrado\tipoAsamblea.do?method=get&&action=consul">Tipo Asamblea</a>
                                     </li>
                                     <li>
-                                        <a href="..\..\proyectoGrado\estadoAsamblea.do?method=get&&action=consul">Estado Asamblea</a>
+                                        <a href="..\..\proyectoGrado\Configuracion\consultar.jsp">Estado Asamblea</a>
                                     </li>
                                     <li>
                                         <a href="..\..\proyectoGrado\tipoDocumento.do?method=get&&action=consul">Tipo documento</a>
-                                    </li>
-                                    <li>
-                                        <a href="..\..\proyectoGrado\tipoEncuesta.do?method=get&&action=consul">Tipo encuesta</a>
                                     </li>
                                     <li>
                                         <a href="..\..\proyectoGrado\tipoInmueble.do?method=get&&action=consul">Tipo inmueble</a>

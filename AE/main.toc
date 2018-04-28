@@ -74,9 +74,26 @@
 \contentsline {subsubsection}{Caso}{56}
 \contentsline {section}{\numberline {9.3}Patrones Estructurales}{57}
 \contentsline {section}{\numberline {9.4}Patrones de Comportamiento}{58}
-\contentsline {part}{III\hspace {1em}Reflexiones}{59}
-\contentsline {chapter}{\numberline {10}Conclusiones-Trabajos Futuros-Aportaciones-Contrastaci\IeC {\'o}n}{60}
-\contentsline {section}{\numberline {10.1}Conclusiones}{60}
-\contentsline {section}{\numberline {10.2}Trabajos Futuros}{61}
-\contentsline {section}{\numberline {10.3}Aportaciones}{62}
-\contentsline {section}{\numberline {10.4}Contrastaci\IeC {\'o}n}{63}
+\contentsline {part}{III\hspace {1em}Desarrollo de la Investigaci\IeC {\'o}n}{59}
+\contentsline {chapter}{\numberline {10}Recolecci\IeC {\'o}n y ordenamiento de informaci\IeC {\'o}n}{60}
+\contentsline {section}{\numberline {10.1}Informaci\IeC {\'o}n materia prima para la investigaci\IeC {\'o}n}{60}
+\contentsline {section}{\numberline {10.2}Tabulaci\IeC {\'o}n, ordenamiento y procesamiento de la informaci\IeC {\'o}n}{60}
+\contentsline {subsection}{\numberline {10.2.1}Ordenamiento}{60}
+\contentsline {subsection}{\numberline {10.2.2}Procesamiento}{62}
+\contentsline {section}{\numberline {10.3}Presentaci\IeC {\'o}n de resultados}{62}
+\contentsline {subsection}{\numberline {10.3.1}Tablas}{62}
+\contentsline {subsection}{\numberline {10.3.2}Histograma de distribuci\IeC {\'o}n de frecuencia}{62}
+\contentsline {subsection}{\numberline {10.3.3}Gr\IeC {\'a}ficos}{62}
+\contentsline {chapter}{\numberline {11}An\IeC {\'a}lisis de los resultados}{66}
+\contentsline {section}{\numberline {11.1}An\IeC {\'a}lisis de los resultados}{66}
+\contentsline {section}{\numberline {11.2}Verificaci\IeC {\'o}n de preguntas de investigaci\IeC {\'o}n}{66}
+\contentsline {section}{\numberline {11.3}Verificaci\IeC {\'o}n de objetivos}{66}
+\contentsline {section}{\numberline {11.4}Verificaci\IeC {\'o}n de hip\IeC {\'o}tesis}{66}
+\contentsline {chapter}{\numberline {12}Presentaci\IeC {\'o}n de resultados}{67}
+\contentsline {section}{\numberline {12.1}Informe de investigaci\IeC {\'o}n}{67}
+\contentsline {part}{IV\hspace {1em}Reflexiones}{68}
+\contentsline {chapter}{\numberline {13}Conclusiones-Trabajos Futuros-Aportaciones-Contrastaci\IeC {\'o}n}{69}
+\contentsline {section}{\numberline {13.1}Conclusiones}{69}
+\contentsline {section}{\numberline {13.2}Trabajos Futuros}{70}
+\contentsline {section}{\numberline {13.3}Aportaciones}{71}
+\contentsline {section}{\numberline {13.4}Contrastaci\IeC {\'o}n}{72}

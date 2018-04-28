@@ -9,6 +9,7 @@ import business.AsambleaBusiness;
 import business.PreguntasBusiness;
 import java.io.IOException;
 import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,6 +43,12 @@ public class PreguntasController extends HttpServlet {
         
         HttpSession misession= (HttpSession) request.getSession(); 
         misession.getAttribute("usuario");
+        
+         if(request.getSession().getAttribute("m_preguntas").equals("display: none")){
+                RequestDispatcher rd = request.getRequestDispatcher("/index.html");
+                rd.forward(request, response);
+           }
+        else{
 
         switch (request.getParameter("action")) {
             case "crear":
@@ -95,6 +102,7 @@ public class PreguntasController extends HttpServlet {
                     break;
             }
         }
+         }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

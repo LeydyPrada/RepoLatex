@@ -7,6 +7,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -35,6 +36,12 @@ public class AsambleaController extends HttpServlet {
         HttpSession misession= (HttpSession) request.getSession(); 
         misession.getAttribute("usuario");
         
+        if(request.getSession().getAttribute("m_asamblea").equals("display: none")){
+                RequestDispatcher rd = request.getRequestDispatcher("/index.html");
+                rd.forward(request, response);
+           }
+        else{
+        
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
@@ -47,6 +54,7 @@ public class AsambleaController extends HttpServlet {
             out.println("</body>");
             out.println("</html>");
         }
+    }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

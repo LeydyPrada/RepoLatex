@@ -10,6 +10,7 @@ import business.TipoInmuebleBusiness;
 import business.UsuarioBusiness;
 import java.io.IOException;
 import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -46,6 +47,12 @@ public class InmuebleController extends HttpServlet {
         
         HttpSession misession= (HttpSession) request.getSession(); 
         misession.getAttribute("usuario");
+        
+        if(request.getSession().getAttribute("m_inmueble").equals("display: none")){
+                RequestDispatcher rd = request.getRequestDispatcher("/index.html");
+                rd.forward(request, response);
+           }
+        else{
         
         switch (request.getParameter("action")) {
             case "crear":
@@ -114,6 +121,7 @@ public class InmuebleController extends HttpServlet {
                     request.getRequestDispatcher("inmueble.do?method=get&&action=consul").forward(request, response);
                     break;
             }
+        }
         }
     }
 

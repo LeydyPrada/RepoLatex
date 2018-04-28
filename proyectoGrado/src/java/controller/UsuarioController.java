@@ -10,6 +10,7 @@ import business.TipoUsuarioBusiness;
 import business.UsuarioBusiness;
 import java.io.IOException;
 import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -44,7 +45,13 @@ public class UsuarioController extends HttpServlet {
             throws ServletException, IOException {
         
         HttpSession misession= (HttpSession) request.getSession(); 
-        misession.getAttribute("usuario");
+        misession.getAttribute("usuario");        
+                     
+        if(request.getSession().getAttribute("m_usuario").equals("display: none")){
+                RequestDispatcher rd = request.getRequestDispatcher("/index.html");
+                rd.forward(request, response);        
+        }
+        else{
                
         
         switch (request.getParameter("action")) {
@@ -121,6 +128,7 @@ public class UsuarioController extends HttpServlet {
                     request.getRequestDispatcher("usuario.do?method=get&&action=consul").forward(request, response);
                     break;
             }
+        }
         }
     }
 

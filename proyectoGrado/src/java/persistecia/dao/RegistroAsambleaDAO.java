@@ -26,6 +26,7 @@ public class RegistroAsambleaDAO implements iRegistroAsambleaDAO{
     private static final String BORRAR_SQL = "DELETE FROM registro_asamblea WHERE id = ?";
     private static final String CONSULTAR_SQL = "SELECT * FROM registro_asamblea WHERE id = ?";
     private static final String CONSULTAR_INMUEBLE_SQL = "SELECT * FROM registro_asamblea WHERE inmueble LIKE ?";
+    private static final String CONSUL_INMUEBLE_CODIGO = "SELECT * FROM registro_asamblea WHERE inmueble = ? AND codigo = ?";
     private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM registro_asamblea";
     
     private static final Conexion con = Conexion.obtener();
@@ -154,6 +155,31 @@ public class RegistroAsambleaDAO implements iRegistroAsambleaDAO{
         }
         return registroAsamblea;
     }
+
+    @Override
+    public RegistroAsambleaDTO consultarPorInmuebleCodigo(int codigo, String inmueble) {
+        PreparedStatement ps;
+        ResultSet rs;
+        RegistroAsambleaDTO registroAsamblea = new RegistroAsambleaDTO();
+        
+        try {           
+            ps = con.getConn().prepareStatement(CONSUL_INMUEBLE_CODIGO);            
+            ps.setString(1, inmueble);
+            ps.setInt(2, codigo);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                registroAsamblea = new RegistroAsambleaDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4));
+            }  
+         } catch (SQLException ex) {
+            Logger.getLogger(RegistroAsambleaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            con.cerrar();
+        }
+        return registroAsamblea;
+    }
+
+    
 
       
     

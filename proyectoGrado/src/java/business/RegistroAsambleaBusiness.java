@@ -55,5 +55,23 @@ public class RegistroAsambleaBusiness {
             Logger.getLogger(RegistroAsambleaBusiness.class.getName()).log(Level.SEVERE, null, ex);
         }
      }
+     
+     public RegistroAsambleaDTO validarRegistroAsamblea(String idUsuario, int codigo){
+        List<InmuebleDTO> inmuebles;
+        RegistroAsambleaDTO registro = new RegistroAsambleaDTO();
+        
+        try{
+            inmuebles = inmuebleDAO.consultarPorUsuario(idUsuario);
+            
+            if(inmuebles != null){
+                for(InmuebleDTO inmueble: inmuebles ){                
+                registro=registroAsambleaDAO.consultarPorInmuebleCodigo(codigo, inmueble.getInmueble());                
+                }          
+            }           
+        }catch(Exception ex){
+            Logger.getLogger(RegistroAsambleaBusiness.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return registro;       
+     }
     
 }

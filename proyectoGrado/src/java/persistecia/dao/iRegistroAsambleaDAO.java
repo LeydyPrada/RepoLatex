@@ -20,5 +20,6 @@ public interface iRegistroAsambleaDAO {
 	public boolean actualizar(RegistroAsambleaDTO registroAsamblea);
 	public boolean borrar(Integer id);
         public List<RegistroAsambleaDTO> consultarPorInmueble(String inmueble);
+        public RegistroAsambleaDTO consultarPorInmuebleCodigo(int codigo, String inmueble);
     
 }

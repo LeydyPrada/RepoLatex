@@ -28,6 +28,7 @@ public class InmuebleDAO implements iInmuebleDAO{
     private static final String BORRAR_SQL = "DELETE FROM inmueble WHERE id = ?";
     private static final String CONSULTAR_SQL = "SELECT * FROM inmueble WHERE id = ?";
     private static final String CONSULTAR_INMUEBLE_SQL = "SELECT * FROM inmueble WHERE inmueble lIKE ?";
+    private static final String CONSULTAR_POR_USR_SQL = "SELECT * FROM inmueble WHERE id_usuario = ?";
     private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM inmueble";
     
     private static final Conexion con = Conexion.obtener();
@@ -165,6 +166,28 @@ public class InmuebleDAO implements iInmuebleDAO{
             con.cerrar();
         }
         return inmuebles;
+    }
+
+    @Override
+    public List<InmuebleDTO> consultarPorUsuario(String idUsuario) {
+       PreparedStatement ps;
+        ResultSet rs;
+        ArrayList<InmuebleDTO> inmuebles = new ArrayList<>();
+        
+        try {           
+            ps = con.getConn().prepareStatement(CONSULTAR_POR_USR_SQL);
+            ps.setString(1, idUsuario); 
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+               inmuebles.add(new InmuebleDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getInt(5), rs.getInt(6), new TipoInmuebleDTO(rs.getInt(7)), new UsuarioDTO(rs.getString(8)), rs.getInt(9)));
+            }            
+        } catch (SQLException ex) {
+            Logger.getLogger(InmuebleDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            con.cerrar();
+        }
+        return inmuebles;        
     }
     
     

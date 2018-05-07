@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.3.13)  24 APR 2018 16:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.3.13)  7 MAY 2018 01:56
 entering extended mode
 **./main.tex
 (main.tex
@@ -6,8 +6,8 @@ LaTeX2e <2017-04-15>
 Babel <3.17> and hyphenation patterns for 75 language(s) loaded.
 ("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\book.cls"
 Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
-("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\bk12.clo"
-File: bk12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\bk11.clo"
+File: bk11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@chapter=\count80
@@ -511,9 +511,6 @@ LaTeX Warning: Label `my-label' multiply defined.
 
 LaTeX Warning: Label `my-label' multiply defined.
 
-
-LaTeX Warning: Label `my-label' multiply defined.
-
 ) (arquitectura/negocio/negocio.aux) (arquitectura/aplicacion/aplicacion.aux)
 (arquitectura/tecnologia/tecnologia.aux)
 (arquitectura/motivavion/motivacion.aux) (arquitectura/migracion/migracion.aux)
@@ -522,20 +519,20 @@ LaTeX Warning: Label `my-label' multiply defined.
 (reflexiones/conclusiones.aux) (reflexiones/anexos.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Info: Redefining \. on input line 14.
-LaTeX Info: Redefining \% on input line 14.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Info: Redefining \. on input line 26.
+LaTeX Info: Redefining \% on input line 26.
 
 ("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.
 mkii"
@@ -621,26 +618,28 @@ G,.JBIG2,.JB2,.eps]
 
 {C:/Users/USUARIO/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2
 
+] [1] [2
+
 ] (main.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 2.
+(Font)              <10.95> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 2.
+(Font)              <8> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 2.
+(Font)              <6> on input line 4.
  [1
 
 ]
-LaTeX Info: Redefining \. on input line 70.
-LaTeX Info: Redefining \% on input line 70.
+LaTeX Info: Redefining \. on input line 87.
+LaTeX Info: Redefining \% on input line 87.
  [2])
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
-LaTeX Info: Redefining \. on input line 38.
-LaTeX Info: Redefining \% on input line 38.
+LaTeX Info: Redefining \. on input line 70.
+LaTeX Info: Redefining \% on input line 70.
  [3] (main.lot
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
@@ -660,20 +659,20 @@ LaTeX Info: Redefining \% on input line 1.
  [5
 
 ]
-LaTeX Info: Redefining \. on input line 42.
-LaTeX Info: Redefining \% on input line 42.
+LaTeX Info: Redefining \. on input line 74.
+LaTeX Info: Redefining \% on input line 74.
  [6
+
+] [1
 
 ]
 \openout2 = `contexto/proyecto/introduccion.aux'.
 
 
-(contexto/proyecto/introduccion.tex
-LaTeX Info: Redefining \. on input line 15.
-LaTeX Info: Redefining \% on input line 15.
- [1
+(contexto/proyecto/introduccion.tex [2
 
-]) [2
+
+]) [3
 
 
 ]
@@ -681,147 +680,145 @@ LaTeX Info: Redefining \% on input line 15.
 
  (contexto/proyecto/proyecto.tex
 Cap\'{\i }tulo 1.
-[3
+[4
 
 
 ]
-LaTeX Info: Redefining \. on input line 29.
-LaTeX Info: Redefining \% on input line 29.
- [4]
-LaTeX Info: Redefining \. on input line 50.
-LaTeX Info: Redefining \% on input line 50.
+LaTeX Info: Redefining \. on input line 47.
+LaTeX Info: Redefining \% on input line 47.
  [5]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 65.
-LaTeX Info: Redefining \% on input line 65.
- [6]
 LaTeX Info: Redefining \. on input line 66.
 LaTeX Info: Redefining \% on input line 66.
-
-[7]
-LaTeX Info: Redefining \. on input line 91.
-LaTeX Info: Redefining \% on input line 91.
- [8]
+ [6]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 91.
 
 ("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 91.
-LaTeX Info: Redefining \. on input line 103.
-LaTeX Info: Redefining \% on input line 103.
-[9]
-LaTeX Info: Redefining \. on input line 118.
-LaTeX Info: Redefining \% on input line 118.
+LaTeX Info: Redefining \. on input line 97.
+LaTeX Info: Redefining \% on input line 97.
+[7]
+LaTeX Info: Redefining \. on input line 119.
+LaTeX Info: Redefining \% on input line 119.
+ [8]
+LaTeX Info: Redefining \. on input line 141.
+LaTeX Info: Redefining \% on input line 141.
+ [9]
+LaTeX Info: Redefining \. on input line 169.
+LaTeX Info: Redefining \% on input line 169.
  [10]
-LaTeX Info: Redefining \. on input line 136.
-LaTeX Info: Redefining \% on input line 136.
- [11]
-LaTeX Info: Redefining \. on input line 145.
-LaTeX Info: Redefining \% on input line 145.
- [12]
-LaTeX Info: Redefining \. on input line 160.
-LaTeX Info: Redefining \% on input line 160.
- [13]
-LaTeX Info: Redefining \. on input line 186.
-LaTeX Info: Redefining \% on input line 186.
- [14]
 LaTeX Info: Redefining \. on input line 195.
 LaTeX Info: Redefining \% on input line 195.
- [15]
-LaTeX Info: Redefining \. on input line 215.
-LaTeX Info: Redefining \% on input line 215.
- [16]
-LaTeX Info: Redefining \. on input line 233.
-LaTeX Info: Redefining \% on input line 233.
- [17]
-LaTeX Info: Redefining \. on input line 247.
-LaTeX Info: Redefining \% on input line 247.
- [18]
-Underfull \vbox (badness 1924) has occurred while \output is active []
+ [11]
+LaTeX Info: Redefining \. on input line 228.
+LaTeX Info: Redefining \% on input line 228.
+ [12]
+LaTeX Info: Redefining \. on input line 250.
+LaTeX Info: Redefining \% on input line 250.
+ [13]
+<contexto/proyecto/imgs/Cronograma_parte1.jpg, id=82, 1135.24126pt x 438.63875p
+t>
+File: contexto/proyecto/imgs/Cronograma_parte1.jpg Graphic file (type jpg)
+<use contexto/proyecto/imgs/Cronograma_parte1.jpg>
+Package pdftex.def Info: contexto/proyecto/imgs/Cronograma_parte1.jpg  used on 
+input line 285.
+(pdftex.def)             Requested size: 455.24905pt x 227.62494pt.
+<contexto/proyecto/imgs/Cronograma_parte2.jpg, id=83, 986.68625pt x 254.9525pt>
 
-LaTeX Info: Redefining \. on input line 268.
-LaTeX Info: Redefining \% on input line 268.
- [19]
-LaTeX Info: Redefining \. on input line 279.
-LaTeX Info: Redefining \% on input line 279.
+File: contexto/proyecto/imgs/Cronograma_parte2.jpg Graphic file (type jpg)
+<use contexto/proyecto/imgs/Cronograma_parte2.jpg>
+Package pdftex.def Info: contexto/proyecto/imgs/Cronograma_parte2.jpg  used on 
+input line 291.
+(pdftex.def)             Requested size: 369.88599pt x 113.81334pt.
+LaTeX Info: Redefining \. on input line 298.
+LaTeX Info: Redefining \% on input line 298.
+ [14]
+<contexto/proyecto/imgs/puerta_enlace.jpg, id=87, 1060.96375pt x 496.85625pt>
+File: contexto/proyecto/imgs/puerta_enlace.jpg Graphic file (type jpg)
+<use contexto/proyecto/imgs/puerta_enlace.jpg>
+Package pdftex.def Info: contexto/proyecto/imgs/puerta_enlace.jpg  used on inpu
+t line 305.
+(pdftex.def)             Requested size: 256.07732pt x 142.26508pt.
 
-[20]) [21
+Underfull \vbox (badness 1509) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 307.
+LaTeX Info: Redefining \% on input line 307.
+ [15 <./contexto/proyecto/imgs/Cronograma_parte1.jpg> <./contexto/proyecto/imgs
+/Cronograma_parte2.jpg>]
+LaTeX Info: Redefining \. on input line 309.
+LaTeX Info: Redefining \% on input line 309.
+ [16 <./contexto/proyecto/imgs/puerta_enlace.jpg>]) [17
 
 
 ]
 \openout2 = `arquitectura/organizacion/organizacion.aux'.
 
- (arquitectura/organizacion/organizacion.tex
+
+(arquitectura/organizacion/organizacion.tex
 Cap\'{\i }tulo 2.
-[22
+[18
 
 
 ]
-<arquitectura/organizacion/imgs/organigrama.jpg, id=103, 340.27126pt x 254.4506
-2pt>
+<arquitectura/organizacion/imgs/organigrama.jpg, id=102, 445.665pt x 330.23375p
+t>
 File: arquitectura/organizacion/imgs/organigrama.jpg Graphic file (type jpg)
 <use arquitectura/organizacion/imgs/organigrama.jpg>
 Package pdftex.def Info: arquitectura/organizacion/imgs/organigrama.jpg  used o
-n input line 20.
-(pdftex.def)             Requested size: 272.99881pt x 204.1548pt.
-LaTeX Info: Redefining \. on input line 33.
-LaTeX Info: Redefining \% on input line 33.
- [23 <./arquitectura/organizacion/imgs/organigrama.jpg>]
-LaTeX Info: Redefining \. on input line 53.
-LaTeX Info: Redefining \% on input line 53.
- [24]
-LaTeX Info: Redefining \. on input line 69.
-LaTeX Info: Redefining \% on input line 69.
- [25]
-<arquitectura/organizacion/imgs/procesos_org1.jpg, id=114, 642.90187pt x 427.59
+n input line 24.
+(pdftex.def)             Requested size: 332.61119pt x 246.46533pt.
+LaTeX Info: Redefining \. on input line 40.
+LaTeX Info: Redefining \% on input line 40.
+ [19 <./arquitectura/organizacion/imgs/organigrama.jpg>]
+LaTeX Info: Redefining \. on input line 71.
+LaTeX Info: Redefining \% on input line 71.
+ [20]
+<arquitectura/organizacion/imgs/procesos_org1.jpg, id=109, 642.90187pt x 427.59
 75pt>
 File: arquitectura/organizacion/imgs/procesos_org1.jpg Graphic file (type jpg)
 <use arquitectura/organizacion/imgs/procesos_org1.jpg>
 Package pdftex.def Info: arquitectura/organizacion/imgs/procesos_org1.jpg  used
- on input line 80.
-(pdftex.def)             Requested size: 272.99881pt x 181.57973pt.
-LaTeX Info: Redefining \. on input line 84.
-LaTeX Info: Redefining \% on input line 84.
- [26 <./arquitectura/organizacion/imgs/procesos_org1.jpg>]
-<arquitectura/organizacion/imgs/procesos_org2.jpg, id=118, 641.39626pt x 344.78
+ on input line 84.
+(pdftex.def)             Requested size: 332.61119pt x 221.22974pt.
+<arquitectura/organizacion/imgs/procesos_org2.jpg, id=110, 641.39626pt x 344.78
 813pt>
 File: arquitectura/organizacion/imgs/procesos_org2.jpg Graphic file (type jpg)
 <use arquitectura/organizacion/imgs/procesos_org2.jpg>
 Package pdftex.def Info: arquitectura/organizacion/imgs/procesos_org2.jpg  used
- on input line 91.
-(pdftex.def)             Requested size: 272.99881pt x 146.7566pt.
-LaTeX Info: Redefining \. on input line 110.
-LaTeX Info: Redefining \% on input line 110.
- [27 <./arquitectura/organizacion/imgs/procesos_org2.jpg>])
-LaTeX Info: Redefining \. on input line 47.
-LaTeX Info: Redefining \% on input line 47.
- [28]
+ on input line 94.
+(pdftex.def)             Requested size: 455.2575pt x 284.52736pt.
+LaTeX Info: Redefining \. on input line 96.
+LaTeX Info: Redefining \% on input line 96.
+ [21 <./arquitectura/organizacion/imgs/procesos_org1.jpg>]
+LaTeX Info: Redefining \. on input line 112.
+LaTeX Info: Redefining \% on input line 112.
+ [22 <./arquitectura/organizacion/imgs/procesos_org2.jpg>])
+LaTeX Info: Redefining \. on input line 80.
+LaTeX Info: Redefining \% on input line 80.
+ [23]
 \openout2 = `arquitectura/adm_lenguaje/adm_lenguaje.aux'.
 
  (arquitectura/adm_lenguaje/adm_lenguaje.tex
-Cap\'{\i }tulo 3.
-[29
+LaTeX Info: Redefining \. on input line 3.
+LaTeX Info: Redefining \% on input line 3.
 
+[24
 
 
 ]
-<arquitectura/adm_lenguaje/imgs/adm.png, id=129, 472.76625pt x 305.64188pt>
+<arquitectura/adm_lenguaje/imgs/adm.png, id=124, 472.76625pt x 305.64188pt>
 File: arquitectura/adm_lenguaje/imgs/adm.png Graphic file (type png)
 <use arquitectura/adm_lenguaje/imgs/adm.png>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/adm.png  used on input 
 line 9.
-(pdftex.def)             Requested size: 272.99881pt x 176.49821pt.
+(pdftex.def)             Requested size: 332.61119pt x 215.03448pt.
 LaTeX Info: Redefining \. on input line 14.
 LaTeX Info: Redefining \% on input line 14.
- [30 <./arquitectura/adm_lenguaje/imgs/adm.png>]
-Overfull \hbox (21.88582pt too wide) in alignment at lines 18--23
- [] [] [] 
- []
-
-<arquitectura/adm_lenguaje/imgs/business/BusinessActor.jpg, id=133, 407.5225pt 
+ [25 <./arquitectura/adm_lenguaje/imgs/adm.png>]
+<arquitectura/adm_lenguaje/imgs/business/BusinessActor.jpg, id=128, 407.5225pt 
 x 133.49875pt>
 File: arquitectura/adm_lenguaje/imgs/business/BusinessActor.jpg Graphic file (t
 ype jpg)
@@ -829,7 +826,7 @@ ype jpg)
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/business/BusinessActor.
 jpg  used on input line 25.
 (pdftex.def)             Requested size: 99.58464pt x 32.62292pt.
-<arquitectura/adm_lenguaje/imgs/business/BusinessRole.jpg, id=134, 460.72125pt 
+<arquitectura/adm_lenguaje/imgs/business/BusinessRole.jpg, id=129, 460.72125pt 
 x 132.495pt>
 File: arquitectura/adm_lenguaje/imgs/business/BusinessRole.jpg Graphic file (ty
 pe jpg)
@@ -839,10 +836,10 @@ pg  used on input line 26.
 (pdftex.def)             Requested size: 99.58464pt x 28.63748pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 27--27
-[]|\OT1/cmr/m/n/12 Colaboracion
+[]|\OT1/cmr/m/n/10.95 Colaboracion
  []
 
-<arquitectura/adm_lenguaje/imgs/business/BusinessCollaboration.jpg, id=135, 419
+<arquitectura/adm_lenguaje/imgs/business/BusinessCollaboration.jpg, id=130, 419
 .5675pt x 128.48pt>
 File: arquitectura/adm_lenguaje/imgs/business/BusinessCollaboration.jpg Graphic
  file (type jpg)
@@ -850,12 +847,7 @@ File: arquitectura/adm_lenguaje/imgs/business/BusinessCollaboration.jpg Graphic
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/business/BusinessCollab
 oration.jpg  used on input line 27.
 (pdftex.def)             Requested size: 99.58464pt x 30.4947pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
-[]|\OT1/cmr/m/n/12 Interfaz de
- []
-
-<arquitectura/adm_lenguaje/imgs/business/BusinessInterface.jpg, id=136, 415.552
+<arquitectura/adm_lenguaje/imgs/business/BusinessInterface.jpg, id=131, 415.552
 5pt x 127.47626pt>
 File: arquitectura/adm_lenguaje/imgs/business/BusinessInterface.jpg Graphic fil
 e (type jpg)
@@ -863,7 +855,7 @@ e (type jpg)
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/business/BusinessInterf
 ace.jpg  used on input line 28.
 (pdftex.def)             Requested size: 99.58464pt x 30.54823pt.
-<arquitectura/adm_lenguaje/imgs/business/Location.jpg, id=137, 421.575pt x 123.
+<arquitectura/adm_lenguaje/imgs/business/Location.jpg, id=132, 421.575pt x 123.
 46124pt>
 File: arquitectura/adm_lenguaje/imgs/business/Location.jpg Graphic file (type j
 pg)
@@ -871,7 +863,7 @@ pg)
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/business/Location.jpg  
 used on input line 29.
 (pdftex.def)             Requested size: 99.58464pt x 29.1641pt.
-<arquitectura/adm_lenguaje/imgs/business/BusinessObject.jpg, id=138, 414.54875p
+<arquitectura/adm_lenguaje/imgs/business/BusinessObject.jpg, id=133, 414.54875p
 t x 131.49126pt>
 File: arquitectura/adm_lenguaje/imgs/business/BusinessObject.jpg Graphic file (
 type jpg)
@@ -880,11 +872,11 @@ Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/business/BusinessObject
 .jpg  used on input line 30.
 (pdftex.def)             Requested size: 99.58464pt x 31.58662pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 31--31
-[]|\OT1/cmr/m/n/12 Proceso de
+Underfull \hbox (badness 2894) in paragraph at lines 31--31
+[]|\OT1/cmr/m/n/10.95 Un ele-men-to de com-por-ta-mien-to que
  []
 
-<arquitectura/adm_lenguaje/imgs/business/BusinessProcess.jpg, id=139, 449.68pt 
+<arquitectura/adm_lenguaje/imgs/business/BusinessProcess.jpg, id=134, 449.68pt 
 x 129.48375pt>
 File: arquitectura/adm_lenguaje/imgs/business/BusinessProcess.jpg Graphic file 
 (type jpg)
@@ -893,11 +885,11 @@ Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/business/BusinessProces
 s.jpg  used on input line 31.
 (pdftex.def)             Requested size: 99.58464pt x 28.6742pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--32
-[]|\OT1/cmr/m/n/12 Funcion de
+Underfull \hbox (badness 2894) in paragraph at lines 32--32
+[]|\OT1/cmr/m/n/10.95 Un ele-men-to de com-por-ta-mien-to que
  []
 
-<arquitectura/adm_lenguaje/imgs/business/BusinessFunction.jpg, id=140, 423.5825
+<arquitectura/adm_lenguaje/imgs/business/BusinessFunction.jpg, id=135, 423.5825
 pt x 131.49126pt>
 File: arquitectura/adm_lenguaje/imgs/business/BusinessFunction.jpg Graphic file
  (type jpg)
@@ -905,12 +897,7 @@ File: arquitectura/adm_lenguaje/imgs/business/BusinessFunction.jpg Graphic file
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/business/BusinessFuncti
 on.jpg  used on input line 32.
 (pdftex.def)             Requested size: 99.58464pt x 30.91248pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 33--33
-[]|\OT1/cmr/m/n/12 Interaccion
- []
-
-<arquitectura/adm_lenguaje/imgs/business/BusinessInteraction.jpg, id=141, 433.6
+<arquitectura/adm_lenguaje/imgs/business/BusinessInteraction.jpg, id=136, 433.6
 2pt x 127.47626pt>
 File: arquitectura/adm_lenguaje/imgs/business/BusinessInteraction.jpg Graphic f
 ile (type jpg)
@@ -918,7 +905,7 @@ ile (type jpg)
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/business/BusinessIntera
 ction.jpg  used on input line 33.
 (pdftex.def)             Requested size: 99.58464pt x 29.27612pt.
-<arquitectura/adm_lenguaje/imgs/business/BusinessEvent.jpg, id=142, 433.62pt x 
+<arquitectura/adm_lenguaje/imgs/business/BusinessEvent.jpg, id=137, 433.62pt x 
 124.465pt>
 File: arquitectura/adm_lenguaje/imgs/business/BusinessEvent.jpg Graphic file (t
 ype jpg)
@@ -926,12 +913,7 @@ ype jpg)
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/business/BusinessEvent.
 jpg  used on input line 34.
 (pdftex.def)             Requested size: 99.58464pt x 28.58456pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 35--35
-[]|\OT1/cmr/m/n/12 Servicio de
- []
-
-<arquitectura/adm_lenguaje/imgs/business/BusinessService.jpg, id=143, 456.70625
+<arquitectura/adm_lenguaje/imgs/business/BusinessService.jpg, id=138, 456.70625
 pt x 127.47626pt>
 File: arquitectura/adm_lenguaje/imgs/business/BusinessService.jpg Graphic file 
 (type jpg)
@@ -940,11 +922,11 @@ Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/business/BusinessServic
 e.jpg  used on input line 35.
 (pdftex.def)             Requested size: 99.58464pt x 27.79588pt.
 
-Overfull \hbox (6.44788pt too wide) in paragraph at lines 36--36
-[]|\OT1/cmr/m/n/12 Representacion| 
+Overfull \hbox (1.19902pt too wide) in paragraph at lines 36--36
+[]|\OT1/cmr/m/n/10.95 Representacion| 
  []
 
-<arquitectura/adm_lenguaje/imgs/business/Representation.jpg, id=144, 423.5825pt
+<arquitectura/adm_lenguaje/imgs/business/Representation.jpg, id=139, 423.5825pt
  x 127.47626pt>
 File: arquitectura/adm_lenguaje/imgs/business/Representation.jpg Graphic file (
 type jpg)
@@ -952,7 +934,7 @@ type jpg)
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/business/Representation
 .jpg  used on input line 36.
 (pdftex.def)             Requested size: 99.58464pt x 29.96858pt.
-<arquitectura/adm_lenguaje/imgs/business/Meaning.jpg, id=145, 418.56375pt x 127
+<arquitectura/adm_lenguaje/imgs/business/Meaning.jpg, id=140, 418.56375pt x 127
 .47626pt>
 File: arquitectura/adm_lenguaje/imgs/business/Meaning.jpg Graphic file (type jp
 g)
@@ -960,7 +942,7 @@ g)
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/business/Meaning.jpg  u
 sed on input line 37.
 (pdftex.def)             Requested size: 99.58464pt x 30.32843pt.
-<arquitectura/adm_lenguaje/imgs/business/Value.jpg, id=146, 401.5pt x 103.38625
+<arquitectura/adm_lenguaje/imgs/business/Value.jpg, id=141, 401.5pt x 103.38625
 pt>
 File: arquitectura/adm_lenguaje/imgs/business/Value.jpg Graphic file (type jpg)
 
@@ -968,7 +950,12 @@ File: arquitectura/adm_lenguaje/imgs/business/Value.jpg Graphic file (type jpg)
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/business/Value.jpg  use
 d on input line 38.
 (pdftex.def)             Requested size: 99.58464pt x 25.64299pt.
-<arquitectura/adm_lenguaje/imgs/business/Product.jpg, id=147, 427.5975pt x 133.
+
+Underfull \hbox (badness 3068) in paragraph at lines 39--39
+[]|\OT1/cmr/m/n/10.95 Una co-lec-cion cohe-ren-te de ser-vi-cios,
+ []
+
+<arquitectura/adm_lenguaje/imgs/business/Product.jpg, id=142, 427.5975pt x 133.
 49875pt>
 File: arquitectura/adm_lenguaje/imgs/business/Product.jpg Graphic file (type jp
 g)
@@ -976,7 +963,7 @@ g)
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/business/Product.jpg  u
 sed on input line 39.
 (pdftex.def)             Requested size: 99.58464pt x 31.0911pt.
-<arquitectura/adm_lenguaje/imgs/business/Contract.jpg, id=148, 432.61626pt x 12
+<arquitectura/adm_lenguaje/imgs/business/Contract.jpg, id=143, 432.61626pt x 12
 9.48375pt>
 File: arquitectura/adm_lenguaje/imgs/business/Contract.jpg Graphic file (type j
 pg)
@@ -984,399 +971,334 @@ pg)
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/business/Contract.jpg  
 used on input line 40.
 (pdftex.def)             Requested size: 99.58464pt x 29.8063pt.
-
-Overfull \hbox (21.88582pt too wide) in alignment at lines 23--41
- [] [] [] 
- []
-
 LaTeX Info: Redefining \. on input line 41.
 LaTeX Info: Redefining \% on input line 41.
-[31 <./arquitectura/adm_lenguaje/imgs/business/BusinessActor.jpg> <./arquitectu
+[26 <./arquitectura/adm_lenguaje/imgs/business/BusinessActor.jpg> <./arquitectu
 ra/adm_lenguaje/imgs/business/BusinessRole.jpg> <./arquitectura/adm_lenguaje/im
 gs/business/BusinessCollaboration.jpg> <./arquitectura/adm_lenguaje/imgs/busine
 ss/BusinessInterface.jpg> <./arquitectura/adm_lenguaje/imgs/business/Location.j
 pg> <./arquitectura/adm_lenguaje/imgs/business/BusinessObject.jpg> <./arquitect
 ura/adm_lenguaje/imgs/business/BusinessProcess.jpg> <./arquitectura/adm_lenguaj
-e/imgs/business/BusinessFunction.jpg>]
-LaTeX Info: Redefining \. on input line 44.
-LaTeX Info: Redefining \% on input line 44.
- [32 <./arquitectura/adm_lenguaje/imgs/business/BusinessInteraction.jpg> <./arq
-uitectura/adm_lenguaje/imgs/business/BusinessEvent.jpg> <./arquitectura/adm_len
-guaje/imgs/business/BusinessService.jpg> <./arquitectura/adm_lenguaje/imgs/busi
-ness/Representation.jpg> <./arquitectura/adm_lenguaje/imgs/business/Meaning.jpg
-> <./arquitectura/adm_lenguaje/imgs/business/Value.jpg> <./arquitectura/adm_len
-guaje/imgs/business/Product.jpg> <./arquitectura/adm_lenguaje/imgs/business/Con
-tract.jpg>]
-Overfull \hbox (21.88582pt too wide) in alignment at lines 48--53
- [] [] [] 
+e/imgs/business/BusinessFunction.jpg> <./arquitectura/adm_lenguaje/imgs/busines
+s/BusinessInteraction.jpg> <./arquitectura/adm_lenguaje/imgs/business/BusinessE
+vent.jpg>]
+LaTeX Info: Redefining \. on input line 43.
+LaTeX Info: Redefining \% on input line 43.
+ [27 <./arquitectura/adm_lenguaje/imgs/business/BusinessService.jpg> <./arquite
+ctura/adm_lenguaje/imgs/business/Representation.jpg> <./arquitectura/adm_lengua
+je/imgs/business/Meaning.jpg> <./arquitectura/adm_lenguaje/imgs/business/Value.
+jpg> <./arquitectura/adm_lenguaje/imgs/business/Product.jpg> <./arquitectura/ad
+m_lenguaje/imgs/business/Contract.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 54--54
+[]|\OT1/cmr/m/n/10.95 Componente
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--55
-[]|\OT1/cmr/m/n/12 Componente
- []
-
-<arquitectura/adm_lenguaje/imgs/application/ApplicationComponent.jpg, id=155, 4
+<arquitectura/adm_lenguaje/imgs/application/ApplicationComponent.jpg, id=151, 4
 72.76625pt x 134.5025pt>
 File: arquitectura/adm_lenguaje/imgs/application/ApplicationComponent.jpg Graph
 ic file (type jpg)
 <use arquitectura/adm_lenguaje/imgs/application/ApplicationComponent.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/application/Application
-Component.jpg  used on input line 55.
+Component.jpg  used on input line 54.
 (pdftex.def)             Requested size: 99.58464pt x 28.33049pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 56--56
-[]|\OT1/cmr/m/n/12 Colaboracion
+Underfull \hbox (badness 10000) in paragraph at lines 55--55
+[]|\OT1/cmr/m/n/10.95 Colaboracion
  []
 
 
-Underfull \hbox (badness 1005) in paragraph at lines 56--56
-\OT1/cmr/m/n/12 de Apli-ca-cio-
+Underfull \hbox (badness 10000) in paragraph at lines 55--55
+\OT1/cmr/m/n/10.95 de Apli-ca-cio-
  []
 
 <arquitectura/adm_lenguaje/imgs/application/ApplicationCollaboration.jpg, id=15
-6, 430.60875pt x 127.47626pt>
+2, 430.60875pt x 127.47626pt>
 File: arquitectura/adm_lenguaje/imgs/application/ApplicationCollaboration.jpg G
 raphic file (type jpg)
 <use arquitectura/adm_lenguaje/imgs/application/ApplicationCollaboration.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/application/Application
-Collaboration.jpg  used on input line 56.
+Collaboration.jpg  used on input line 55.
 (pdftex.def)             Requested size: 99.58464pt x 29.48036pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 57--57
-[]|\OT1/cmr/m/n/12 Interfaz de
+Underfull \hbox (badness 10000) in paragraph at lines 56--56
+[]|\OT1/cmr/m/n/10.95 Interfaz de
  []
 
-<arquitectura/adm_lenguaje/imgs/application/ApplicationInterface.jpg, id=157, 4
+<arquitectura/adm_lenguaje/imgs/application/ApplicationInterface.jpg, id=153, 4
 69.755pt x 127.47626pt>
 File: arquitectura/adm_lenguaje/imgs/application/ApplicationInterface.jpg Graph
 ic file (type jpg)
 <use arquitectura/adm_lenguaje/imgs/application/ApplicationInterface.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/application/Application
-Interface.jpg  used on input line 57.
+Interface.jpg  used on input line 56.
 (pdftex.def)             Requested size: 99.58464pt x 27.02367pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 58--58
-[]|\OT1/cmr/m/n/12 Objeto de
- []
-
-<arquitectura/adm_lenguaje/imgs/application/DataObject.jpg, id=158, 442.65375pt
+<arquitectura/adm_lenguaje/imgs/application/DataObject.jpg, id=154, 442.65375pt
  x 130.4875pt>
 File: arquitectura/adm_lenguaje/imgs/application/DataObject.jpg Graphic file (t
 ype jpg)
 <use arquitectura/adm_lenguaje/imgs/application/DataObject.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/application/DataObject.
-jpg  used on input line 58.
+jpg  used on input line 57.
 (pdftex.def)             Requested size: 99.58464pt x 29.35443pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
-[]|\OT1/cmr/m/n/12 Funcion de
+Underfull \hbox (badness 10000) in paragraph at lines 58--58
+[]|\OT1/cmr/m/n/10.95 Funcion de
  []
 
-<arquitectura/adm_lenguaje/imgs/application/ApplicationFunction.jpg, id=159, 44
+
+Underfull \hbox (badness 2894) in paragraph at lines 58--58
+[]|\OT1/cmr/m/n/10.95 Un ele-men-to de com-por-ta-mien-to que
+ []
+
+<arquitectura/adm_lenguaje/imgs/application/ApplicationFunction.jpg, id=155, 44
 2.65375pt x 127.47626pt>
 File: arquitectura/adm_lenguaje/imgs/application/ApplicationFunction.jpg Graphi
 c file (type jpg)
 <use arquitectura/adm_lenguaje/imgs/application/ApplicationFunction.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/application/Application
-Function.jpg  used on input line 59.
+Function.jpg  used on input line 58.
 (pdftex.def)             Requested size: 99.58464pt x 28.67702pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--60
-[]|\OT1/cmr/m/n/12 Interaccion
- []
-
-
-Underfull \hbox (badness 1005) in paragraph at lines 60--60
-\OT1/cmr/m/n/12 de Apli-ca-cio-
- []
-
-<arquitectura/adm_lenguaje/imgs/application/ApplicationInteraction.jpg, id=160,
+<arquitectura/adm_lenguaje/imgs/application/ApplicationInteraction.jpg, id=156,
  417.56pt x 126.4725pt>
 File: arquitectura/adm_lenguaje/imgs/application/ApplicationInteraction.jpg Gra
 phic file (type jpg)
 <use arquitectura/adm_lenguaje/imgs/application/ApplicationInteraction.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/application/Application
-Interaction.jpg  used on input line 60.
+Interaction.jpg  used on input line 59.
 (pdftex.def)             Requested size: 99.58464pt x 30.16103pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--61
-[]|\OT1/cmr/m/n/12 Servicio de
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
+[]|\OT1/cmr/m/n/10.95 Servicio de
  []
 
-<arquitectura/adm_lenguaje/imgs/application/ApplicationService.jpg, id=161, 421
+<arquitectura/adm_lenguaje/imgs/application/ApplicationService.jpg, id=157, 421
 .575pt x 75.28125pt>
 File: arquitectura/adm_lenguaje/imgs/application/ApplicationService.jpg Graphic
  file (type jpg)
 <use arquitectura/adm_lenguaje/imgs/application/ApplicationService.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/application/Application
-Service.jpg  used on input line 61.
+Service.jpg  used on input line 60.
 (pdftex.def)             Requested size: 99.58464pt x 17.78297pt.
-
-Overfull \hbox (21.88582pt too wide) in alignment at lines 53--62
- [] [] [] 
- []
-
-LaTeX Info: Redefining \. on input line 64.
-LaTeX Info: Redefining \% on input line 64.
-[33 <./arquitectura/adm_lenguaje/imgs/application/ApplicationComponent.jpg> <./
+LaTeX Info: Redefining \. on input line 63.
+LaTeX Info: Redefining \% on input line 63.
+[28 <./arquitectura/adm_lenguaje/imgs/application/ApplicationComponent.jpg> <./
 arquitectura/adm_lenguaje/imgs/application/ApplicationCollaboration.jpg> <./arq
 uitectura/adm_lenguaje/imgs/application/ApplicationInterface.jpg> <./arquitectu
 ra/adm_lenguaje/imgs/application/DataObject.jpg> <./arquitectura/adm_lenguaje/i
 mgs/application/ApplicationFunction.jpg> <./arquitectura/adm_lenguaje/imgs/appl
 ication/ApplicationInteraction.jpg> <./arquitectura/adm_lenguaje/imgs/applicati
 on/ApplicationService.jpg>]
-Overfull \hbox (23.30855pt too wide) in alignment at lines 69--74
- [] [] [] 
- []
-
-<arquitectura/adm_lenguaje/imgs/technology/Node.jpg, id=165, 424.58624pt x 127.
+<arquitectura/adm_lenguaje/imgs/technology/Node.jpg, id=161, 424.58624pt x 127.
 47626pt>
 File: arquitectura/adm_lenguaje/imgs/technology/Node.jpg Graphic file (type jpg
 )
 <use arquitectura/adm_lenguaje/imgs/technology/Node.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/technology/Node.jpg  us
-ed on input line 76.
+ed on input line 75.
 (pdftex.def)             Requested size: 99.58464pt x 29.89856pt.
-<arquitectura/adm_lenguaje/imgs/technology/Device.jpg, id=166, 424.58624pt x 14
+<arquitectura/adm_lenguaje/imgs/technology/Device.jpg, id=162, 424.58624pt x 14
 4.54pt>
 File: arquitectura/adm_lenguaje/imgs/technology/Device.jpg Graphic file (type j
 pg)
 <use arquitectura/adm_lenguaje/imgs/technology/Device.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/technology/Device.jpg  
-used on input line 77.
+used on input line 76.
 (pdftex.def)             Requested size: 99.58464pt x 33.90073pt.
-<arquitectura/adm_lenguaje/imgs/technology/Network.jpg, id=167, 420.57124pt x 1
+<arquitectura/adm_lenguaje/imgs/technology/Network.jpg, id=163, 420.57124pt x 1
 28.48pt>
 File: arquitectura/adm_lenguaje/imgs/technology/Network.jpg Graphic file (type 
 jpg)
 <use arquitectura/adm_lenguaje/imgs/technology/Network.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/technology/Network.jpg 
- used on input line 78.
+ used on input line 77.
 (pdftex.def)             Requested size: 99.58464pt x 30.42216pt.
-
-Underfull \hbox (badness 3118) in paragraph at lines 79--79
-[]|\OT1/cmr/m/n/12 Ruta de co-
- []
-
-<arquitectura/adm_lenguaje/imgs/technology/CommunicationPath.jpg, id=168, 415.5
+<arquitectura/adm_lenguaje/imgs/technology/CommunicationPath.jpg, id=164, 415.5
 525pt x 124.465pt>
 File: arquitectura/adm_lenguaje/imgs/technology/CommunicationPath.jpg Graphic f
 ile (type jpg)
 <use arquitectura/adm_lenguaje/imgs/technology/CommunicationPath.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/technology/Communicatio
-nPath.jpg  used on input line 79.
+nPath.jpg  used on input line 78.
 (pdftex.def)             Requested size: 99.58464pt x 29.82661pt.
-<arquitectura/adm_lenguaje/imgs/technology/InfrastructureInterface.jpg, id=169,
+<arquitectura/adm_lenguaje/imgs/technology/InfrastructureInterface.jpg, id=165,
  417.56pt x 128.48pt>
 File: arquitectura/adm_lenguaje/imgs/technology/InfrastructureInterface.jpg Gra
 phic file (type jpg)
 <use arquitectura/adm_lenguaje/imgs/technology/InfrastructureInterface.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/technology/Infrastructu
-reInterface.jpg  used on input line 80.
+reInterface.jpg  used on input line 79.
 (pdftex.def)             Requested size: 99.58464pt x 30.63977pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--81
-[]|\OT1/cmr/m/n/12 Software del
+Underfull \hbox (badness 10000) in paragraph at lines 80--80
+[]|\OT1/cmr/m/n/10.95 Software del
  []
 
-<arquitectura/adm_lenguaje/imgs/technology/SystemSoftware.jpg, id=170, 421.575p
+<arquitectura/adm_lenguaje/imgs/technology/SystemSoftware.jpg, id=166, 421.575p
 t x 130.4875pt>
 File: arquitectura/adm_lenguaje/imgs/technology/SystemSoftware.jpg Graphic file
  (type jpg)
 <use arquitectura/adm_lenguaje/imgs/technology/SystemSoftware.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/technology/SystemSoftwa
-re.jpg  used on input line 81.
+re.jpg  used on input line 80.
 (pdftex.def)             Requested size: 99.58464pt x 30.82384pt.
-<arquitectura/adm_lenguaje/imgs/technology/InfrastructureFunction.jpg, id=171, 
+
+Underfull \hbox (badness 2894) in paragraph at lines 81--81
+[]|\OT1/cmr/m/n/10.95 Un ele-men-to de com-por-ta-mien-to que
+ []
+
+<arquitectura/adm_lenguaje/imgs/technology/InfrastructureFunction.jpg, id=167, 
 386.44376pt x 137.51375pt>
 File: arquitectura/adm_lenguaje/imgs/technology/InfrastructureFunction.jpg Grap
 hic file (type jpg)
 <use arquitectura/adm_lenguaje/imgs/technology/InfrastructureFunction.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/technology/Infrastructu
-reFunction.jpg  used on input line 82.
+reFunction.jpg  used on input line 81.
 (pdftex.def)             Requested size: 99.58464pt x 35.43588pt.
-<arquitectura/adm_lenguaje/imgs/technology/InfrastructureService.jpg, id=172, 3
+<arquitectura/adm_lenguaje/imgs/technology/InfrastructureService.jpg, id=168, 3
 93.47pt x 131.49126pt>
 File: arquitectura/adm_lenguaje/imgs/technology/InfrastructureService.jpg Graph
 ic file (type jpg)
 <use arquitectura/adm_lenguaje/imgs/technology/InfrastructureService.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/technology/Infrastructu
-reService.jpg  used on input line 83.
+reService.jpg  used on input line 82.
 (pdftex.def)             Requested size: 99.58464pt x 33.27802pt.
-<arquitectura/adm_lenguaje/imgs/technology/Artifact.jpg, id=173, 400.49625pt x 
+<arquitectura/adm_lenguaje/imgs/technology/Artifact.jpg, id=169, 400.49625pt x 
 126.4725pt>
 File: arquitectura/adm_lenguaje/imgs/technology/Artifact.jpg Graphic file (type
  jpg)
 <use arquitectura/adm_lenguaje/imgs/technology/Artifact.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/technology/Artifact.jpg
-  used on input line 84.
+  used on input line 83.
 (pdftex.def)             Requested size: 99.58464pt x 31.44629pt.
-
-Overfull \hbox (23.30855pt too wide) in alignment at lines 74--85
- [] [] [] 
- []
-
-LaTeX Info: Redefining \. on input line 85.
-LaTeX Info: Redefining \% on input line 85.
-[34 <./arquitectura/adm_lenguaje/imgs/technology/Node.jpg> <./arquitectura/adm_
+LaTeX Info: Redefining \. on input line 86.
+LaTeX Info: Redefining \% on input line 86.
+[29 <./arquitectura/adm_lenguaje/imgs/technology/Node.jpg> <./arquitectura/adm_
 lenguaje/imgs/technology/Device.jpg> <./arquitectura/adm_lenguaje/imgs/technolo
 gy/Network.jpg> <./arquitectura/adm_lenguaje/imgs/technology/CommunicationPath.
 jpg> <./arquitectura/adm_lenguaje/imgs/technology/InfrastructureInterface.jpg> 
 <./arquitectura/adm_lenguaje/imgs/technology/SystemSoftware.jpg> <./arquitectur
 a/adm_lenguaje/imgs/technology/InfrastructureFunction.jpg> <./arquitectura/adm_
-lenguaje/imgs/technology/InfrastructureService.jpg>]
-LaTeX Info: Redefining \. on input line 87.
-LaTeX Info: Redefining \% on input line 87.
- [35 <./arquitectura/adm_lenguaje/imgs/technology/Artifact.jpg>]
-Overfull \hbox (21.88582pt too wide) in alignment at lines 91--96
- [] [] [] 
- []
-
-<arquitectura/adm_lenguaje/imgs/motivational/Stakeholder.jpg, id=181, 466.74374
+lenguaje/imgs/technology/InfrastructureService.jpg> <./arquitectura/adm_lenguaj
+e/imgs/technology/Artifact.jpg>]
+<arquitectura/adm_lenguaje/imgs/motivational/Stakeholder.jpg, id=173, 466.74374
 pt x 115.43124pt>
 File: arquitectura/adm_lenguaje/imgs/motivational/Stakeholder.jpg Graphic file 
 (type jpg)
 <use arquitectura/adm_lenguaje/imgs/motivational/Stakeholder.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/motivational/Stakeholde
-r.jpg  used on input line 98.
+r.jpg  used on input line 97.
 (pdftex.def)             Requested size: 99.58464pt x 24.627pt.
 
-Underfull \hbox (badness 2057) in paragraph at lines 99--99
-[]|\OT1/cmr/m/n/12 Driver (Con-
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
+[]|\OT1/cmr/m/n/10.95 Driver (Con-
  []
 
-<arquitectura/adm_lenguaje/imgs/motivational/Diver.jpg, id=182, 457.71pt x 97.3
+<arquitectura/adm_lenguaje/imgs/motivational/Diver.jpg, id=174, 457.71pt x 97.3
 6375pt>
 File: arquitectura/adm_lenguaje/imgs/motivational/Diver.jpg Graphic file (type 
 jpg)
 <use arquitectura/adm_lenguaje/imgs/motivational/Diver.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/motivational/Diver.jpg 
- used on input line 99.
+ used on input line 98.
 (pdftex.def)             Requested size: 99.58464pt x 21.18237pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
-[]|\OT1/cmr/m/n/12 Assessment
+Underfull \hbox (badness 10000) in paragraph at lines 99--99
+[]|\OT1/cmr/m/n/10.95 Assessment
  []
 
-<arquitectura/adm_lenguaje/imgs/motivational/Assessment.jpg, id=183, 463.7325pt
+<arquitectura/adm_lenguaje/imgs/motivational/Assessment.jpg, id=175, 463.7325pt
  x 107.40125pt>
 File: arquitectura/adm_lenguaje/imgs/motivational/Assessment.jpg Graphic file (
 type jpg)
 <use arquitectura/adm_lenguaje/imgs/motivational/Assessment.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/motivational/Assessment
-.jpg  used on input line 100.
+.jpg  used on input line 99.
 (pdftex.def)             Requested size: 99.58464pt x 23.06294pt.
-<arquitectura/adm_lenguaje/imgs/motivational/Goal.jpg, id=184, 471.7625pt x 110
+<arquitectura/adm_lenguaje/imgs/motivational/Goal.jpg, id=176, 471.7625pt x 110
 .4125pt>
 File: arquitectura/adm_lenguaje/imgs/motivational/Goal.jpg Graphic file (type j
 pg)
 <use arquitectura/adm_lenguaje/imgs/motivational/Goal.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/motivational/Goal.jpg  
-used on input line 101.
+used on input line 100.
 (pdftex.def)             Requested size: 99.58464pt x 23.30692pt.
-
-Overfull \hbox (3.44513pt too wide) in paragraph at lines 102--102
-[]|\OT1/cmr/m/n/12 Requerimiento| 
- []
-
-<arquitectura/adm_lenguaje/imgs/motivational/Requirement.jpg, id=185, 478.78876
+<arquitectura/adm_lenguaje/imgs/motivational/Requirement.jpg, id=177, 478.78876
 pt x 108.405pt>
 File: arquitectura/adm_lenguaje/imgs/motivational/Requirement.jpg Graphic file 
 (type jpg)
 <use arquitectura/adm_lenguaje/imgs/motivational/Requirement.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/motivational/Requiremen
-t.jpg  used on input line 102.
+t.jpg  used on input line 101.
 (pdftex.def)             Requested size: 99.58464pt x 22.54736pt.
-<arquitectura/adm_lenguaje/imgs/motivational/Constraint.jpg, id=186, 480.79625p
+<arquitectura/adm_lenguaje/imgs/motivational/Constraint.jpg, id=178, 480.79625p
 t x 106.3975pt>
 File: arquitectura/adm_lenguaje/imgs/motivational/Constraint.jpg Graphic file (
 type jpg)
 <use arquitectura/adm_lenguaje/imgs/motivational/Constraint.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/motivational/Constraint
-.jpg  used on input line 103.
+.jpg  used on input line 102.
 (pdftex.def)             Requested size: 99.58464pt x 22.0373pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--104
-[]|\OT1/cmr/m/n/12 Principle
+Underfull \hbox (badness 10000) in paragraph at lines 103--103
+[]|\OT1/cmr/m/n/10.95 Principle
  []
 
-<arquitectura/adm_lenguaje/imgs/motivational/Principle.jpg, id=187, 475.7775pt 
+<arquitectura/adm_lenguaje/imgs/motivational/Principle.jpg, id=179, 475.7775pt 
 x 108.405pt>
 File: arquitectura/adm_lenguaje/imgs/motivational/Principle.jpg Graphic file (t
 ype jpg)
 <use arquitectura/adm_lenguaje/imgs/motivational/Principle.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/motivational/Principle.
-jpg  used on input line 104.
+jpg  used on input line 103.
 (pdftex.def)             Requested size: 99.58464pt x 22.68962pt.
-
-Overfull \hbox (21.88582pt too wide) in alignment at lines 96--105
- [] [] [] 
- []
-
-LaTeX Info: Redefining \. on input line 109.
-LaTeX Info: Redefining \% on input line 109.
-[36 <./arquitectura/adm_lenguaje/imgs/motivational/Stakeholder.jpg> <./arquitec
+LaTeX Info: Redefining \. on input line 108.
+LaTeX Info: Redefining \% on input line 108.
+[30 <./arquitectura/adm_lenguaje/imgs/motivational/Stakeholder.jpg> <./arquitec
 tura/adm_lenguaje/imgs/motivational/Diver.jpg> <./arquitectura/adm_lenguaje/img
 s/motivational/Assessment.jpg> <./arquitectura/adm_lenguaje/imgs/motivational/G
 oal.jpg> <./arquitectura/adm_lenguaje/imgs/motivational/Requirement.jpg> <./arq
 uitectura/adm_lenguaje/imgs/motivational/Constraint.jpg> <./arquitectura/adm_le
 nguaje/imgs/motivational/Principle.jpg>]
-Overfull \hbox (21.88582pt too wide) in alignment at lines 113--118
- [] [] [] 
+Underfull \hbox (badness 10000) in paragraph at lines 119--119
+[]|\OT1/cmr/m/n/10.95 Paquete de
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 120--120
-[]|\OT1/cmr/m/n/12 Paquete de
- []
-
-<arquitectura/adm_lenguaje/imgs/implementacionMigration/WorkPackage.jpg, id=191
+<arquitectura/adm_lenguaje/imgs/implementacionMigration/WorkPackage.jpg, id=183
 , 293.095pt x 129.48375pt>
 File: arquitectura/adm_lenguaje/imgs/implementacionMigration/WorkPackage.jpg Gr
 aphic file (type jpg)
 <use arquitectura/adm_lenguaje/imgs/implementacionMigration/WorkPackage.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/implementacionMigration
-/WorkPackage.jpg  used on input line 120.
+/WorkPackage.jpg  used on input line 119.
 (pdftex.def)             Requested size: 99.58464pt x 43.99425pt.
-<arquitectura/adm_lenguaje/imgs/implementacionMigration/Deliverable.jpg, id=192
+<arquitectura/adm_lenguaje/imgs/implementacionMigration/Deliverable.jpg, id=184
 , 276.03125pt x 126.4725pt>
 File: arquitectura/adm_lenguaje/imgs/implementacionMigration/Deliverable.jpg Gr
 aphic file (type jpg)
 <use arquitectura/adm_lenguaje/imgs/implementacionMigration/Deliverable.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/implementacionMigration
-/Deliverable.jpg  used on input line 121.
+/Deliverable.jpg  used on input line 120.
 (pdftex.def)             Requested size: 99.58464pt x 45.62848pt.
-
-Underfull \hbox (badness 1472) in paragraph at lines 122--122
-[]|\OT1/cmr/m/n/12 Un es-ta-do re-la-ti-va-men-te es-ta-ble de
- []
-
-<arquitectura/adm_lenguaje/imgs/implementacionMigration/Plateau.jpg, id=193, 28
+<arquitectura/adm_lenguaje/imgs/implementacionMigration/Plateau.jpg, id=185, 28
 9.08pt x 129.48375pt>
 File: arquitectura/adm_lenguaje/imgs/implementacionMigration/Plateau.jpg Graphi
 c file (type jpg)
 <use arquitectura/adm_lenguaje/imgs/implementacionMigration/Plateau.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/implementacionMigration
-/Plateau.jpg  used on input line 122.
+/Plateau.jpg  used on input line 121.
 (pdftex.def)             Requested size: 99.58464pt x 44.60475pt.
-<arquitectura/adm_lenguaje/imgs/implementacionMigration/Gap.jpg, id=194, 279.04
+<arquitectura/adm_lenguaje/imgs/implementacionMigration/Gap.jpg, id=186, 279.04
 25pt x 118.4425pt>
 File: arquitectura/adm_lenguaje/imgs/implementacionMigration/Gap.jpg Graphic fi
 le (type jpg)
 <use arquitectura/adm_lenguaje/imgs/implementacionMigration/Gap.jpg>
 Package pdftex.def Info: arquitectura/adm_lenguaje/imgs/implementacionMigration
-/Gap.jpg  used on input line 123.
+/Gap.jpg  used on input line 122.
 (pdftex.def)             Requested size: 99.58464pt x 42.26877pt.
-
-Overfull \hbox (21.88582pt too wide) in alignment at lines 118--124
- [] [] [] 
- []
-
 )
-LaTeX Info: Redefining \. on input line 48.
-LaTeX Info: Redefining \% on input line 48.
- [37 <./arquitectura/adm_lenguaje/imgs/implementacionMigration/WorkPackage.jpg>
+LaTeX Info: Redefining \. on input line 81.
+LaTeX Info: Redefining \% on input line 81.
+ [31 <./arquitectura/adm_lenguaje/imgs/implementacionMigration/WorkPackage.jpg>
  <./arquitectura/adm_lenguaje/imgs/implementacionMigration/Deliverable.jpg> <./
 arquitectura/adm_lenguaje/imgs/implementacionMigration/Plateau.jpg> <./arquitec
 tura/adm_lenguaje/imgs/implementacionMigration/Gap.jpg>]
@@ -1384,127 +1306,118 @@ tura/adm_lenguaje/imgs/implementacionMigration/Gap.jpg>]
 
 
 (arquitectura/negocio/negocio.tex
-Cap\'{\i }tulo 4.
-[38
-
+LaTeX Info: Redefining \. on input line 6.
+LaTeX Info: Redefining \% on input line 6.
+ [32
 
 
 ]
-<arquitectura/negocio/imgs/m_organizacion.pdf, id=201, 347.79938pt x 123.662pt>
+<arquitectura/negocio/imgs/m_organizacion.pdf, id=193, 347.79938pt x 123.662pt>
 
 File: arquitectura/negocio/imgs/m_organizacion.pdf Graphic file (type pdf)
 <use arquitectura/negocio/imgs/m_organizacion.pdf>
 Package pdftex.def Info: arquitectura/negocio/imgs/m_organizacion.pdf  used on 
-input line 12.
-(pdftex.def)             Requested size: 272.99881pt x 97.0692pt.
-LaTeX Info: Redefining \. on input line 16.
-LaTeX Info: Redefining \% on input line 16.
- [39 <./arquitectura/negocio/imgs/m_organizacion.pdf>]
-<arquitectura/negocio/imgs/organizacion.png, id=207, 739.76375pt x 505.89pt>
+input line 16.
+(pdftex.def)             Requested size: 369.9021pt x 170.72354pt.
+<arquitectura/negocio/imgs/organizacion.png, id=194, 481.04718pt x 188.95593pt>
+
 File: arquitectura/negocio/imgs/organizacion.png Graphic file (type png)
 <use arquitectura/negocio/imgs/organizacion.png>
 Package pdftex.def Info: arquitectura/negocio/imgs/organizacion.png  used on in
-put line 23.
-(pdftex.def)             Requested size: 272.99881pt x 186.69005pt.
-LaTeX Info: Redefining \. on input line 26.
-LaTeX Info: Redefining \% on input line 26.
- [40 <./arquitectura/negocio/imgs/organizacion.png (PNG copy)>]
+put line 27.
+(pdftex.def)             Requested size: 341.44313pt x 199.17075pt.
+LaTeX Info: Redefining \. on input line 30.
+LaTeX Info: Redefining \% on input line 30.
+ [33 <./arquitectura/negocio/imgs/m_organizacion.pdf> <./arquitectura/negocio/i
+mgs/organizacion.png>]
 File: arquitectura/negocio/imgs/m_organizacion.pdf Graphic file (type pdf)
 <use arquitectura/negocio/imgs/m_organizacion.pdf>
 Package pdftex.def Info: arquitectura/negocio/imgs/m_organizacion.pdf  used on 
-input line 35.
-(pdftex.def)             Requested size: 272.99881pt x 97.0692pt.
-LaTeX Info: Redefining \. on input line 39.
-LaTeX Info: Redefining \% on input line 39.
- [41]
-<arquitectura/negocio/imgs/funciones-1.png, id=215, 739.76375pt x 505.89pt>
+input line 40.
+(pdftex.def)             Requested size: 341.44606pt x 199.17651pt.
+LaTeX Info: Redefining \. on input line 44.
+LaTeX Info: Redefining \% on input line 44.
+ [34]
+<arquitectura/negocio/imgs/funciones-1.png, id=206, 539.01375pt x 244.66406pt>
 File: arquitectura/negocio/imgs/funciones-1.png Graphic file (type png)
 <use arquitectura/negocio/imgs/funciones-1.png>
 Package pdftex.def Info: arquitectura/negocio/imgs/funciones-1.png  used on inp
-ut line 46.
-(pdftex.def)             Requested size: 272.99881pt x 186.69005pt.
-<arquitectura/negocio/imgs/funciones-2.png, id=216, 739.76375pt x 505.89pt>
+ut line 52.
+(pdftex.def)             Requested size: 369.88838pt x 227.62854pt.
+<arquitectura/negocio/imgs/funciones-2.png, id=207, 539.76656pt x 292.09125pt>
 File: arquitectura/negocio/imgs/funciones-2.png Graphic file (type png)
 <use arquitectura/negocio/imgs/funciones-2.png>
 Package pdftex.def Info: arquitectura/negocio/imgs/funciones-2.png  used on inp
-ut line 51.
-(pdftex.def)             Requested size: 272.99881pt x 186.69005pt.
-<arquitectura/negocio/imgs/funciones-3.png, id=217, 739.76375pt x 505.89pt>
+ut line 59.
+(pdftex.def)             Requested size: 369.89435pt x 227.62967pt.
+<arquitectura/negocio/imgs/funciones-3.png, id=208, 488.57532pt x 307.1475pt>
 File: arquitectura/negocio/imgs/funciones-3.png Graphic file (type png)
 <use arquitectura/negocio/imgs/funciones-3.png>
 Package pdftex.def Info: arquitectura/negocio/imgs/funciones-3.png  used on inp
-ut line 56.
-(pdftex.def)             Requested size: 272.99881pt x 186.69005pt.
-LaTeX Info: Redefining \. on input line 59.
-LaTeX Info: Redefining \% on input line 59.
- [42 <./arquitectura/negocio/imgs/funciones-1.png (PNG copy)> <./arquitectura/n
-egocio/imgs/funciones-2.png (PNG copy)>]
+ut line 64.
+(pdftex.def)             Requested size: 369.88972pt x 227.62303pt.
+LaTeX Info: Redefining \. on input line 67.
+LaTeX Info: Redefining \% on input line 67.
+ [35 <./arquitectura/negocio/imgs/funciones-1.png> <./arquitectura/negocio/imgs
+/funciones-2.png>]
 File: arquitectura/negocio/imgs/m_organizacion.pdf Graphic file (type pdf)
 <use arquitectura/negocio/imgs/m_organizacion.pdf>
 Package pdftex.def Info: arquitectura/negocio/imgs/m_organizacion.pdf  used on 
-input line 68.
-(pdftex.def)             Requested size: 272.99881pt x 97.0692pt.
-LaTeX Info: Redefining \. on input line 72.
-LaTeX Info: Redefining \% on input line 72.
- [43 <./arquitectura/negocio/imgs/funciones-3.png (PNG copy)>]
-<arquitectura/negocio/imgs/proceso.png, id=224, 739.76375pt x 505.89pt>
+input line 76.
+(pdftex.def)             Requested size: 341.44606pt x 199.17651pt.
+LaTeX Info: Redefining \. on input line 80.
+LaTeX Info: Redefining \% on input line 80.
+ [36 <./arquitectura/negocio/imgs/funciones-3.png>]
+<arquitectura/negocio/imgs/proceso.png, id=218, 739.76375pt x 505.89pt>
 File: arquitectura/negocio/imgs/proceso.png Graphic file (type png)
 <use arquitectura/negocio/imgs/proceso.png>
 Package pdftex.def Info: arquitectura/negocio/imgs/proceso.png  used on input l
-ine 79.
-(pdftex.def)             Requested size: 272.99881pt x 186.69005pt.
-LaTeX Info: Redefining \. on input line 82.
-LaTeX Info: Redefining \% on input line 82.
- [44 <./arquitectura/negocio/imgs/proceso.png (PNG copy)>]
+ine 87.
+(pdftex.def)             Requested size: 341.43552pt x 199.17207pt.
+LaTeX Info: Redefining \. on input line 90.
+LaTeX Info: Redefining \% on input line 90.
+ [37 <./arquitectura/negocio/imgs/proceso.png (PNG copy)>]
 File: arquitectura/negocio/imgs/m_organizacion.pdf Graphic file (type pdf)
 <use arquitectura/negocio/imgs/m_organizacion.pdf>
 Package pdftex.def Info: arquitectura/negocio/imgs/m_organizacion.pdf  used on 
-input line 91.
-(pdftex.def)             Requested size: 272.99881pt x 97.0692pt.
-LaTeX Info: Redefining \. on input line 95.
-LaTeX Info: Redefining \% on input line 95.
-
-Overfull \hbox (18.30359pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 4.8.  PUNTO DE VISTA DE COOPERACI[]ON DE PROCESO DE NEGOCIO \O
-T1/cmr/m/n/12 45
- []
-
-[45]
-<arquitectura/negocio/imgs/cooperacion-proceso.png, id=231, 739.76375pt x 505.8
+input line 99.
+(pdftex.def)             Requested size: 341.44606pt x 199.17651pt.
+LaTeX Info: Redefining \. on input line 103.
+LaTeX Info: Redefining \% on input line 103.
+ [38]
+<arquitectura/negocio/imgs/cooperacion-proceso.png, id=225, 739.76375pt x 505.8
 9pt>
 File: arquitectura/negocio/imgs/cooperacion-proceso.png Graphic file (type png)
 
 <use arquitectura/negocio/imgs/cooperacion-proceso.png>
 Package pdftex.def Info: arquitectura/negocio/imgs/cooperacion-proceso.png  use
-d on input line 102.
-(pdftex.def)             Requested size: 272.99881pt x 186.69005pt.
-LaTeX Info: Redefining \. on input line 105.
-LaTeX Info: Redefining \% on input line 105.
- [46 <./arquitectura/negocio/imgs/cooperacion-proceso.png (PNG copy)>]
+d on input line 110.
+(pdftex.def)             Requested size: 341.43552pt x 199.17207pt.
+LaTeX Info: Redefining \. on input line 113.
+LaTeX Info: Redefining \% on input line 113.
+ [39 <./arquitectura/negocio/imgs/cooperacion-proceso.png (PNG copy)>]
 File: arquitectura/negocio/imgs/m_organizacion.pdf Graphic file (type pdf)
 <use arquitectura/negocio/imgs/m_organizacion.pdf>
 Package pdftex.def Info: arquitectura/negocio/imgs/m_organizacion.pdf  used on 
-input line 114.
-(pdftex.def)             Requested size: 272.99881pt x 97.0692pt.
-LaTeX Info: Redefining \. on input line 118.
-LaTeX Info: Redefining \% on input line 118.
-
-[47]
-<arquitectura/negocio/imgs/producto.png, id=239, 739.76375pt x 505.89pt>
+input line 122.
+(pdftex.def)             Requested size: 341.44606pt x 199.17651pt.
+LaTeX Info: Redefining \. on input line 126.
+LaTeX Info: Redefining \% on input line 126.
+ [40]
+<arquitectura/negocio/imgs/producto.png, id=233, 739.76375pt x 505.89pt>
 File: arquitectura/negocio/imgs/producto.png Graphic file (type png)
 <use arquitectura/negocio/imgs/producto.png>
 Package pdftex.def Info: arquitectura/negocio/imgs/producto.png  used on input 
-line 125.
-(pdftex.def)             Requested size: 272.99881pt x 186.69005pt.
-LaTeX Info: Redefining \. on input line 128.
-LaTeX Info: Redefining \% on input line 128.
- [48 <./arquitectura/negocio/imgs/producto.png (PNG copy)>])
+line 133.
+(pdftex.def)             Requested size: 341.43552pt x 199.17207pt.
+LaTeX Info: Redefining \. on input line 136.
+LaTeX Info: Redefining \% on input line 136.
+ [41 <./arquitectura/negocio/imgs/producto.png (PNG copy)>])
 \openout2 = `arquitectura/aplicacion/aplicacion.aux'.
 
-
-(arquitectura/aplicacion/aplicacion.tex
-Cap\'{\i }tulo 5.
-[49
+ (arquitectura/aplicacion/aplicacion.tex
+Cap\'{\i }tulo 3.
+[42
 
 
 
@@ -1512,8 +1425,8 @@ Cap\'{\i }tulo 5.
 \openout2 = `arquitectura/tecnologia/tecnologia.aux'.
 
  (arquitectura/tecnologia/tecnologia.tex
-Cap\'{\i }tulo 6.
-[50
+Cap\'{\i }tulo 4.
+[43
 
 
 
@@ -1521,8 +1434,8 @@ Cap\'{\i }tulo 6.
 \openout2 = `arquitectura/motivavion/motivacion.aux'.
 
  (arquitectura/motivavion/motivacion.tex
-Cap\'{\i }tulo 7.
-[51
+Cap\'{\i }tulo 5.
+[44
 
 
 
@@ -1530,8 +1443,8 @@ Cap\'{\i }tulo 7.
 \openout2 = `arquitectura/migracion/migracion.aux'.
 
  (arquitectura/migracion/migracion.tex
-Cap\'{\i }tulo 8.
-[52
+Cap\'{\i }tulo 6.
+[45
 
 
 
@@ -1539,174 +1452,143 @@ Cap\'{\i }tulo 8.
 \openout2 = `arquitectura/diseno/gof.aux'.
 
  (arquitectura/diseno/gof.tex
-Cap\'{\i }tulo 9.
-[53
+Cap\'{\i }tulo 7.
+[46
 
 
 
 ]
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
- [54]
-<arquitectura/diseno/imgs/m_fabrica.pdf, id=262, 644.30708pt x 303.534pt>
+ [47]
+<arquitectura/diseno/imgs/m_fabrica.pdf, id=256, 644.30708pt x 303.534pt>
 File: arquitectura/diseno/imgs/m_fabrica.pdf Graphic file (type pdf)
 <use arquitectura/diseno/imgs/m_fabrica.pdf>
 Package pdftex.def Info: arquitectura/diseno/imgs/m_fabrica.pdf  used on input 
 line 14.
-(pdftex.def)             Requested size: 272.99881pt x 128.6135pt.
+(pdftex.def)             Requested size: 332.61119pt x 156.69922pt.
 LaTeX Info: Redefining \. on input line 18.
 LaTeX Info: Redefining \% on input line 18.
- [55 <./arquitectura/diseno/imgs/m_fabrica.pdf>]
-<arquitectura/diseno/imgs/s_fabrica.pdf, id=268, 437.73538pt x 170.73787pt>
+ [48 <./arquitectura/diseno/imgs/m_fabrica.pdf>]
+<arquitectura/diseno/imgs/s_fabrica.pdf, id=262, 437.73538pt x 170.73787pt>
 File: arquitectura/diseno/imgs/s_fabrica.pdf Graphic file (type pdf)
 <use arquitectura/diseno/imgs/s_fabrica.pdf>
 Package pdftex.def Info: arquitectura/diseno/imgs/s_fabrica.pdf  used on input 
 line 24.
-(pdftex.def)             Requested size: 272.99881pt x 106.48424pt.
+(pdftex.def)             Requested size: 332.61119pt x 129.73866pt.
 LaTeX Info: Redefining \. on input line 28.
 LaTeX Info: Redefining \% on input line 28.
- [56 <./arquitectura/diseno/imgs/s_fabrica.pdf>]
+ [49 <./arquitectura/diseno/imgs/s_fabrica.pdf>]
 LaTeX Info: Redefining \. on input line 32.
 LaTeX Info: Redefining \% on input line 32.
- [57]
+ [50]
 LaTeX Info: Redefining \. on input line 36.
 LaTeX Info: Redefining \% on input line 36.
- [58]) [59
-
-
-]
+ [51])
 \openout2 = `desarrollo/recoleccion/recoleccion.aux'.
 
+ (desarrollo/recoleccion/recoleccion.tex
+Cap\'{\i }tulo 8.
 
-(desarrollo/recoleccion/recoleccion.tex
-Cap\'{\i }tulo 10.
-
-Overfull \hbox (17.34769pt too wide) in paragraph at lines 9--9
-[]\OT1/cmr/bx/n/17.28 Tabulacion, or-de-na-mien-to y pro-ce-sa-mien-
- []
-
-
-Overfull \hbox (7.6306pt too wide) in paragraph at lines 20--20
-[]\OT1/cmr/bx/n/12 ITEM| 
+Overfull \hbox (5.30954pt too wide) in paragraph at lines 20--20
+[]\OT1/cmr/bx/n/10.95 ITEM| 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 20--20
-[]\OT1/cmr/bx/n/12 SUB
+[]\OT1/cmr/bx/n/10.95 SUB
  []
 
 
-Overfull \hbox (7.6306pt too wide) in paragraph at lines 20--20
-\OT1/cmr/bx/n/12 ITEM| 
+Overfull \hbox (5.30954pt too wide) in paragraph at lines 20--20
+\OT1/cmr/bx/n/10.95 ITEM| 
  []
 
 
-Overfull \hbox (77.74057pt too wide) in paragraph at lines 16--51
- [][] 
- []
-
-
-Overfull \hbox (7.6306pt too wide) in paragraph at lines 65--65
-[]\OT1/cmr/bx/n/12 ITEM| 
+Overfull \hbox (5.30954pt too wide) in paragraph at lines 65--65
+[]\OT1/cmr/bx/n/10.95 ITEM| 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 66--66
-[]\OT1/cmr/bx/n/12 SUB
+[]\OT1/cmr/bx/n/10.95 SUB
  []
 
 
-Overfull \hbox (7.6306pt too wide) in paragraph at lines 66--66
-\OT1/cmr/bx/n/12 ITEM| 
+Overfull \hbox (5.30954pt too wide) in paragraph at lines 66--66
+\OT1/cmr/bx/n/10.95 ITEM| 
  []
 
-<desarrollo/resultados/imgs/pregunta-1.jpg, id=284, 543.02875pt x 313.17pt>
+<desarrollo/resultados/imgs/pregunta-1.jpg, id=275, 543.02875pt x 313.17pt>
 File: desarrollo/resultados/imgs/pregunta-1.jpg Graphic file (type jpg)
 <use desarrollo/resultados/imgs/pregunta-1.jpg>
 Package pdftex.def Info: desarrollo/resultados/imgs/pregunta-1.jpg  used on inp
-ut line 106.
-(pdftex.def)             Requested size: 272.99881pt x 157.44475pt.
-[60
-
-
-]
-LaTeX Info: Redefining \. on input line 108.
-LaTeX Info: Redefining \% on input line 108.
-
-Overfull \hbox (88.51508pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 10.2.  TABULACI[]ON, ORDENAMIENTO Y PROCESAMIENTO DE LA INFORM
-ACI[]ON \OT1/cmr/m/n/12 61
- []
-
-[61]
-<desarrollo/resultados/imgs/pregunta-2.jpg, id=291, 480.79625pt x 303.1325pt>
+ut line 108.
+(pdftex.def)             Requested size: 332.61119pt x 191.82664pt.
+<desarrollo/resultados/imgs/pregunta-2.jpg, id=276, 480.79625pt x 303.1325pt>
 File: desarrollo/resultados/imgs/pregunta-2.jpg Graphic file (type jpg)
 <use desarrollo/resultados/imgs/pregunta-2.jpg>
 Package pdftex.def Info: desarrollo/resultados/imgs/pregunta-2.jpg  used on inp
-ut line 114.
-(pdftex.def)             Requested size: 272.99881pt x 172.12126pt.
-<desarrollo/resultados/imgs/pregunta-3.jpg, id=292, 515.9275pt x 296.10625pt>
+ut line 116.
+(pdftex.def)             Requested size: 332.61119pt x 209.70744pt.
+<desarrollo/resultados/imgs/pregunta-3.jpg, id=277, 515.9275pt x 296.10625pt>
 File: desarrollo/resultados/imgs/pregunta-3.jpg Graphic file (type jpg)
 <use desarrollo/resultados/imgs/pregunta-3.jpg>
 Package pdftex.def Info: desarrollo/resultados/imgs/pregunta-3.jpg  used on inp
-ut line 122.
-(pdftex.def)             Requested size: 272.99881pt x 156.68706pt.
-<desarrollo/resultados/imgs/pregunta-4.jpg, id=293, 446.66875pt x 260.975pt>
+ut line 124.
+(pdftex.def)             Requested size: 332.61119pt x 190.89896pt.
+<desarrollo/resultados/imgs/pregunta-4.jpg, id=278, 446.66875pt x 260.975pt>
 File: desarrollo/resultados/imgs/pregunta-4.jpg Graphic file (type jpg)
 <use desarrollo/resultados/imgs/pregunta-4.jpg>
 Package pdftex.def Info: desarrollo/resultados/imgs/pregunta-4.jpg  used on inp
-ut line 130.
-(pdftex.def)             Requested size: 272.99881pt x 159.50513pt.
-<desarrollo/resultados/imgs/pregunta-5.jpg, id=294, 478.78876pt x 269.005pt>
+ut line 132.
+(pdftex.def)             Requested size: 332.61119pt x 194.337pt.
+<desarrollo/resultados/imgs/pregunta-5.jpg, id=279, 478.78876pt x 269.005pt>
 File: desarrollo/resultados/imgs/pregunta-5.jpg Graphic file (type jpg)
 <use desarrollo/resultados/imgs/pregunta-5.jpg>
 Package pdftex.def Info: desarrollo/resultados/imgs/pregunta-5.jpg  used on inp
-ut line 138.
-(pdftex.def)             Requested size: 272.99881pt x 153.38368pt.
-<desarrollo/resultados/imgs/pregunta-6.jpg, id=295, 473.77pt x 274.02374pt>
+ut line 140.
+(pdftex.def)             Requested size: 332.61119pt x 186.87788pt.
+<desarrollo/resultados/imgs/pregunta-6.jpg, id=280, 473.77pt x 274.02374pt>
 File: desarrollo/resultados/imgs/pregunta-6.jpg Graphic file (type jpg)
 <use desarrollo/resultados/imgs/pregunta-6.jpg>
 Package pdftex.def Info: desarrollo/resultados/imgs/pregunta-6.jpg  used on inp
-ut line 146.
-(pdftex.def)             Requested size: 272.99881pt x 157.90529pt.
-<desarrollo/resultados/imgs/pregunta-7.jpg, id=296, 531.9875pt x 297.11pt>
+ut line 148.
+(pdftex.def)             Requested size: 332.61119pt x 192.38396pt.
+<desarrollo/resultados/imgs/pregunta-7.jpg, id=281, 531.9875pt x 297.11pt>
 File: desarrollo/resultados/imgs/pregunta-7.jpg Graphic file (type jpg)
 <use desarrollo/resultados/imgs/pregunta-7.jpg>
 Package pdftex.def Info: desarrollo/resultados/imgs/pregunta-7.jpg  used on inp
-ut line 154.
-(pdftex.def)             Requested size: 272.99881pt x 152.47159pt.
-LaTeX Info: Redefining \. on input line 159.
-LaTeX Info: Redefining \% on input line 159.
+ut line 156.
+(pdftex.def)             Requested size: 332.61119pt x 185.76582pt.
+[52
 
-Overfull \hbox (22.7726pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/12 62 \OT1/cmr/m/sl/12 CAP[]ITULO 10.  RECOLECCI[]ON Y ORDENAMIENT
-O DE INFORMACI[]ON
- []
 
-[62 <./desarrollo/resultados/imgs/pregunta-1.jpg>])
-LaTeX Info: Redefining \. on input line 56.
-LaTeX Info: Redefining \% on input line 56.
- [63 <./desarrollo/resultados/imgs/pregunta-2.jpg> <./desarrollo/resultados/img
-s/pregunta-3.jpg>]
-LaTeX Info: Redefining \. on input line 56.
-LaTeX Info: Redefining \% on input line 56.
 
-Overfull \hbox (22.7726pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/12 64 \OT1/cmr/m/sl/12 CAP[]ITULO 10.  RECOLECCI[]ON Y ORDENAMIENT
-O DE INFORMACI[]ON
- []
-
-[64 <./desarrollo/resultados/imgs/pregunta-4.jpg> <./desarrollo/resultados/imgs
-/pregunta-5.jpg>]
-LaTeX Info: Redefining \. on input line 56.
-LaTeX Info: Redefining \% on input line 56.
- [65 <./desarrollo/resultados/imgs/pregunta-6.jpg> <./desarrollo/resultados/img
-s/pregunta-7.jpg>]
+]
+LaTeX Info: Redefining \. on input line 161.
+LaTeX Info: Redefining \% on input line 161.
+ [53])
+LaTeX Info: Redefining \. on input line 89.
+LaTeX Info: Redefining \% on input line 89.
+ [54 <./desarrollo/resultados/imgs/pregunta-1.jpg> <./desarrollo/resultados/img
+s/pregunta-2.jpg>]
+LaTeX Info: Redefining \. on input line 89.
+LaTeX Info: Redefining \% on input line 89.
+ [55 <./desarrollo/resultados/imgs/pregunta-3.jpg> <./desarrollo/resultados/img
+s/pregunta-4.jpg>]
+LaTeX Info: Redefining \. on input line 89.
+LaTeX Info: Redefining \% on input line 89.
+ [56 <./desarrollo/resultados/imgs/pregunta-5.jpg> <./desarrollo/resultados/img
+s/pregunta-6.jpg>]
+LaTeX Info: Redefining \. on input line 89.
+LaTeX Info: Redefining \% on input line 89.
+ [57 <./desarrollo/resultados/imgs/pregunta-7.jpg>]
 \openout2 = `desarrollo/analisis/analisis.aux'.
 
  (desarrollo/analisis/analisis.tex
-Cap\'{\i }tulo 11.
-[66
+Cap\'{\i }tulo 9.
+[58
 
 
 
@@ -1714,94 +1596,91 @@ Cap\'{\i }tulo 11.
 \openout2 = `desarrollo/resultados/resultados.aux'.
 
  (desarrollo/resultados/resultados.tex
-Cap\'{\i }tulo 12.
-[67
+Cap\'{\i }tulo 10.
+[59
 
 
 
-]) [68
+]) [60
 
 
 ]
 \openout2 = `reflexiones/conclusiones.aux'.
 
  (reflexiones/conclusiones.tex
-Cap\'{\i }tulo 13.
-[69
+Cap\'{\i }tulo 11.
+[61
 
 
 ]
 LaTeX Info: Redefining \. on input line 7.
 LaTeX Info: Redefining \% on input line 7.
 
-Overfull \hbox (139.44888pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/12 70 \OT1/cmr/m/sl/12 CAP[]ITULO 13.  CONCLUSIONES-TRABAJOS FUTUR
-OS-APORTACIONES-CONTRASTACI[]ON
+Overfull \hbox (18.34882pt too wide) has occurred while \output is active
+\OT1/cmr/m/n/10.95 62 \OT1/cmr/m/sl/10.95 CAP[]ITULO 11.  CONCLUSIONES-TRABAJOS
+ FUTUROS-APORTACIONES-CONTRASTACI[]ON
  []
 
-[70]
+[62]
 LaTeX Info: Redefining \. on input line 10.
 LaTeX Info: Redefining \% on input line 10.
- [71]
+ [63]
 LaTeX Info: Redefining \. on input line 13.
 LaTeX Info: Redefining \% on input line 13.
 
-Overfull \hbox (139.44888pt too wide) has occurred while \output is active
-\OT1/cmr/m/n/12 72 \OT1/cmr/m/sl/12 CAP[]ITULO 13.  CONCLUSIONES-TRABAJOS FUTUR
-OS-APORTACIONES-CONTRASTACI[]ON
+Overfull \hbox (18.34882pt too wide) has occurred while \output is active
+\OT1/cmr/m/n/10.95 64 \OT1/cmr/m/sl/10.95 CAP[]ITULO 11.  CONCLUSIONES-TRABAJOS
+ FUTUROS-APORTACIONES-CONTRASTACI[]ON
  []
 
-[72])
+[64])
 \openout2 = `reflexiones/anexos.aux'.
 
  (reflexiones/anexos.tex
 ("C:\Users\USUARIO\AppData\Local\Programs\MiKTeX 2.9\tex\latex\listings\lstlang
 1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-)) [73
+)) [65
 
 
 
 ] (main.bbl
-Underfull \hbox (badness 5637) in paragraph at lines 10--15
-[]\OT1/cmr/m/n/12 Edificios y Con-jun-tos.  Asam-blea ge-ne-ral de pro-pie-ta-r
-ios en
+Underfull \hbox (badness 10000) in paragraph at lines 10--15
+[]\OT1/cmr/m/n/10.95 Edificios y Con-jun-tos.  Asam-blea ge-ne-ral de pro-pie-t
+a-rios en
  []
 
 
-Underfull \hbox (badness 5607) in paragraph at lines 10--15
-\OT1/cmr/m/n/12 edi-fi-cios y con-jun-tos.  $\OT1/cmtt/m/n/12 http : / / edific
-iosyconjuntos . com / blog /
+Underfull \hbox (badness 10000) in paragraph at lines 10--15
+\OT1/cmr/m/n/10.95 edi-fi-cios y con-jun-tos.  $\OT1/cmtt/m/n/10.95 http : / / 
+edificiosyconjuntos . com / blog /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--23
-[]\OT1/cmr/m/n/12 Actualce-se.  Ley de pro-pie-dad ho-ri-zon-tal: de-re-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 17--23
-\OT1/cmr/m/n/12 chos y de-be-res de co-pro-pie-ta-rios y ad-mi-nis-tra-dor.
+Underfull \hbox (badness 2529) in paragraph at lines 10--15
+\OT1/cmtt/m/n/10.95 funciones-[]asamblea-[]general-[]en-[]edificios-[]conjuntos
+/$\OT1/cmr/m/n/10.95 .  [On-li-ne; ac-ce-di-do el 12 de
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 17--23
-\OT1/cmtt/m/n/12 https : / / actualicese . com / actualidad / 2015 / 12 / 14 /
+[]\OT1/cmr/m/n/10.95 Actualce-se.  Ley de pro-pie-dad ho-ri-zon-tal: de-re-ch
+os y de-be-res de co-pro-pie-
  []
 
 
-Overfull \hbox (136.71669pt too wide) in paragraph at lines 17--23
-\OT1/cmtt/m/n/12 ley-[]de-[]propiedad-[]horizontal-[]derechos-[]y-[]deberes-[]d
-e-[]copropietarios-[]y-[]administrador/$\OT1/cmr/m/n/12 .
+Underfull \hbox (badness 10000) in paragraph at lines 17--23
+\OT1/cmr/m/n/10.95 ta-rios y ad-mi-nis-tra-dor.  $\OT1/cmtt/m/n/10.95 https : /
+ / actualicese . com / actualidad / 2015 / 12 / 14 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--37
-\OT1/cmtt/m/n/12 proyectos / abreproy / 11247 / fichero / Memoria % 252F7-[]SOA
-P + y + WSDL .
+Overfull \hbox (15.5578pt too wide) in paragraph at lines 17--23
+\OT1/cmtt/m/n/10.95 ley-[]de-[]propiedad-[]horizontal-[]derechos-[]y-[]deberes-
+[]de-[]copropietarios-[]y-[]administrador/$\OT1/cmr/m/n/10.95 .
  []
 
-) [74
+) [66
 
 
 
@@ -1822,26 +1701,28 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4928 strings out of 493303
- 85838 string characters out of 3128914
- 193095 words of memory out of 3000000
- 8196 multiletter control sequences out of 15000+200000
- 9924 words of font info for 35 fonts, out of 3000000 for 9000
+ 4949 strings out of 493303
+ 86571 string characters out of 3128914
+ 192264 words of memory out of 3000000
+ 8212 multiletter control sequences out of 15000+200000
+ 10842 words of font info for 38 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,19n,38p,1126b,620s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,19n,38p,1126b,629s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/USUARIO/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmbx12.pfb><C:/Users/USUARIO/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/USUARIO/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/USUARIO/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/USUARIO/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/U
-sers/USUARIO/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-msl12.pfb><C:/Users/USUARIO/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmsy10.pfb><C:/Users/USUARIO/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (82 pages, 1244430 bytes).
+ts/cm/cmbx10.pfb><C:/Users/USUARIO/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmbx12.pfb><C:/Users/USUARIO/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/USUARIO/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/USUARIO
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:
+/Users/USUARIO/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmr12.pfb><C:/Users/USUARIO/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmr8.pfb><C:/Users/USUARIO/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/USUARIO/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/USUARIO/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on main.pdf (76 pages, 1574792 bytes).
 PDF statistics:
- 368 PDF objects out of 1000 (max. 8388607)
+ 365 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 321 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 336 words of extra memory for PDF output out of 10000 (max. 10000000)
 

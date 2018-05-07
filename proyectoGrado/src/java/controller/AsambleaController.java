@@ -5,21 +5,30 @@
  */
 package controller;
 
+import business.AsambleaBusiness;
+import business.TipoAsambleaBusiness;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import persistecia.dto.AsambleaDTO;
+import persistecia.dto.TipoAsambleaDTO;
 
 /**
  *
  * @author USUARIO
  */
+@WebServlet(name = "AsambleaController", urlPatterns = {"/asamblea.do"})
 public class AsambleaController extends HttpServlet {
 
+    AsambleaBusiness asambleBusiness = new AsambleaBusiness();
+    TipoAsambleaBusiness tipoAsambleaBusiness = new TipoAsambleaBusiness();
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -30,31 +39,69 @@ public class AsambleaController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {        
-        response.setContentType("text/html;charset=UTF-8");
+            throws ServletException, IOException {
         
-        HttpSession misession= (HttpSession) request.getSession(); 
+        HttpSession misession = (HttpSession) request.getSession();
         misession.getAttribute("usuario");
-        
-        if(request.getSession().getAttribute("m_asamblea").equals("display: none")){
-                RequestDispatcher rd = request.getRequestDispatcher("/index.html");
-                rd.forward(request, response);
-           }
-        else{
-        
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet AsambleaController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet AsambleaController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+
+        if (request.getSession().getAttribute("m_asambleas").equals("display: none")) {
+            RequestDispatcher rd = request.getRequestDispatcher("/index.html");
+            rd.forward(request, response);
+        } else {
+/*
+            switch (request.getParameter("action")) {
+                case "crear":
+                    AsambleaDTO preg = new AsambleaDTO();
+                    preg.setDescripcion(request.getParameter("txtDescripcion"));
+                    AsambleaDTO asamblea = asambleBusiness.consultarAsambleaPorId(Integer.parseInt(request.getParameter("txtAsamblea")));
+                    preg.setAsamblea(asamblea);
+                    preg.setActivo(1);
+                    preguntaBusiness.crearPreguntas(preg);
+                    request.getRequestDispatcher("preguntas.do?method=get&&action=consul").forward(request, response);
+                    break;
+                case "consultar":
+                    List<PreguntasDTO> preguntas = preguntaBusiness.consultarPreguntas(request.getParameter("txtDescripBuscar"));
+                    request.getSession().setAttribute("Preguntas", preguntas);
+                    request.getRequestDispatcher("Asamblea/pregunta.jsp").forward(request, response);
+                    break;
+                case "modificar":
+                    PreguntasDTO pregun = preguntaBusiness.consultarPrePorId(Integer.parseInt(request.getParameter("idPreg")));
+                    pregun.setDescripcion(request.getParameter("txtDescripcion"));
+                    AsambleaDTO asambl = asambleBusiness.consultarAsambleaPorId(Integer.parseInt(request.getParameter("txtAsamblea")));
+                    pregun.setAsamblea(asambl);
+                    preguntaBusiness.actualizarPreguntas(pregun);
+                    request.getRequestDispatcher("preguntas.do?method=get&&action=consul").forward(request, response);
+                    break;
+            }*/
+
+            /*METHOD GET*/
+            if ("get".equals(request.getParameter("method"))) {
+                switch (request.getParameter("action")) {
+                    case "consul":
+                        List<TipoAsambleaDTO> tipos = tipoAsambleaBusiness.listarTiposAsamblea();
+                        request.getSession().setAttribute("TipoAsamblea", tipos);
+                        request.getRequestDispatcher("Asamblea/pregunta.jsp").forward(request, response);
+                        break;
+                    /*case "consulTipos":
+                        List<AsambleaDTO> tipos = asambleBusiness.listarAsambleas();
+                        request.getSession().setAttribute("Asambleas", tipos);
+                        request.getRequestDispatcher("Asamblea/crearPregunta.jsp").forward(request, response);
+                        break;
+                    case "up"://actualizar
+                        PreguntasDTO doc = preguntaBusiness.consultarPrePorId(Integer.parseInt(request.getParameter("code")));
+                        request.getSession().setAttribute("Preguntas", doc);
+                        List<AsambleaDTO> tiposEn = asambleBusiness.listarAsambleas();
+                        request.getSession().setAttribute("Asambleas", tiposEn);
+                        request.getRequestDispatcher("Asamblea/modificarPregunta.jsp").forward(request, response);
+                        break;
+                    case "dl"://Eliminar
+                        PreguntasDTO pregunta = preguntaBusiness.consultarPrePorId(Integer.parseInt(request.getParameter("code")));
+                        preguntaBusiness.cambiarEstadoPre(pregunta);
+                        request.getRequestDispatcher("preguntas.do?method=get&&action=consul").forward(request, response);
+                        break;*/
+                }
+            }
         }
-    }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

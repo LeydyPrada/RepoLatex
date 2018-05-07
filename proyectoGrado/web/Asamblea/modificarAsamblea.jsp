@@ -4,8 +4,7 @@
     Author     : USUARIO
 --%>
 
-<%@page import="persistecia.dto.TipoEncuestaDTO"%>
-<%@page import="persistecia.dto.EncuestaDTO"%>
+<%@page import="persistecia.dto.AsambleaDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ include file="/masterpage.jsp" %>
@@ -13,8 +12,7 @@
 <%  if(request.getSession().getAttribute("usuario") == null){
       response.sendRedirect("index.html");
     }
-    EncuestaDTO encuesta = (EncuestaDTO) request.getSession().getAttribute("Encuesta");
-    ArrayList<TipoEncuestaDTO> tipos = (ArrayList<TipoEncuestaDTO>) request.getSession().getAttribute("TipoEncuestas");
+    AsambleaDTO encuesta = (AsambleaDTO) request.getSession().getAttribute("Encuesta");
 %>
 
 <html>
@@ -32,20 +30,6 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="control-label">Descripción</label>
                             <input type="text" class="form-control" id="txtDescripcion" name="txtDescripcion" placeholder="Descripcion Encuesta" required value="<%out.print(encuesta.getDescripcion());%>">
-                        </div>
-                        <div class="form-group">
-                            <label for="inputEmail3" class="control-label">Tipos de Encuesta</label>
-                            <select class="form-control" id="txtTipo" name="txtTipo" required>
-                                <%
-                                    for (int i = 0; i < tipos.size(); i++) {
-                                        if (tipos.get(i).getId() == encuesta.getTipoEncuesta().getId()) {
-                                            out.println("<option value=" + tipos.get(i).getId() + " selected>" + tipos.get(i).getTipo() + "</option>");
-                                        } else {
-                                            out.println("<option value=" + tipos.get(i).getId() + ">" + tipos.get(i).getTipo() + "</option>");
-                                        }
-                                    }
-                                %>
-                            </select>
                         </div>
                     </div>
                     <div class="col-md-12">

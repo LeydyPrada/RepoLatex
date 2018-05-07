@@ -13,7 +13,7 @@
       response.sendRedirect("index.html");
     }
     ArrayList<AsambleaDTO> tipos = null;
-    tipos = (ArrayList<AsambleaDTO>) request.getSession().getAttribute("TipoEncuestas");
+    tipos = (ArrayList<AsambleaDTO>) request.getSession().getAttribute("TipoAsambleas");
 %>
 
 <html>
@@ -32,8 +32,8 @@
                             <input type="text" class="form-control" id="txtDescripcion" name="txtDescripcion" placeholder="Descripcion Pregunta" required>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail3" class="control-label">Encuesta</label>
-                            <select class="form-control" id="txtEncuesta" name="txtEncuesta" required>
+                            <label for="inputEmail3" class="control-label">Asamblea</label>
+                            <select class="form-control" id="txtAsamblea" name="txtAsamblea" required>
                                 <%
                                     out.println("<option value="+"></option>");
                                     for (int i = 0; i < tipos.size(); i++) {

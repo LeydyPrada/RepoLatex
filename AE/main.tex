@@ -1,4 +1,16 @@
-\documentclass[letter,12pt,openany]{book}
+\documentclass[letter,11pt,openany]{book}
+
+\oddsidemargin=-1cm
+\textwidth=18cm
+\topmargin=2cm
+\textheight=20cm
+
+\evensidemargin -6mm
+\oddsidemargin -0.4cm
+\textwidth 16.7cm
+\textheight 22cm
+\topmargin -0.65cm
+
 %%%PAQUETES
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
@@ -17,20 +29,40 @@
 \begin{titlepage}
 	\centering	
 	{\scshape\LARGE PROTOTIPO DE APLICACIÓN WEB PARA LA SISTEMATIZACIÓN DEL PROCESO DE ASAMBLEA GENERAL DE COPROPIETARIOS EN PROPIEDAD HORIZONTAL MEDIANTE SERVICIOS SOAP \par}
-	\vspace{4cm}
+	\vspace{7cm}
 	{\scshape\Large JEIMMY LORENA NIETO NIETO\\
 		LEYDY YOLANDA PRADA CRUZ\par}
-	\vspace{4.5cm}
+	\vspace{7.5cm}
 	
 	{\Large\ UNIVERSIDAD DISTRITAL FRANCISCO JOSÉ DE CALDAS\par}
 	{\Large\ ESPECIALIZACIÓN EN INGENIERIA DE SOFTWARE\par}
-    PROYECTO DE GRADO \\
-	BOGOTÁ D.C.
+    {\Large\ PROYECTO DE GRADO\par}
+	{\Large\ BOGOTÁ D.C.\par}
+	{\Large\ 2018\par}	
+\end{titlepage}
+
+%%%ContraPortada
+\begin{titlepage}
+	\centering	
+	{\scshape\LARGE PROTOTIPO DE APLICACIÓN WEB PARA LA SISTEMATIZACIÓN DEL PROCESO DE ASAMBLEA GENERAL DE COPROPIETARIOS EN PROPIEDAD HORIZONTAL MEDIANTE SERVICIOS SOAP \par}
+	\vspace{4cm}
+	{\scshape\Large JEIMMY LORENA NIETO NIETO\par}
+	{\scshape\Large 20172099029\par}
+	{\scshape\Large LEYDY YOLANDA PRADA CRUZ\par}
+	{\scshape\Large 20172099032\par}
+	\vspace{2.5cm}
 	
-	\vfill
+	{\scshape\Large DIRECTORA\par}
+	{\scshape\Large LILIAN BEJARANO\par}
+	{\scshape\Large REVISOR\par}
+	{\scshape\Large EDGAR RINCON\par}
+	\vspace{2.5cm}
 	
-	\vfill
-	
+	{\Large\ UNIVERSIDAD DISTRITAL FRANCISCO JOSÉ DE CALDAS\par}
+	{\Large\ ESPECIALIZACIÓN EN INGENIERIA DE SOFTWARE\par}
+	{\Large\ PROYECTO DE GRADO\par}
+	{\Large\ BOGOTÁ D.C.\par}
+	{\Large\ 2018\par}	
 \end{titlepage}
 
 \frontmatter
@@ -38,12 +70,13 @@
 \listoftables
 \listoffigures
 
-%%%Estructruuta
+%%%Estructura
 \mainmatter
+\part*{INTRODUCCIÓN}
 \include{contexto/proyecto/introduccion}
-\part{Contextualización de la Investigación}
+\part{CONTEXTUALIZACIÓN DE LA INVESTIGACIÓN}
 \include{contexto/proyecto/proyecto}
-\part{Arquitectura y Diseño}
+\part{DESARROLLO DE LA INVESTIGACIÓN}
 \include{arquitectura/organizacion/organizacion}
 \include{arquitectura/adm_lenguaje/adm_lenguaje}
 \include{arquitectura/negocio/negocio}
@@ -52,11 +85,11 @@
 \include{arquitectura/motivavion/motivacion}
 \include{arquitectura/migracion/migracion}
 \include{arquitectura/diseno/gof}
-\part{Desarrollo de la Investigación}
+
 \include{desarrollo/recoleccion/recoleccion}
 \include{desarrollo/analisis/analisis}
 \include{desarrollo/resultados/resultados}
-\part{Reflexiones}
+\part{CIERRE DE LA INVESTIGACIÓN}
 \include{reflexiones/conclusiones}
 \include{reflexiones/anexos}
 %\include{}

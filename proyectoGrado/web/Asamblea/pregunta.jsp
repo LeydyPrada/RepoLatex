@@ -56,7 +56,7 @@
         <div class="col-md-12">
             <div class="container">
                 <div class="col-sm-2">
-                    <a href="Encuesta/preguntas.jsp" class="btn btn-default ColorFondo1 TextoMenu">Limpiar Resultados</a>
+                    <a href="Asamblea/preguntas.jsp" class="btn btn-default ColorFondo1 TextoMenu">Limpiar Resultados</a>
                 </div>
                 <div class="col-md-12"><p><br></p></div>
                 <table class="table">
@@ -64,7 +64,7 @@
                         <tr>
                             <th>No</th>
                             <th>Descripci&oacute;n</th>
-                            <th>Encuesta</th>
+                            <th>Asamblea</th>
                             <th>Estado</th>
                             <th>Acci&oacute;n</th>
                         </tr>
@@ -75,7 +75,7 @@
                                 out.println("<tr>");
                                 out.println("<td>" + tipos.get(i).getId() + "</td>");
                                 out.println("<td>" + tipos.get(i).getDescripcion() + "</td>");
-                                out.println("<td>" + tipos.get(i).getEncuesta().getDescripcion()+ "</td>");
+                                out.println("<td>" + tipos.get(i).getAsamblea().getDescripcion()+ "</td>");
                                 out.println("<td>" + (tipos.get(i).getActivo() == 1 ? "activo" : "inactivo") + "</td>");
                                 out.println("<td><a href='preguntas.do?method=get&&action=up&&code=" + tipos.get(i).getId() + "'><i class='fa fa-2x fa-pencil-square-o fa-fw'></i></a><a href='preguntas.do?method=get&&action=dl&&code=" + tipos.get(i).getId() + "'><i class='fa fa-2x fa-exchange fa-fw'></i></a></td>");
                                 out.println("</tr>");

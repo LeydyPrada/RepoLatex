@@ -22,8 +22,8 @@ import persistecia.dto.PreguntasDTO;
  */
 public class PreguntasDAO implements iPreguntasDAO{
     
-    private static final String CREAR_SQL = "INSERT INTO preguntas (descripcion, activo, id_encuesta) VALUES (?, ?, ?)";
-    private static final String ACTUALIZAR_SQL = "UPDATE preguntas SET descripcion = ?, activo = ?, id_encuesta = ? WHERE id = ?";
+    private static final String CREAR_SQL = "INSERT INTO preguntas (descripcion, activo, id_asamblea) VALUES (?, ?, ?)";
+    private static final String ACTUALIZAR_SQL = "UPDATE preguntas SET descripcion = ?, activo = ?, id_asamblea = ? WHERE id = ?";
     private static final String BORRAR_SQL = "DELETE FROM preguntas WHERE id = ?";
     private static final String CONSULTAR_SQL = "SELECT * FROM preguntas WHERE id = ?";
     private static final String CONSULTAR_DESC_SQL = "SELECT * FROM preguntas WHERE descripcion LIKE ?";

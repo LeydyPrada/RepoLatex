@@ -4,7 +4,7 @@
     Author     : USUARIO
 --%>
 
-<%@page import="persistecia.dto.EncuestaDTO"%>
+<%@page import="persistecia.dto.AsambleaDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ include file="/masterpage.jsp" %>
@@ -12,15 +12,15 @@
 <%  if(request.getSession().getAttribute("usuario") == null){
       response.sendRedirect("index.html");
     }
-    ArrayList<EncuestaDTO> tipos = null;
-    tipos = (ArrayList<EncuestaDTO>) request.getSession().getAttribute("Encuestas");
+    ArrayList<AsambleaDTO> tipos = null;
+    tipos = (ArrayList<AsambleaDTO>) request.getSession().getAttribute("Asambleas");
 %>
 
 <html>
     <body>
 
         <div class="col-md-12"><p><br></p></div>
-        <div class="col-md-12 container"><div class="col-md-12"><p><h1>Listar Encuestas</h1></p><br><hr><br></div></div>
+        <div class="col-md-12 container"><div class="col-md-12"><p><h1>Listar Asambleas</h1></p><br><hr><br></div></div>
 
 
         <div class="col-md-6">
@@ -30,7 +30,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="inputEmail3" class="control-label">Descripción</label>
-                            <input type="text" class="form-control" id="txtDescripBuscar" name="txtDescripBuscar" placeholder="Descripción">
+                            <input type="text" class="form-control" id="txtDescripBusc  ar" name="txtDescripBuscar" placeholder="Descripción">
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -63,7 +63,6 @@
                         <tr>
                             <th>No</th>
                             <th>Descripción</th>
-                            <th>Tipo</th>
                             <th>Estado</th>
                             <th>Acción</th>
                         </tr>
@@ -74,8 +73,7 @@
                                 out.println("<tr>");
                                 out.println("<td>" + tipos.get(i).getId() + "</td>");
                                 out.println("<td>" + tipos.get(i).getDescripcion() + "</td>");
-                                out.println("<td>" + tipos.get(i).getTipoEncuesta().getTipo() + "</td>");
-                                out.println("<td>" + (tipos.get(i).getActivo() == 1 ? "activo" : "inactivo") + "</td>");
+                                out.println("<td>" + tipos.get(i).getIdEstadoAsamblea()+ "</td>");
                                 out.println("<td><a href='encuesta.do?method=get&&action=up&&code=" + tipos.get(i).getId() + "'><i class='fa fa-2x fa-pencil-square-o fa-fw'></i></a><a href='encuesta.do?method=get&&action=dl&&code=" + tipos.get(i).getId() + "'><i class='fa fa-2x fa-exchange fa-fw'></i></a></td>");
                                 out.println("</tr>");
                             }

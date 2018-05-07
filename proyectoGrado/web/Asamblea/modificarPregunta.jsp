@@ -14,7 +14,7 @@
       response.sendRedirect("index.html");
     }
     PreguntasDTO pregunta = (PreguntasDTO) request.getSession().getAttribute("Preguntas");
-    ArrayList<AsambleaDTO> tipos = (ArrayList<AsambleaDTO>) request.getSession().getAttribute("Encuestas");
+    ArrayList<AsambleaDTO> tipos = (ArrayList<AsambleaDTO>) request.getSession().getAttribute("Asambleas");
 %>
 
 <html>
@@ -34,8 +34,8 @@
                             <input type="text" class="form-control" id="txtDescripcion" name="txtDescripcion" placeholder="Descripcion Pregunta" required value="<%out.print(pregunta.getDescripcion());%>">
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail3" class="control-label">Encuesta</label>
-                            <select class="form-control" id="txtTipo" name="txtEncuesta" required>
+                            <label for="inputEmail3" class="control-label">Asamblea</label>
+                            <select class="form-control" id="txtTipo" name="txtAsamblea" required>
                                 <%
                                     for (int i = 0; i < tipos.size(); i++) {
                                         if (tipos.get(i).getId() == pregunta.getAsamblea().getId()) {

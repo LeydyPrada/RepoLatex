@@ -40,69 +40,68 @@ public class PreguntasController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        HttpSession misession= (HttpSession) request.getSession(); 
+
+        HttpSession misession = (HttpSession) request.getSession();
         misession.getAttribute("usuario");
-        
-         if(request.getSession().getAttribute("m_preguntas").equals("display: none")){
-                RequestDispatcher rd = request.getRequestDispatcher("/index.html");
-                rd.forward(request, response);
-           }
-        else{
 
-        switch (request.getParameter("action")) {
-            case "crear":
-                PreguntasDTO preg = new PreguntasDTO();
-                preg.setDescripcion(request.getParameter("txtDescripcion"));
-                AsambleaDTO asamblea = asambleBusiness.consultarAsambleaPorId(Integer.parseInt(request.getParameter("txtEncuesta")));
-                preg.setAsamblea(asamblea);
-                preg.setActivo(1);
-                preguntaBusiness.crearPreguntas(preg);
-                request.getRequestDispatcher("preguntas.do?method=get&&action=consul").forward(request, response);
-                break;
-            case "consultar":
-                List<PreguntasDTO> preguntas = preguntaBusiness.consultarPreguntas(request.getParameter("txtDescripBuscar"));
-                request.getSession().setAttribute("Preguntas", preguntas);
-                request.getRequestDispatcher("Encuesta/pregunta.jsp").forward(request, response);
-                break;
-            case "modificar":
-                PreguntasDTO pregun = preguntaBusiness.consultarPrePorId(Integer.parseInt(request.getParameter("idPreg")));
-                pregun.setDescripcion(request.getParameter("txtDescripcion"));
-                AsambleaDTO asambl = asambleBusiness.consultarAsambleaPorId(Integer.parseInt(request.getParameter("txtEncuesta")));
-                pregun.setAsamblea(asambl);
-                preguntaBusiness.actualizarPreguntas(pregun);
-                request.getRequestDispatcher("preguntas.do?method=get&&action=consul").forward(request, response);
-                break;
-        }
+        if (request.getSession().getAttribute("m_preguntas").equals("display: none")) {
+            RequestDispatcher rd = request.getRequestDispatcher("/index.html");
+            rd.forward(request, response);
+        } else {
 
-        /*METHOD GET*/
-        if ("get".equals(request.getParameter("method"))) {
             switch (request.getParameter("action")) {
-                case "consul":
-                    List<PreguntasDTO> preguntas = preguntaBusiness.listarPreguntas();
+                case "crear":
+                    PreguntasDTO preg = new PreguntasDTO();
+                    preg.setDescripcion(request.getParameter("txtDescripcion"));
+                    AsambleaDTO asamblea = asambleBusiness.consultarAsambleaPorId(Integer.parseInt(request.getParameter("txtAsamblea")));
+                    preg.setAsamblea(asamblea);
+                    preg.setActivo(1);
+                    preguntaBusiness.crearPreguntas(preg);
+                    request.getRequestDispatcher("preguntas.do?method=get&&action=consul").forward(request, response);
+                    break;
+                case "consultar":
+                    List<PreguntasDTO> preguntas = preguntaBusiness.consultarPreguntas(request.getParameter("txtDescripBuscar"));
                     request.getSession().setAttribute("Preguntas", preguntas);
-                    request.getRequestDispatcher("Encuesta/pregunta.jsp").forward(request, response);
+                    request.getRequestDispatcher("Asamblea/pregunta.jsp").forward(request, response);
                     break;
-                case "consulTipos":
-                    List<AsambleaDTO> tipos = asambleBusiness.listarAsambleas();
-                    request.getSession().setAttribute("TipoEncuestas", tipos);
-                    request.getRequestDispatcher("Encuesta/crearPregunta.jsp").forward(request, response);
-                    break;
-                case "up"://actualizar
-                    PreguntasDTO doc = preguntaBusiness.consultarPrePorId(Integer.parseInt(request.getParameter("code")));
-                    request.getSession().setAttribute("Preguntas", doc);
-                    List<AsambleaDTO> tiposEn = asambleBusiness.listarAsambleas();
-                    request.getSession().setAttribute("Encuestas", tiposEn);
-                    request.getRequestDispatcher("Encuesta/modificarPregunta.jsp").forward(request, response);
-                    break;
-                case "dl"://Eliminar
-                    PreguntasDTO pregunta = preguntaBusiness.consultarPrePorId(Integer.parseInt(request.getParameter("code")));
-                    preguntaBusiness.cambiarEstadoPre(pregunta);
+                case "modificar":
+                    PreguntasDTO pregun = preguntaBusiness.consultarPrePorId(Integer.parseInt(request.getParameter("idPreg")));
+                    pregun.setDescripcion(request.getParameter("txtDescripcion"));
+                    AsambleaDTO asambl = asambleBusiness.consultarAsambleaPorId(Integer.parseInt(request.getParameter("txtAsamblea")));
+                    pregun.setAsamblea(asambl);
+                    preguntaBusiness.actualizarPreguntas(pregun);
                     request.getRequestDispatcher("preguntas.do?method=get&&action=consul").forward(request, response);
                     break;
             }
+
+            /*METHOD GET*/
+            if ("get".equals(request.getParameter("method"))) {
+                switch (request.getParameter("action")) {
+                    case "consul":
+                        List<PreguntasDTO> preguntas = preguntaBusiness.listarPreguntas();
+                        request.getSession().setAttribute("Preguntas", preguntas);
+                        request.getRequestDispatcher("Asamblea/pregunta.jsp").forward(request, response);
+                        break;
+                    case "consulTipos":
+                        List<AsambleaDTO> tipos = asambleBusiness.listarAsambleas();
+                        request.getSession().setAttribute("Asambleas", tipos);
+                        request.getRequestDispatcher("Asamblea/crearPregunta.jsp").forward(request, response);
+                        break;
+                    case "up"://actualizar
+                        PreguntasDTO doc = preguntaBusiness.consultarPrePorId(Integer.parseInt(request.getParameter("code")));
+                        request.getSession().setAttribute("Preguntas", doc);
+                        List<AsambleaDTO> tiposEn = asambleBusiness.listarAsambleas();
+                        request.getSession().setAttribute("Asambleas", tiposEn);
+                        request.getRequestDispatcher("Asamblea/modificarPregunta.jsp").forward(request, response);
+                        break;
+                    case "dl"://Eliminar
+                        PreguntasDTO pregunta = preguntaBusiness.consultarPrePorId(Integer.parseInt(request.getParameter("code")));
+                        preguntaBusiness.cambiarEstadoPre(pregunta);
+                        request.getRequestDispatcher("preguntas.do?method=get&&action=consul").forward(request, response);
+                        break;
+                }
+            }
         }
-         }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

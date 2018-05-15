@@ -124,5 +124,26 @@ public class AsambleaBusiness {
             Logger.getLogger(AsambleaBusiness.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//actualizarAsamblea
+    
+    public AsambleaDTO consultarAsambleaPorEstado(String estado) {
+
+        AsambleaDTO asamblea = new AsambleaDTO();
+        EstadoAsambleaDTO estadoAsamblea; 
+        try {
+            
+            estadoAsamblea = estadoDAO.consultarPorEstado(estado);
+            if(estadoAsamblea != null && estadoAsamblea.getId() != null){
+            asamblea = asambleaDAO.consultarEstadoAsamblea(estadoAsamblea.getId());
+                if(asamblea.getId()==null){
+                    asamblea = null;
+                }
+                    
+            }
+
+        } catch (Exception ex) {
+            Logger.getLogger(AsambleaBusiness.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return asamblea;
+    }
 
 }

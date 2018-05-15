@@ -17,6 +17,8 @@ public class OrdenDiaDTO {
     private String orden;
     private String descripcion;
     private Integer activo;
+    private Integer aprobado;
+    private Integer noAprobado;
     private List<AsambleaDTO> asamblea;
 
     public OrdenDiaDTO() {
@@ -26,11 +28,13 @@ public class OrdenDiaDTO {
         this.id = id;
     }
 
-    public OrdenDiaDTO(Integer id, String orden, String descripcion, Integer activo) {
+    public OrdenDiaDTO(Integer id, String orden, String descripcion, Integer activo, Integer aprobado, Integer noAprobado) {
         this.id = id;
         this.orden = orden;
         this.descripcion = descripcion;
         this.activo = activo;
+        this.aprobado = aprobado;
+        this.noAprobado = noAprobado;
     }   
 
     public Integer getId() {
@@ -65,6 +69,22 @@ public class OrdenDiaDTO {
         this.activo = activo;
     }
 
+    public Integer getAprobado() {
+        return aprobado;
+    }
+
+    public void setAprobado(Integer aprobado) {
+        this.aprobado = aprobado;
+    }
+
+    public Integer getNoAprobado() {
+        return noAprobado;
+    }
+
+    public void setNoAprobado(Integer noAprobado) {
+        this.noAprobado = noAprobado;
+    }    
+    
     public List<AsambleaDTO> getAsamblea() {
         return asamblea;
     }

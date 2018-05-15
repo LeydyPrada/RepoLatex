@@ -20,5 +20,6 @@ public interface iEstadoAsambleaDAO {
 	public boolean actualizar(EstadoAsambleaDTO estadoAsamblea);
 	public boolean borrar(Integer id);
         public List<EstadoAsambleaDTO> consultarPorDescrip(String desc);
+        public EstadoAsambleaDTO consultarPorEstado(String estado);
     
 }

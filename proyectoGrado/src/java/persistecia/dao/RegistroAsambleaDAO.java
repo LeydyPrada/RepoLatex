@@ -21,7 +21,7 @@ import persistecia.dto.RegistroAsambleaDTO;
  */
 public class RegistroAsambleaDAO implements iRegistroAsambleaDAO{
     
-    private static final String CREAR_SQL = "INSERT INTO registro_asamblea (inmueble, codigo, verificado) VALUES (?, ?, ?)";
+    private static final String CREAR_SQL = "INSERT INTO registro_asamblea (inmueble, codigo, verificado, id_asamblea) VALUES (?, ?, ?, ?)";
     private static final String ACTUALIZAR_SQL = "UPDATE registro_asamblea SET inmueble = ?, codigo = ?, verificado=? WHERE id = ?";
     private static final String BORRAR_SQL = "DELETE FROM registro_asamblea WHERE id = ?";
     private static final String CONSULTAR_SQL = "SELECT * FROM registro_asamblea WHERE id = ?";
@@ -38,7 +38,8 @@ public class RegistroAsambleaDAO implements iRegistroAsambleaDAO{
             ps = con.getConn().prepareStatement(CREAR_SQL);
             ps.setString(1, registroAsamblea.getInmueble());   
             ps.setInt(2, registroAsamblea.getCodigo());
-            ps.setInt(3, registroAsamblea.getVerificado());            
+            ps.setInt(3, registroAsamblea.getVerificado());
+            ps.setInt(4, registroAsamblea.getId_asamblea());
                                    
             if (ps.executeUpdate() > 0){
                 return true;
@@ -63,7 +64,7 @@ public class RegistroAsambleaDAO implements iRegistroAsambleaDAO{
             rs = ps.executeQuery();
             
             while(rs.next()){
-                registroAsamblea = new RegistroAsambleaDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4));
+                registroAsamblea = new RegistroAsambleaDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getInt(5));
             }  
             return registroAsamblea;
         } catch (SQLException ex) {
@@ -85,7 +86,7 @@ public class RegistroAsambleaDAO implements iRegistroAsambleaDAO{
             rs = ps.executeQuery();
             
             while(rs.next()){
-               registrosAsamblea.add(new RegistroAsambleaDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4)));
+               registrosAsamblea.add(new RegistroAsambleaDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getInt(5)));
             }            
         } catch (SQLException ex) {
             Logger.getLogger(RegistroAsambleaDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -102,8 +103,8 @@ public class RegistroAsambleaDAO implements iRegistroAsambleaDAO{
             ps = con.getConn().prepareStatement(ACTUALIZAR_SQL);
             ps.setString(1, registroAsamblea.getInmueble());
             ps.setInt(2, registroAsamblea.getCodigo());
-            ps.setInt(2, registroAsamblea.getVerificado());
-            ps.setInt(3, registroAsamblea.getId());
+            ps.setInt(3, registroAsamblea.getVerificado());
+            ps.setInt(4, registroAsamblea.getId());
                         
             if (ps.executeUpdate() > 0){
                 return true;
@@ -146,7 +147,7 @@ public class RegistroAsambleaDAO implements iRegistroAsambleaDAO{
             rs = ps.executeQuery();
             
             while(rs.next()){
-                registroAsamblea.add(new RegistroAsambleaDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4)));
+                registroAsamblea.add(new RegistroAsambleaDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getInt(5)));
             }  
          } catch (SQLException ex) {
             Logger.getLogger(RegistroAsambleaDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -169,7 +170,7 @@ public class RegistroAsambleaDAO implements iRegistroAsambleaDAO{
             rs = ps.executeQuery();
             
             while(rs.next()){
-                registroAsamblea = new RegistroAsambleaDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4));
+                registroAsamblea = new RegistroAsambleaDTO(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getInt(4), rs.getInt(5));
             }  
          } catch (SQLException ex) {
             Logger.getLogger(RegistroAsambleaDAO.class.getName()).log(Level.SEVERE, null, ex);

@@ -36,6 +36,7 @@ public class AccesoController extends HttpServlet {
     String m_tipo_documento = "display: none";
     String m_tipo_inmueble = "display: none";
     String m_tipo_usuario = "display: none";
+    String m_ingreso_asamblea="display: none";
     String menu_asamblea_general = "display: none";
     String menu_usuarios = "display: none";
     String menu_configuracion = "display: none";
@@ -98,6 +99,9 @@ public class AccesoController extends HttpServlet {
                             case "tipo_usuario":
                                 m_tipo_usuario = "display:inline";
                                 break;
+                            case "ingreso_asamblea":
+                                m_ingreso_asamblea = "display:inline";
+                                break;
                             case "asamblea_general":
                                 menu_asamblea_general = "display:inline";
                                 break;
@@ -126,6 +130,7 @@ public class AccesoController extends HttpServlet {
             request.getSession().setAttribute("m_tipo_documento", m_tipo_documento);
             request.getSession().setAttribute("m_tipo_inmueble", m_tipo_inmueble);
             request.getSession().setAttribute("m_tipo_usuario", m_tipo_usuario);
+            request.getSession().setAttribute("m_ingreso_asamblea", m_ingreso_asamblea);
             request.getSession().setAttribute("menu_asamblea_general", menu_asamblea_general);
             request.getSession().setAttribute("menu_usuarios", menu_usuarios);
             request.getSession().setAttribute("menu_configuracion", menu_configuracion);

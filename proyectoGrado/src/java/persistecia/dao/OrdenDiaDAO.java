@@ -21,11 +21,13 @@ import persistecia.dto.OrdenDiaDTO;
 public class OrdenDiaDAO implements iOrdenDiaDAO{
     
     private static final String CREAR_SQL = "INSERT INTO orden_dia (orden, descripcion, activo) VALUES (?, ?, ?)";
-    private static final String ACTUALIZAR_SQL = "UPDATE orden_dia SET orden = ?, descripcion = ?, activo = ? WHERE id = ?";
+    private static final String ACTUALIZAR_SQL = "UPDATE orden_dia SET orden = ?, descripcion = ?, activo = ?, aprobado = ?, no_aprobado = ? WHERE id = ?";
     private static final String BORRAR_SQL = "DELETE FROM orden_dia WHERE id = ?";
     private static final String CONSULTAR_SQL = "SELECT * FROM orden_dia WHERE id = ?";
     private static final String CONSULTAR_ORDEN_SQL = "SELECT * FROM orden_dia WHERE orden LIKE ?";
     private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM orden_dia";
+    private static final String VOTACION_ORDEN_DIA = "INSERT INTO voto_orden_dia (id_orden_dia, aprobado, no_aprobado) VALUES(?, ?, ?)";
+    
     
     private static final Conexion con = Conexion.obtener();
 
@@ -36,7 +38,7 @@ public class OrdenDiaDAO implements iOrdenDiaDAO{
             ps = con.getConn().prepareStatement(CREAR_SQL);
             ps.setString(1, ordenDia.getOrden()); 
             ps.setString(2, ordenDia.getDescripcion());
-            ps.setInt(3, ordenDia.getActivo());
+            ps.setInt(3, ordenDia.getActivo());           
                                    
             if (ps.executeUpdate() > 0){
                 return true;
@@ -61,7 +63,7 @@ public class OrdenDiaDAO implements iOrdenDiaDAO{
             rs = ps.executeQuery();
             
             while(rs.next()){
-                ordenDia = new OrdenDiaDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4));
+                ordenDia = new OrdenDiaDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getInt(5), rs.getInt(6));
             }  
             return ordenDia;
         } catch (SQLException ex) {
@@ -83,7 +85,7 @@ public class OrdenDiaDAO implements iOrdenDiaDAO{
             rs = ps.executeQuery();
             
             while(rs.next()){
-               ordenDia.add(new OrdenDiaDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4)));
+               ordenDia.add(new OrdenDiaDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getInt(5), rs.getInt(6)));
             }            
         } catch (SQLException ex) {
             Logger.getLogger(OrdenDiaDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -102,6 +104,9 @@ public class OrdenDiaDAO implements iOrdenDiaDAO{
             ps.setString(2, ordenDia.getDescripcion());
             ps.setInt(3, ordenDia.getActivo());
             ps.setInt(4, ordenDia.getId());
+            ps.setInt(5, ordenDia.getAprobado());
+            ps.setInt(6, ordenDia.getNoAprobado());
+            
                         
             if (ps.executeUpdate() > 0){
                 return true;
@@ -144,7 +149,7 @@ public class OrdenDiaDAO implements iOrdenDiaDAO{
             rs = ps.executeQuery();
             
             while(rs.next()){
-               ordenDia.add(new OrdenDiaDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4)));
+               ordenDia.add(new OrdenDiaDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getInt(5), rs.getInt(6)));
             }            
         } catch (SQLException ex) {
             Logger.getLogger(OrdenDiaDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -152,6 +157,27 @@ public class OrdenDiaDAO implements iOrdenDiaDAO{
             con.cerrar();
         }
         return ordenDia;
+    }
+
+    @Override
+    public boolean votarOrdenDia(OrdenDiaDTO ordenDia) {
+        PreparedStatement ps;
+        try {            
+            ps = con.getConn().prepareStatement(VOTACION_ORDEN_DIA);
+            ps.setInt(1, ordenDia.getId()); 
+            ps.setInt(2, ordenDia.getAprobado());
+            ps.setInt(3, ordenDia.getNoAprobado());           
+                                   
+            if (ps.executeUpdate() > 0){
+                return true;
+            }           
+        } catch (SQLException ex) {
+            Logger.getLogger(OrdenDiaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            con.cerrar();
+        }        
+        return false;
+        
     }
 
    

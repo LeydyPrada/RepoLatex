@@ -27,6 +27,7 @@ public class EstadoAsambleaDAO implements iEstadoAsambleaDAO{
     private static final String CONSULTAR_SQL = "SELECT * FROM estados_asamblea WHERE id = ?";
     private static final String CONSULTAR_ESTADOS_SQL = "SELECT * FROM estados_asamblea WHERE descripcion LIKE ?";
     private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM estados_asamblea";
+    private static final String CONSULTAR_ESTADO_SQL = "SELECT * FROM estados_asamblea WHERE descripcion = ?";
     
     private static final Conexion con = Conexion.obtener();
 
@@ -152,6 +153,28 @@ public class EstadoAsambleaDAO implements iEstadoAsambleaDAO{
             con.cerrar();
         }
         return estadosAsamblea;
+    }
+    
+    @Override
+    public EstadoAsambleaDTO consultarPorEstado(String estado) {
+        PreparedStatement ps;
+        ResultSet rs;
+        EstadoAsambleaDTO estadoAsamblea = new EstadoAsambleaDTO();
+        
+        try {           
+            ps = con.getConn().prepareStatement(CONSULTAR_ESTADO_SQL);
+            ps.setString(1, estado);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                estadoAsamblea = new EstadoAsambleaDTO(rs.getInt(1), rs.getString(2), rs.getInt(3));
+            }  
+         } catch (SQLException ex) {
+            Logger.getLogger(EstadoAsambleaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            con.cerrar();
+        }
+        return estadoAsamblea;
     }
     
 }

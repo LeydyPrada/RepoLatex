@@ -92,4 +92,14 @@ public class OrdenDiaBusiness {
         } 
     }//cambiarEstadoOrdenDia
     
+    public void votarOrdenDia(OrdenDiaDTO ordenDia){
+        try{            
+            ordenDiaDAO.votarOrdenDia(ordenDia);
+            
+        }catch(Exception ex){
+            Logger.getLogger(OrdenDiaBusiness.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//votarOrdenDia
+    
 }

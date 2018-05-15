@@ -19,5 +19,6 @@ public interface iOrdenDiaDAO {
 	public boolean actualizar(OrdenDiaDTO ordenDia);
 	public boolean borrar(Integer id); 
         public List<OrdenDiaDTO> consultarPorOrden(String Orden);
+        public boolean votarOrdenDia(OrdenDiaDTO ordenDia);
     
 }

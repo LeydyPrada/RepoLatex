@@ -65,9 +65,23 @@ public class RegistroAsambleaBusiness {
             
             if(inmuebles != null){
                 for(InmuebleDTO inmueble: inmuebles ){                
-                registro=registroAsambleaDAO.consultarPorInmuebleCodigo(codigo, inmueble.getInmueble());                
+                registro=registroAsambleaDAO.consultarPorInmuebleCodigo(codigo, inmueble.getInmueble());
+                    if(registro !=null && registro.getId() !=null){                                               
+                        if(registro.getVerificado() != 1){
+                            registro.setVerificado(1);
+                            registro.setResultado("Registro Valido");
+                           registroAsambleaDAO.actualizar(registro);
+                        }else{
+                           registro.setResultado("Este codigo ya fue registrado");
+                        }
+                        break; 
+                    }                
                 }          
-            }           
+            }
+            if(registro != null && registro.getId()==null){
+                registro.setResultado("Codigo no existe");
+            }
+                
         }catch(Exception ex){
             Logger.getLogger(RegistroAsambleaBusiness.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -32,6 +32,7 @@ public class AsambleaDAO implements iAsambleaDAO{
     private static final String CONSULTAR_SQL = "SELECT * FROM asamblea WHERE id = ?";
     private static final String CONSULTAR_DESC_SQL = "SELECT * FROM asamblea WHERE descipcion LIKE ?";
     private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM asamblea";
+    private static final String CONSULTAR_ESTADO_SQL = "SELECT * FROM asamblea WHERE id_estado_asamblea = ?";
     
     private static final Conexion con = Conexion.obtener();
 
@@ -164,6 +165,29 @@ public class AsambleaDAO implements iAsambleaDAO{
             while(rs.next()){
                asamblea.add(new AsambleaDTO(rs.getInt(1), new TipoAsambleaDTO(rs.getInt(2)), rs.getString(3), rs.getDate(4), rs.getTime(5), rs.getTime(6), new OrdenDiaDTO(rs.getInt(7)), new EstadoAsambleaDTO(rs.getInt(8))));
             }            
+        } catch (SQLException ex) {
+            Logger.getLogger(AsambleaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            con.cerrar();
+        }
+        return asamblea;
+    }
+    
+    @Override
+    public AsambleaDTO consultarEstadoAsamblea(Integer idEstado) {
+        PreparedStatement ps;
+        ResultSet rs;
+        AsambleaDTO asamblea = new AsambleaDTO();
+        
+        try {           
+            ps = con.getConn().prepareStatement(CONSULTAR_ESTADO_SQL);
+            ps.setInt(1, idEstado);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                asamblea = new AsambleaDTO(rs.getInt(1), new TipoAsambleaDTO(rs.getInt(2)), rs.getString(3), rs.getDate(4), rs.getTime(5), rs.getTime(6), new OrdenDiaDTO(rs.getInt(7)), new EstadoAsambleaDTO(rs.getInt(8)));
+            }  
+            return asamblea;
         } catch (SQLException ex) {
             Logger.getLogger(AsambleaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }finally{

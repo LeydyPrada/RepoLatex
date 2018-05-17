@@ -1,20 +1,26 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
 A level-1 auxiliary file: contexto/proyecto/introduccion.aux
 A level-1 auxiliary file: contexto/proyecto/proyecto.aux
+A level-1 auxiliary file: desarrollo/recoleccion/recoleccion.aux
+A level-1 auxiliary file: desarrollo/analisis/analisis.aux
 A level-1 auxiliary file: arquitectura/organizacion/organizacion.aux
 A level-1 auxiliary file: arquitectura/adm_lenguaje/adm_lenguaje.aux
 A level-1 auxiliary file: arquitectura/negocio/negocio.aux
 A level-1 auxiliary file: arquitectura/aplicacion/aplicacion.aux
-A level-1 auxiliary file: arquitectura/tecnologia/tecnologia.aux
-A level-1 auxiliary file: arquitectura/motivavion/motivacion.aux
-A level-1 auxiliary file: arquitectura/migracion/migracion.aux
-A level-1 auxiliary file: arquitectura/diseno/gof.aux
-A level-1 auxiliary file: desarrollo/recoleccion/recoleccion.aux
-A level-1 auxiliary file: desarrollo/analisis/analisis.aux
-A level-1 auxiliary file: desarrollo/resultados/resultados.aux
 A level-1 auxiliary file: reflexiones/conclusiones.aux
 A level-1 auxiliary file: reflexiones/anexos.aux
 The style file: unsrt.bst
 Database file #1: bibliografia/articulos.bib
 Database file #2: bibliografia/libros.bib
 Database file #3: bibliografia/url.bib
+Too many commas in name 1 of "Josey Andrw, Harrinson Rachel, Homan Paul, Rouse Mathew E., Van Sante Tom, Turner Mike, Van Der Merwe Paul" for entry LTogaf
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Josey Andrw, Harrinson Rachel, Homan Paul, Rouse Mathew E., Van Sante Tom, Turner Mike, Van Der Merwe Paul" for entry LTogaf
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Josey Andrw, Harrinson Rachel, Homan Paul, Rouse Mathew E., Van Sante Tom, Turner Mike, Van Der Merwe Paul" for entry LTogaf
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Josey Andrw, Harrinson Rachel, Homan Paul, Rouse Mathew E., Van Sante Tom, Turner Mike, Van Der Merwe Paul" for entry LTogaf
+while executing---line 944 of file unsrt.bst
+Warning--empty publisher in LTogaf
+Warning--empty year in LTogaf
+(There were 4 error messages)

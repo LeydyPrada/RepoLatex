@@ -1,5 +1,10 @@
 \begin{thebibliography}{1}
 
+\bibitem{WEB7}
+Archimate 2.0.
+\newblock \url{http://pubs.opengroup.org/architecture/archimate2-doc/toc.html}.
+\newblock [Online; accedido 2013].
+
 \bibitem{WEB1}
 Copropietarios.
 \newblock Ley 675 de 2001 propiedad horizontal.
@@ -40,5 +45,15 @@ Copro.
 \newblock Ley 675 de 2001.
 \newblock \url{http://www.copropietarios.com.co}.
 \newblock [Online; accedido el 12 de Octubre de 2017].
+
+\bibitem{WEB8}
+Togaf.
+\newblock \url{https://www.opengroup.org/togaf/}.
+\newblock Online; accedido 2013.
+
+\bibitem{LTogaf}
+Homan Paul Rouse Mathew E. Van Sante Tom Turner Mike Van Der Merwe~Paul
+  Josey~Andrw, Harrinson~Rachel.
+\newblock {\em Togaf Versión 9.1, Guía de Bolsillo}.
 
 \end{thebibliography}

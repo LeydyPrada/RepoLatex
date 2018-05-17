@@ -18,6 +18,7 @@
     String m_tipo_inmueble = (String) request.getSession().getAttribute("m_tipo_inmueble");
     String m_tipo_usuario = (String) request.getSession().getAttribute("m_tipo_usuario");
     String m_ingreso_asamblea = (String)request.getSession().getAttribute("m_ingreso_asamblea");
+    String m_ejecucion_asamblea = (String)request.getSession().getAttribute("m_ejecucion_asamblea");
     String menu_asamblea_general = (String) request.getSession().getAttribute("menu_asamblea_general");
     String menu_usuarios = (String) request.getSession().getAttribute("menu_usuarios");
     String menu_configuracion = (String) request.getSession().getAttribute("menu_configuracion");
@@ -68,6 +69,9 @@
                                     </li>
                                     <li>
                                         <a href="..\..\proyectoGrado\registroAsamblea.do?method=get&&action=ingreso" style="<%out.print(m_ingreso_asamblea);%>">Ingreso Asamblea</a>
+                                    </li>
+                                    <li>
+                                        <a href="..\..\proyectoGrado\ejecucionAsamblea.do?method=get&&action=iniciar" style="<%out.print(m_ejecucion_asamblea);%>">Ejecutar Asamblea</a>
                                     </li>
                                 </ul>
                             </li>

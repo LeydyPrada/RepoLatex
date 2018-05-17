@@ -35,6 +35,11 @@ public class RegistroAsambleaController extends HttpServlet {
     
     String opcionOrden = "display: none";
     String opcionRegistro = "display:inline";
+    String aprobado = "display:inline";
+    String noAprobado = "display:inline";
+    String preguntas = "display: none";
+    
+            
     
 
     /**
@@ -68,18 +73,12 @@ public class RegistroAsambleaController extends HttpServlet {
                     opcionOrden = "display:inline";
                     request.getSession().setAttribute("opcionOrden", opcionOrden);
                     request.getSession().setAttribute("opcionRegistro", opcionRegistro);                    
-                    request.getRequestDispatcher("Asamblea/ingresoAsamblea.jsp").forward(request, response);
-                }
+                    request.getRequestDispatcher("registroAsamblea.do?method=get&&action=consulOrden").forward(request, response);
+                    }
                 else{
                     out.println("<font color='red'><b>"+registroAsamblea.getResultado()+"</b></font>");
                 }                
-                break;
-            case "consulOrden":
-                AsambleaDTO asambleaEjec = asambleaBusiness.consultarAsambleaPorEstado("Ejecucion");
-                OrdenDiaDTO ordenDia = ordenDiaBusiness.consultarOrdenDiaPorId(asambleaEjec.getIdOrdenDia().getId());
-                request.getSession().setAttribute("OrdenDia", ordenDia);
-                request.getRequestDispatcher("Asamblea/ingresoAsamblea.jsp").forward(request, response);
-                break;           
+                break;                      
         }
 
         /*METHOD GET*/
@@ -92,20 +91,39 @@ public class RegistroAsambleaController extends HttpServlet {
                     request.getSession().setAttribute("opcionOrden", opcionOrden);
                     request.getRequestDispatcher("Asamblea/ingresoAsamblea.jsp").forward(request, response);
                     break;
-                case "votar":
-                    OrdenDiaDTO ordenDia = new OrdenDiaDTO();
+                case "consulOrden":
                     AsambleaDTO asambleaEjec = asambleaBusiness.consultarAsambleaPorEstado("Ejecucion");
-                    ordenDia.setId(asambleaEjec.getIdOrdenDia().getId());
+                    OrdenDiaDTO ordenDia = ordenDiaBusiness.consultarOrdenDiaPorId(asambleaEjec.getIdOrdenDia().getId());
+                    request.getSession().setAttribute("OrdenDia", ordenDia);
+                    aprobado = "display:inline";
+                    noAprobado = "display:inline";
+                    preguntas = "display: none";
+                    request.getSession().setAttribute("btnAprobado", aprobado);
+                    request.getSession().setAttribute("btnNoAprobado", noAprobado);
+                    request.getSession().setAttribute("btnPreguntas", preguntas);                    
+                    request.getRequestDispatcher("Asamblea/ingresoAsamblea.jsp").forward(request, response);
+                    break;
+                case "votar":
+                    OrdenDiaDTO ordenDelDia = new OrdenDiaDTO();
+                    AsambleaDTO asambleaEnEjec = asambleaBusiness.consultarAsambleaPorEstado("Ejecucion");
+                    ordenDelDia.setId(asambleaEnEjec.getIdOrdenDia().getId());
                     if(request.getParameter("aprob") != null){
-                    ordenDia.setAprobado(Integer.parseInt(request.getParameter("aprob")));
-                    ordenDia.setNoAprobado(0);
+                    ordenDelDia.setAprobado(Integer.parseInt(request.getParameter("aprob")));
+                    ordenDelDia.setNoAprobado(0);
                     }else if(request.getParameter("noaprob") != null){
-                    ordenDia.setNoAprobado(Integer.parseInt(request.getParameter("noaprob")));
-                    ordenDia.setAprobado(0);
+                    ordenDelDia.setNoAprobado(Integer.parseInt(request.getParameter("noaprob")));
+                    ordenDelDia.setAprobado(0);
                     }
-                    ordenDiaBusiness.votarOrdenDia(ordenDia);
-                    request.getRequestDispatcher("registroAsamblea.do?method=get&&action=ingreso").forward(request, response);                    
-                    break;               
+                    ordenDiaBusiness.votarOrdenDia(ordenDelDia);
+                    aprobado = "display: none";
+                    noAprobado = "display: none";
+                    preguntas = "display:inline";
+                    request.getSession().setAttribute("btnAprobado", aprobado);
+                    request.getSession().setAttribute("btnNoAprobado", noAprobado);
+                    request.getSession().setAttribute("btnPreguntas", preguntas);
+                    request.getRequestDispatcher("Asamblea/ingresoAsamblea.jsp").forward(request, response);
+                    break;
+                
             }
         }
         }

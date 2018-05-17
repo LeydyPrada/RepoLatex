@@ -1,4 +1,4 @@
-\documentclass[letter,11pt,openany]{book}
+\documentclass[letter,12pt,openany]{book}
 
 \oddsidemargin=-1cm
 \textwidth=18cm
@@ -28,35 +28,37 @@
 %%%Portada
 \begin{titlepage}
 	\centering	
-	{\scshape\LARGE PROTOTIPO DE APLICACIÓN WEB PARA LA SISTEMATIZACIÓN DEL PROCESO DE ASAMBLEA GENERAL DE COPROPIETARIOS EN PROPIEDAD HORIZONTAL MEDIANTE SERVICIOS SOAP \par}
-	\vspace{7cm}
-	{\scshape\Large JEIMMY LORENA NIETO NIETO\\
+	{\LARGE PROTOTIPO DE APLICACIÓN WEB PARA LA SISTEMATIZACIÓN DEL PROCESO DE ASAMBLEA GENERAL DE COPROPIETARIOS EN PROPIEDAD HORIZONTAL MEDIANTE SERVICIOS SOAP \par}
+	\vspace{6cm}
+	{\Large JEIMMY LORENA NIETO NIETO\\
 		LEYDY YOLANDA PRADA CRUZ\par}
-	\vspace{7.5cm}
+	\vspace{7cm}
 	
 	{\Large\ UNIVERSIDAD DISTRITAL FRANCISCO JOSÉ DE CALDAS\par}
 	{\Large\ ESPECIALIZACIÓN EN INGENIERIA DE SOFTWARE\par}
     {\Large\ PROYECTO DE GRADO\par}
 	{\Large\ BOGOTÁ D.C.\par}
 	{\Large\ 2018\par}	
-\end{titlepage}
 
-%%%ContraPortada
-\begin{titlepage}
 	\centering	
-	{\scshape\LARGE PROTOTIPO DE APLICACIÓN WEB PARA LA SISTEMATIZACIÓN DEL PROCESO DE ASAMBLEA GENERAL DE COPROPIETARIOS EN PROPIEDAD HORIZONTAL MEDIANTE SERVICIOS SOAP \par}
-	\vspace{4cm}
-	{\scshape\Large JEIMMY LORENA NIETO NIETO\par}
-	{\scshape\Large 20172099029\par}
-	{\scshape\Large LEYDY YOLANDA PRADA CRUZ\par}
-	{\scshape\Large 20172099032\par}
-	\vspace{2.5cm}
+	{\Large PROTOTIPO DE APLICACIÓN WEB PARA LA SISTEMATIZACIÓN DEL PROCESO DE ASAMBLEA GENERAL DE COPROPIETARIOS EN PROPIEDAD HORIZONTAL MEDIANTE SERVICIOS SOAP \par}
+	\vspace{2cm}
+	{\Large JEIMMY LORENA NIETO NIETO\par}
+	{\Large 20172099029\par}
+	{\Large LEYDY YOLANDA PRADA CRUZ\par}
+	{\Large 20172099032\par}
+	\vspace{1.5cm}
 	
-	{\scshape\Large DIRECTORA\par}
-	{\scshape\Large LILIAN BEJARANO\par}
-	{\scshape\Large REVISOR\par}
-	{\scshape\Large EDGAR RINCON\par}
-	\vspace{2.5cm}
+	{\small Trabajo de grado presentado como requisito parcial para optar al
+		título de:\\
+		\textbf{Especialista en Ingeniería de Software}}
+	\vspace{1.5cm}
+	
+	{\Large DIRECTORA\par}
+	{\Large Msc LILIAN BEJARANO GARZÓN\par}
+	{\Large REVISOR\par}
+	{\Large PhD EDGAR RINCON\par}
+	\vspace{2cm}
 	
 	{\Large\ UNIVERSIDAD DISTRITAL FRANCISCO JOSÉ DE CALDAS\par}
 	{\Large\ ESPECIALIZACIÓN EN INGENIERIA DE SOFTWARE\par}
@@ -72,28 +74,30 @@
 
 %%%Estructura
 \mainmatter
-\part*{INTRODUCCIÓN}
 \include{contexto/proyecto/introduccion}
 \part{CONTEXTUALIZACIÓN DE LA INVESTIGACIÓN}
 \include{contexto/proyecto/proyecto}
 \part{DESARROLLO DE LA INVESTIGACIÓN}
+
+\include{desarrollo/recoleccion/recoleccion}
+\include{desarrollo/analisis/analisis}
+%\include{desarrollo/resultados/resultados}
+
 \include{arquitectura/organizacion/organizacion}
 \include{arquitectura/adm_lenguaje/adm_lenguaje}
 \include{arquitectura/negocio/negocio}
 \include{arquitectura/aplicacion/aplicacion}
 \include{arquitectura/tecnologia/tecnologia}
-\include{arquitectura/motivavion/motivacion}
-\include{arquitectura/migracion/migracion}
-\include{arquitectura/diseno/gof}
+%\include{arquitectura/motivavion/motivacion}
+%\include{arquitectura/migracion/migracion}
+%\include{arquitectura/diseno/gof}
 
-\include{desarrollo/recoleccion/recoleccion}
-\include{desarrollo/analisis/analisis}
-\include{desarrollo/resultados/resultados}
+%\include{desarrollo/metodologia/metodologia}
+
 \part{CIERRE DE LA INVESTIGACIÓN}
 \include{reflexiones/conclusiones}
 \include{reflexiones/anexos}
 %\include{}
-
 
 %%%Final
 \backmatter

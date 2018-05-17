@@ -1,13 +1,22 @@
-\section{ADM-ARCHIMATE}
-\subsection{Introducción}
-\newpage
+\section{ADM-Archimate}
+\subsubsection{Introducción}
 
-\subsection{ADM}
+ArchiMate es un marco estándar internacional, independiente del proveedor introducido por The Open Group. Sus conceptos y modelos bien fundamentados proporcionan precisión. ArchiMate ayuda a alejarse de la imagen de arquitectura borrosa. Es un lenguaje delgado y simple. 
+
+\vspace{0.5cm}
+
+Contiene conceptos suficientes para modelar la arquitectura empresarial y no está aumentado para incluir todo lo posible. Su estructura uniforme hace que sea fácil de aprender y aplicar.
+
+\vspace{0.5cm}
+
+ArchiMate es un buen lenguaje visual para modelar arquitectura empresarial, pero no es un método que proporcione pasos o técnicas para guiar a través de todo el proceso de desarrollo de arquitectura empresarial. ArchiMate puede integrarse con TOGAF ADM de manera transparente e intrínseca por diseño.
+
+\subsubsection{ADM}
 
 \begin{figure}[th!]
 	\centering
 	\includegraphics[width=0.7\linewidth]{arquitectura/adm_lenguaje/imgs/adm}
-	\caption{ADM}
+	\caption{ADM} {\scriptsize \textbf{Fuente:} Togaf \cite{WEB8} \cite{LTogaf}}	
 	\label{fig:adm}
 \end{figure}
 
@@ -16,8 +25,7 @@
 \subsubsection{Glosario Conceptos Capa de Negocio}
 
 \begin{longtable}[c]{|p{2.5cm}|l|c|}
-	\caption{Conceptos Capa de Negocio}
-	\label{my-label}\\
+	
 	\hline
 	\textbf{Concepto} 			& \textbf{Descripción}                                                                                                                                            & \textbf{Notación} \\ \hline
 	\endhead
@@ -38,6 +46,7 @@
 	Valor    					& \begin{tabular}[c]{p{7cm}@{}l@{}}El valor relativo, la utilidad o la importancia de un servicio o producto comercial.\end{tabular} & \includegraphics[width=35mm]{arquitectura/adm_lenguaje/imgs/business/Value}          \\ \hline
 	Producto				    & \begin{tabular}[c]{p{7cm}@{}l@{}}Una colección coherente de servicios, acompañado de un contrato / conjunto de acuerdos, que se ofrece en su conjunto para (internos o externos) clientes.\end{tabular} & \includegraphics[width=35mm]{arquitectura/adm_lenguaje/imgs/business/Product}          \\ \hline
 	Contrato				    & \begin{tabular}[c]{p{7cm}@{}l@{}}Una especificación formal o informal de acuerdo que especifica los derechos y obligaciones asociadas con un producto.\end{tabular} & \includegraphics[width=35mm]{arquitectura/adm_lenguaje/imgs/business/Contract}          \\ \hline
+	\caption{Conceptos Capa de Negocio \cite{WEB7}}
 \end{longtable}
 
 \newpage
@@ -45,8 +54,7 @@
 \subsubsection{Glosario Conceptos Capa de Aplicación}
 
 \begin{longtable}[c]{|p{2.5cm}|l|c|}
-	\caption{Conceptos Capa de Aplicación}
-	\label{my-label}\\
+
 	\hline
 	\textbf{Concepto} 			& \textbf{Descripción}                                                                                                                                            & \textbf{Notación} \\ \hline
 	\endhead
@@ -58,6 +66,7 @@
 	Función de Aplicación		& \begin{tabular}[c]{p{7cm}@{}l@{}}Un elemento de comportamiento que agrupa el comportamiento automatizado que puede realizar un componente de la aplicación.\end{tabular} & \includegraphics[width=35mm]{arquitectura/adm_lenguaje/imgs/application/ApplicationFunction}          \\ \hline
 	Interacción de Aplicaciones	& \begin{tabular}[c]{p{7cm}@{}l@{}}Un elemento de comportamiento que describe el comportamiento de una colaboración de aplicaciones.\end{tabular} & \includegraphics[width=35mm]{arquitectura/adm_lenguaje/imgs/application/ApplicationInteraction}          \\ \hline
 	Servicio de Aplicación	   	& \begin{tabular}[c]{p{7cm}@{}l@{}}Un servicio que expone el comportamiento automatizado.\end{tabular} & \includegraphics[width=35mm]{arquitectura/adm_lenguaje/imgs/application/ApplicationService}          \\ \hline
+	\caption{Conceptos Capa de Aplicación \cite{WEB7}}
 \end{longtable}
 
 \newpage
@@ -66,8 +75,6 @@
 
 
 \begin{longtable}[c]{|p{2.55cm}|l|c|}
-	\caption{Conceptos Capa de Tecnología}
-	\label{my-label}\\
 	\hline
 	\textbf{Concepto} 			& \textbf{Descripción}                                                                                                                                            & \textbf{Notación} \\ \hline
 	\endhead
@@ -81,6 +88,7 @@
 	Función de Infraestructura	& \begin{tabular}[c]{p{7cm}@{}l@{}}Un elemento de comportamiento que agrupa el comportamiento infraestructural que puede realizar un nodo.\end{tabular} & \includegraphics[width=35mm]{arquitectura/adm_lenguaje/imgs/technology/InfrastructureFunction}          \\ \hline		
 	Servicio de Infraestructura	& \begin{tabular}[c]{p{7cm}@{}l@{}}Una unidad de funcionalidad externamente visible, proporcionada por uno o más nodos, expuesta a través de interfaces bien definidas y significativa para el entorno.\end{tabular} & \includegraphics[width=35mm]{arquitectura/adm_lenguaje/imgs/technology/InfrastructureService}          \\ \hline
 	Artefacto				   	& \begin{tabular}[c]{p{7cm}@{}l@{}}Una pieza física de datos que se utiliza o produce en un proceso de desarrollo de software, o mediante el despliegue y la operación de un sistema.\end{tabular} & \includegraphics[width=35mm]{arquitectura/adm_lenguaje/imgs/technology/Artifact}          \\ \hline
+	\caption{Conceptos Capa de Tecnología \cite{WEB7}}
 \end{longtable}
 
 \newpage
@@ -88,8 +96,7 @@
 \subsubsection{Glosario Capa Motivacional}
 
 \begin{longtable}[c]{|p{2.5cm}|l|c|}
-	\caption{Conceptos Capa Motivacional}
-	\label{my-label}\\
+
 	\hline
 	\textbf{Concepto} 			& \textbf{Descripción}                                                                                                                                            & \textbf{Notación} \\ \hline
 	\endhead
@@ -101,6 +108,7 @@
 	Requerimiento				& \begin{tabular}[c]{p{7cm}@{}l@{}}Una declaración de necesidad que debe ser realizada por un sistema.\end{tabular} & \includegraphics[width=35mm]{arquitectura/adm_lenguaje/imgs/motivational/Requirement}          \\ \hline
 	Restricción					& \begin{tabular}[c]{p{7cm}@{}l@{}}Una restricción en la forma en que se realiza un sistema.\end{tabular} & \includegraphics[width=35mm]{arquitectura/adm_lenguaje/imgs/motivational/Constraint}          \\ \hline
 	Principle (Principio)	   	& \begin{tabular}[c]{p{7cm}@{}l@{}}Una propiedad normativa de todos los sistemas en un contexto dado, o la forma en que se realizan.\end{tabular} & \includegraphics[width=35mm]{arquitectura/adm_lenguaje/imgs/motivational/Principle}          \\ \hline
+	\caption{Conceptos Capa Motivacional \cite{WEB7}}
 \end{longtable}
 
 
@@ -110,8 +118,7 @@
 \subsubsection{Glosario Conceptos Capa de Implementación y Migración}
 
 \begin{longtable}[c]{|p{2.5cm}|l|c|}
-	\caption{Conceptos Capa de Implementación y Migración}
-	\label{my-label}\\
+
 	\hline
 	\textbf{Concepto} 			& \textbf{Descripción}                                                                                                                                            & \textbf{Notación} \\ \hline
 	\endhead
@@ -120,4 +127,5 @@
 	Entregable					& \begin{tabular}[c]{p{7cm}@{}l@{}}Un resultado definido con precisión de un paquete de trabajo.\end{tabular} & \includegraphics[width=35mm]{arquitectura/adm_lenguaje/imgs/implementacionMigration/Deliverable}          \\ \hline
 	Plateau						& \begin{tabular}[c]{p{7cm}@{}l@{}}Un estado relativamente estable de la arquitectura que existe durante un período de tiempo limitado.\end{tabular} & \includegraphics[width=35mm]{arquitectura/adm_lenguaje/imgs/implementacionMigration/Plateau}          \\ \hline
 	Gap (Brecha)	   			& \begin{tabular}[c]{p{7cm}@{}l@{}}Un resultado de un análisis de brecha entre dos mesetas.\end{tabular} & \includegraphics[width=35mm]{arquitectura/adm_lenguaje/imgs/implementacionMigration/Gap}          \\ \hline
+	\caption{Conceptos Capa de Implementación y Migración \cite{WEB7}}
 \end{longtable}

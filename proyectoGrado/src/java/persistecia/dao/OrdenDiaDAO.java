@@ -27,6 +27,8 @@ public class OrdenDiaDAO implements iOrdenDiaDAO{
     private static final String CONSULTAR_ORDEN_SQL = "SELECT * FROM orden_dia WHERE orden LIKE ?";
     private static final String CONSULTAR_TODOS_SQL = "SELECT * FROM orden_dia";
     private static final String VOTACION_ORDEN_DIA = "INSERT INTO voto_orden_dia (id_orden_dia, aprobado, no_aprobado) VALUES(?, ?, ?)";
+    private static final String VOTO_ORDEN_DIA_APROB = "SELECT count(*) FROM voto_orden_dia WHERE id_orden_dia = ? AND aprobado = ?";
+    private static final String VOTO_ORDEN_DIA_TOTAL = "SELECT count(*) FROM voto_orden_dia WHERE id_orden_dia = ?";
     
     
     private static final Conexion con = Conexion.obtener();
@@ -102,11 +104,10 @@ public class OrdenDiaDAO implements iOrdenDiaDAO{
             ps = con.getConn().prepareStatement(ACTUALIZAR_SQL);
             ps.setString(1, ordenDia.getOrden());
             ps.setString(2, ordenDia.getDescripcion());
-            ps.setInt(3, ordenDia.getActivo());
-            ps.setInt(4, ordenDia.getId());
-            ps.setInt(5, ordenDia.getAprobado());
-            ps.setInt(6, ordenDia.getNoAprobado());
-            
+            ps.setInt(3, ordenDia.getActivo());            
+            ps.setInt(4, ordenDia.getAprobado());
+            ps.setInt(5, ordenDia.getNoAprobado());
+            ps.setInt(6, ordenDia.getId());            
                         
             if (ps.executeUpdate() > 0){
                 return true;
@@ -178,6 +179,53 @@ public class OrdenDiaDAO implements iOrdenDiaDAO{
         }        
         return false;
         
+    }
+
+    @Override
+    public Integer contarVotoOrden(Integer idOrdenDia) {
+        PreparedStatement ps;
+        ResultSet rs;
+        int totalAprobado = 0;
+        
+        try {           
+            ps = con.getConn().prepareStatement(VOTO_ORDEN_DIA_APROB);
+            ps.setInt(1, idOrdenDia);
+            ps.setInt(2, 1);
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+              totalAprobado = rs.getInt(1);
+            }  
+            return totalAprobado;
+        } catch (SQLException ex) {
+            Logger.getLogger(OrdenDiaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            con.cerrar();
+        }
+        return totalAprobado;        
+    }
+    
+    @Override
+    public Integer totalVotoOrden(Integer idOrdenDia) {
+        PreparedStatement ps;
+        ResultSet rs;
+        int totalVotos = 0;
+        
+        try {           
+            ps = con.getConn().prepareStatement(VOTO_ORDEN_DIA_TOTAL);
+            ps.setInt(1, idOrdenDia);            
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+              totalVotos = rs.getInt(1);
+            }  
+            return totalVotos;
+        } catch (SQLException ex) {
+            Logger.getLogger(OrdenDiaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            con.cerrar();
+        }
+        return totalVotos;        
     }
 
    

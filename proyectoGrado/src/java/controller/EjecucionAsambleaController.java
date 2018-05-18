@@ -33,13 +33,8 @@ public class EjecucionAsambleaController extends HttpServlet {
     OrdenDiaBusiness ordenDiaBusiness = new OrdenDiaBusiness();
     AsambleaBusiness asambleaBusiness = new AsambleaBusiness();
     
-    String opcionOrden = "display: none";
-    String opcionRegistro = "display:inline";
-    String aprobado = "display:inline";
-    String noAprobado = "display:inline";
-    String preguntas = "display: none";
-    
-            
+    String labelAprob = "display: none";
+    String labelNoAprob = "display: none";            
     
 
     /**
@@ -66,9 +61,24 @@ public class EjecucionAsambleaController extends HttpServlet {
         else{       
         
         switch (request.getParameter("action")) {
-            case "iniciar": 
+            case "iniciar":                
+                request.getSession().setAttribute("labelAprob", labelAprob);
+                request.getSession().setAttribute("labelNoAprob", labelNoAprob);
                 request.getRequestDispatcher("Asamblea/ejecucionAsamblea.jsp").forward(request, response);                        
-                break;                      
+                break;
+            case "validarOrden":
+                
+                AsambleaDTO asambleaEjec = asambleaBusiness.consultarAsambleaPorEstado("Ejecucion");
+                if(ordenDiaBusiness.validarOrdenDia(asambleaEjec.getIdOrdenDia().getId())){
+                    labelAprob = "display:inline";                     
+                } else{
+                    labelNoAprob = "display:inline";
+                } 
+                request.getSession().setAttribute("labelAprob", labelAprob);
+                request.getSession().setAttribute("labelNoAprob", labelNoAprob);
+                request.getRequestDispatcher("Asamblea/ejecucionAsamblea.jsp").forward(request, response);                        
+                break;    
+            
         }
 
         /*METHOD GET*/

@@ -20,5 +20,7 @@ public interface iOrdenDiaDAO {
 	public boolean borrar(Integer id); 
         public List<OrdenDiaDTO> consultarPorOrden(String Orden);
         public boolean votarOrdenDia(OrdenDiaDTO ordenDia);
+        public Integer contarVotoOrden(Integer idOrdenDia);
+        public Integer totalVotoOrden(Integer idOrdenDia);
     
 }

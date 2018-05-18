@@ -12,7 +12,9 @@
 
 <%  if (request.getSession().getAttribute("usuario") == null) {
         response.sendRedirect("index.html");
-    }   
+    }
+    String labelAprob = (String)request.getSession().getAttribute("labelAprob");
+    String labelNoAprob = (String)request.getSession().getAttribute("labelNoAprob");
 %>
 
 <html>
@@ -24,9 +26,11 @@
         <div class="col-md-3">
             <div class="CentrarForm">
                 <form id="preguntas" method="post" action="\proyectoGrado\ejecucionAsamblea.do">
-                    <input type="hidden" id="action" name="action" value="iniciar"/>                    
+                    <input type="hidden" id="action" name="action" value="validarOrden"/>                    
                     <div class="col-md-3">
-                        <button type="submit" class="btn btn-default">Validar Orden de Dia</button>                        
+                        <button type="submit" class="btn btn-default">Validar Orden del Dia</button> 
+                        <label style="<%out.print(labelAprob);%>" for="inputEmail3" class="control-label">Orden del dia Aprobada</label>
+                        <label style="<%out.print(labelNoAprob);%>" for="inputEmail3" class="control-label">Orden del dia No Aprobada</label>
                     </div>
                 </form>                            
             </div>            

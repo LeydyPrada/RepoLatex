@@ -102,4 +102,32 @@ public class OrdenDiaBusiness {
         
     }//votarOrdenDia
     
+     public boolean validarOrdenDia(Integer idOrdenDia){
+         int votosAprob, totalVotos, mitadvotos = 0;
+         OrdenDiaDTO ordenDia;
+                     
+        try{            
+           votosAprob = ordenDiaDAO.contarVotoOrden(idOrdenDia);
+           totalVotos = ordenDiaDAO.totalVotoOrden(idOrdenDia);
+           mitadvotos = totalVotos/2;
+           ordenDia = ordenDiaDAO.consultarPorId(idOrdenDia);
+                     
+           if(votosAprob > mitadvotos){               
+              //actualiza estado aprobado ordenDia
+              ordenDia.setAprobado(1);
+              ordenDiaDAO.actualizar(ordenDia);              
+              return true;              
+           }else{
+              ordenDia.setNoAprobado(1);
+              ordenDiaDAO.actualizar(ordenDia); 
+             return false;
+           }
+            
+        }catch(Exception ex){
+            Logger.getLogger(OrdenDiaBusiness.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+        
+    }//votarOrdenDia
+    
 }
